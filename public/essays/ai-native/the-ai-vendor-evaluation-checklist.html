@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The AI Vendor Evaluation Checklist — Edge Notes · The Launch Edge</title>
+<meta name="description" content="The demo is always better than the production reality. A structured framework for evaluating AI vendors on data residency, fallback behaviour, latency at scale, hallucination rate, and the contract terms that protect you when the model changes." />
+<meta name="keywords" content="AI vendor evaluation, AI procurement, LLM vendor comparison, AI contract terms, data residency AI, AI hallucination rate, enterprise AI vendors, AI vendor checklist" />
+<link rel="canonical" href="https://www.thelaunchedge.com/essays/ai-native/the-ai-vendor-evaluation-checklist" />
+<meta property="og:type" content="article" /><meta property="og:title" content="The AI Vendor Evaluation Checklist" /><meta property="og:description" content="The demo is always better than the production reality. A structured framework for evaluating AI vendors on data residency, fallback behaviour, latency at scale, hallucination rate, and the contract terms that protect you when the model changes." /><meta property="og:url" content="https://www.thelaunchedge.com/essays/ai-native/the-ai-vendor-evaluation-checklist" /><meta property="og:site_name" content="The Launch Edge" /><meta property="article:published_time" content="2026-04-20" /><meta property="article:section" content="AI-Native" />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="The AI Vendor Evaluation Checklist" /><meta name="twitter:description" content="The demo is always better than the production reality. A structured framework for evaluating AI vendors on data residency, fallback behaviour, latency at scale, hallucination rate, and the contract terms that protect you when the model changes." />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"The AI Vendor Evaluation Checklist","description":"The demo is always better than the production reality. A structured framework for evaluating AI vendors on data residency, fallback behaviour, latency at scale, hallucination rate, and the contract terms that protect you when the model changes.","datePublished":"2026-04-20","dateModified":"2026-04-20","author":{"@type":"Organization","name":"The Launch Edge","url":"https://www.thelaunchedge.com"},"publisher":{"@type":"Organization","name":"The Launch Edge","url":"https://www.thelaunchedge.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thelaunchedge.com/essays/ai-native/the-ai-vendor-evaluation-checklist"},"keywords":"AI vendor evaluation, AI procurement, LLM vendor comparison, AI contract terms, data residency AI, AI hallucination rate, enterprise AI vendors, AI vendor checklist","articleSection":"AI-Native","inLanguage":"en-SG"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the most important thing to test in an AI vendor evaluation?","acceptedAnswer":{"@type":"Answer","text":"Hallucination rate on your specific use case. Generic benchmarks measure performance on standardised test sets that may have little overlap with your actual queries. Build a test set of 50 to 100 representative queries from your use case, include questions the model should refuse or escalate, and measure accuracy against a human-reviewed ground truth. A vendor who scores well on public benchmarks but poorly on your test set is not the right vendor for you, regardless of what the sales deck says."}},{"@type":"Question","name":"What data residency questions should I ask an AI vendor?","acceptedAnswer":{"@type":"Answer","text":"Ask where your prompts and completions are processed and stored, how long they are retained, whether they are used to train future models, and what happens to your data if you terminate the contract. For regulated industries, also ask whether the vendor can provide a data processing agreement that meets your regulatory requirements, and whether they have completed a SOC 2 Type II audit or equivalent. Vendors who cannot answer these questions directly should not be in your shortlist."}},{"@type":"Question","name":"How do I test an AI vendor's latency at scale?","acceptedAnswer":{"@type":"Answer","text":"Request a load test environment or use the vendor's public API to run a realistic concurrent load test before signing any contract. Measure p50, p95, and p99 latency — the median and tail latencies tell you different things. A vendor with good median latency but high p99 latency will provide a poor experience in the cases that matter most. Also test latency under your realistic peak load, not your average load. Most vendors perform acceptably at low volumes and degrade unpredictably under concurrent demand."}},{"@type":"Question","name":"What contract terms matter most in an AI vendor agreement?","acceptedAnswer":{"@type":"Answer","text":"Three terms require specific attention. First, model version stability: get a written commitment on how much notice you will receive before the vendor changes the underlying model in a way that affects output behaviour. Second, data handling on termination: confirm that your data is deleted within a specified timeframe after contract end, and get this in writing. Third, liability caps: most AI vendor contracts cap liability at a multiple of fees paid, which can be inadequate if an AI error causes downstream business harm. Negotiate the cap or ensure your own business insurance covers the gap."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thelaunchedge.com"},{"@type":"ListItem","position":2,"name":"Essays","item":"https://www.thelaunchedge.com/essays"},{"@type":"ListItem","position":3,"name":"AI-Native","item":"https://www.thelaunchedge.com/essays/ai-native"},{"@type":"ListItem","position":4,"name":"The AI Vendor Evaluation Checklist","item":"https://www.thelaunchedge.com/essays/ai-native/the-ai-vendor-evaluation-checklist"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/article.css">
+</head>
+<body>
+<header class="masthead"><div class="wrap"><a href="/" class="back">← Edge <em>Notes</em></a><div class="meta"><span>№ 119 · AI-Native</span><span>20 apr 2026</span><span>13 min read</span></div></div></header>
+<article class="article"><div class="wrap">
+  <div class="kicker"><span class="bar"></span> Essay · ai-native</div>
+  <h1>The AI vendor <em>evaluation checklist</em></h1>
+  <p class="deck">The vendor's demo was flawless. Your team was impressed. Six months into the contract, the model was updated without warning and a critical workflow broke overnight. This is not bad luck. It is the predictable result of evaluating a vendor on the wrong criteria.</p>
+
+  <h2>Why AI vendor evaluations go wrong.</h2>
+
+  <p>Evaluating software vendors is a known discipline. You have procurement processes, security questionnaires, reference checks, pilot projects. These are not wrong for AI vendors — they are simply insufficient. AI vendor evaluation fails in a specific way: teams evaluate the model's capability in isolation from the operational context that determines whether that capability survives contact with production.</p>
+
+  <p>The demo is optimised to show the model at its best. Queries are curated. The knowledge base is freshly indexed. Response time is measured on a single uncongested API call. The evaluator knows what to avoid. None of this resembles production, where queries are messy, the knowledge base is two months stale, API calls are concurrent under load, and nobody is filtering for the edge cases that break things.</p>
+
+  <p>The result is a systematic overestimation of vendor quality at the point of contract signing, followed by a disillusioning first quarter in production. Most teams then spend the next six months trying to adapt their use case to the vendor's limitations rather than re-evaluating whether the vendor was the right choice. The re-evaluation never happens because switching costs are real and the sunk cost is significant.</p>
+
+  <p>The framework below is designed to surface the production reality during the evaluation period, before you sign. It is not exhaustive — every use case has specific requirements that need specific tests. But it covers the categories where AI vendor evaluations most consistently fail.</p>
+
+  <h2>Category one: data and privacy.</h2>
+
+  <p>Before any technical evaluation begins, you need clear answers to a set of data handling questions. These are not negotiable for regulated industries and are becoming less negotiable for everyone else as AI-specific data regulations mature.</p>
+
+  <p>The first question is data residency: where are your prompts and completions processed, and where are they stored? For companies handling personal data under PDPA, GDPR, or equivalent frameworks, this question determines whether you can use the vendor at all. "Processed in US-East with optional EU region" is a different answer from "processed in-region, no data leaves Singapore." Get the precise answer in writing, not in a sales slide.</p>
+
+  <p>The second question is training data use: do you agree that your prompts, completions, and any uploaded documents will not be used to train future versions of the model? Most enterprise tiers of major AI vendors offer this guarantee. Most consumer or developer tiers do not. Know which tier you are on and get the guarantee documented in your contract, not just referenced in a help centre article that can be updated without notice.</p>
+
+  <p>The third question is retention period: how long does the vendor retain your prompts and completions after each API call? Retention for 30 days for abuse monitoring is a standard and usually acceptable answer. Retention for 12 months for unspecified purposes is not. Ask the question directly and confirm the answer in your data processing agreement.</p>
+
+  <p>The fourth question is breach notification: what is the vendor's contractual obligation to notify you of a data breach, and within what timeframe? Most well-run vendors have a 72-hour notification standard. Some do not. The answer tells you something about their security posture beyond the specific breach scenario.</p>
+
+  <h2>Category two: hallucination rate on your use case.</h2>
+
+  <p>Public benchmarks are useful for comparing models in aggregate. They are not useful for predicting performance on your specific use case. The benchmark data overlaps with training data in ways that are difficult to audit. The query distribution on a benchmark may be entirely unlike your actual query distribution. A model that ranks first on a legal reasoning benchmark may perform mediocrely on the specific type of legal document review your team does.</p>
+
+  <p>The only evaluation that matters is the one you conduct yourself, on your data. Before signing any contract, build a test set of at least 50 queries that represent the actual distribution of your production use case. Include straightforward queries where the right answer is unambiguous. Include ambiguous queries where a well-calibrated model should express uncertainty rather than confabulate. Include off-topic queries that the model should decline to answer. Include queries that require the model to distinguish between similar but distinct concepts in your domain.</p>
+
+  <p>For each query, document the correct answer, the acceptable answer range, and what an incorrect answer looks like. Run the test set against every vendor you are evaluating. Grade the outputs against your ground truth. Calculate the percentage of responses that are factually correct, the percentage that are clearly wrong, and the percentage that are plausible-sounding but subtly incorrect. That last category — the confident near-miss — is the most dangerous in production and the most underweighted in standard evaluations.</p>
+
+  <p>The hallucination rate that matters is the rate on your test set, not the model's published performance on a generic benchmark. If a vendor will not let you run this evaluation before signing, that is itself a significant signal about what production will look like.</p>
+
+  <h2>Category three: latency and reliability under realistic load.</h2>
+
+  <p>A single API call to a major AI provider typically responds in one to three seconds under light load. This number appears in demos and documentation. It is not the number that determines your user experience in production.</p>
+
+  <p>The number that determines your user experience is the p95 and p99 latency under your peak concurrent load. If your application makes 50 simultaneous API calls at peak — a customer support platform with 50 active conversations — the 95th-percentile response time under that load is what your users experience 5 percent of the time. For most AI APIs, p99 latency under realistic load is 2 to 5 times higher than the median latency shown in documentation.</p>
+
+  <p>Run a load test before you sign. Most major vendors allow you to run load tests against their API. Send 20 to 100 concurrent requests at your expected peak volume, with realistic prompt lengths and expected completion lengths. Measure p50, p95, and p99 latency. Measure error rate — the percentage of requests that time out or return a 5xx response. A vendor with 99.9 percent uptime but 3 percent error rate under concurrent load is not actually 99.9 percent available for your application.</p>
+
+  <p>Also ask about rate limits and how the vendor handles rate limit errors. Does the API return a 429 with a retry-after header that allows for graceful degradation? Does the vendor offer dedicated throughput for enterprise customers? What happens to queued requests during a provider-side incident? These questions have specific technical answers that vendors with mature infrastructure can give you directly.</p>
+
+  <div class="pullquote">You are not buying the demo. You are buying the API under concurrent load, at 2am on a Sunday, with a query distribution that your QA team did not anticipate.</div>
+
+  <h2>Category four: fallback behaviour and graceful degradation.</h2>
+
+  <p>Every AI system fails sometimes. The question is not whether it fails — it is what it does when it fails. An AI vendor's fallback behaviour is a window into their engineering culture and their understanding of production systems.</p>
+
+  <p>When the model is unavailable due to an outage, what does the API return? A clear error code with status page information is good. A timeout after 30 seconds with no status is bad. Ask the vendor for their incident response process, their SLA for partial and full outages, and their historical uptime record with root cause summaries for major incidents. A vendor who cannot produce this information is not operating with production engineering discipline.</p>
+
+  <p>When the model's confidence is low, does the vendor's API surface that information? Confidence scores and uncertainty signals are inconsistently implemented across AI APIs. For applications where a low-confidence answer is worse than no answer — medical information, legal advice, compliance guidance — you need a way to detect when the model is uncertain and route accordingly. If the vendor's API does not surface this information, you need to build your own confidence estimation layer on top, which is additional engineering work that should be factored into your evaluation.</p>
+
+  <p>When the model should decline to answer, does it decline clearly or does it produce a hedged response that looks like an answer? Test this explicitly. Give the vendor's model a set of questions that fall outside its appropriate scope and evaluate the quality of its refusals. A model that says "I am not able to help with that specific question — here is what I can help with" is more trustworthy than a model that produces a qualified non-answer that looks like engagement.</p>
+
+  <h2>Category five: contract terms that protect you when things change.</h2>
+
+  <p>AI vendor contracts have specific risks that standard software procurement checklists do not cover. Three terms require particular attention.</p>
+
+  <p>Model version stability is the most important and most frequently overlooked. AI providers update their models continuously. A model update can change output style, output structure, reasoning behaviour, and refusal patterns — often without a versioning system that allows you to pin to a specific behaviour. Ask the vendor: how much advance notice will you give before a model change that affects output behaviour? What is your model versioning policy? Can I pin my application to a specific model version, and for how long? The answers reveal how much the vendor has thought about the downstream impact of model changes on their customers' production applications.</p>
+
+  <p>Data deletion on termination is the second critical term. Your contract should specify that the vendor will delete your data within a defined period after contract termination — typically 30 to 90 days — and provide written confirmation that deletion has occurred. Vendors who are vague about this process are signalling that they do not have a clean data deletion capability, which is itself an information security concern.</p>
+
+  <p>Liability and indemnification terms are the third area. Most AI vendor contracts cap liability at fees paid in the preceding 12 months. For enterprise applications where an AI error could cause significant downstream harm — a misrouted support case that results in a customer churn, a wrong answer in a compliance context — this cap may be entirely inadequate. Negotiate the cap upward if the use case warrants it, and review your own business insurance coverage for AI-related errors.</p>
+
+  <ul class="rules">
+    <li><span class="n">01</span><div><b>Build a use-case-specific test set before you evaluate any vendor.</b> Fifty representative queries with documented correct answers will tell you more about production performance than any published benchmark. Run the same test set against every vendor you shortlist to produce a directly comparable result.</div></li>
+    <li><span class="n">02</span><div><b>Run a load test before you sign.</b> Measure p95 and p99 latency under your expected peak concurrent load. Single-call latency in a demo tells you almost nothing about performance under realistic conditions.</div></li>
+    <li><span class="n">03</span><div><b>Get data handling commitments in the contract, not the help centre.</b> Data residency, training use, and retention period commitments in a help centre article can be changed without notice. The same commitments in a signed data processing agreement cannot.</div></li>
+    <li><span class="n">04</span><div><b>Ask specifically about model version stability.</b> The model you evaluated will not be the model you run in production in 18 months. Know the vendor's versioning policy, the notice period for breaking changes, and whether you can pin to a stable version.</div></li>
+    <li><span class="n">05</span><div><b>Test fallback behaviour and refusal quality explicitly.</b> Include off-scope queries, adversarial inputs, and low-information queries in your evaluation. How the model behaves when it should not answer is as important as how it behaves when it should.</div></li>
+    <li><span class="n">06</span><div><b>Compare total cost of ownership, not per-token pricing.</b> Integration cost, monitoring infrastructure, the human review layer most applications still require, and retraining or reconfiguration costs when the model changes all belong in the TCO calculation. The vendor with the cheapest tokens is rarely the cheapest deployment.</div></li>
+  </ul>
+
+  <h2>Frequently asked questions.</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>What is the most important thing to test in an AI vendor evaluation?</h3>
+      <p>Hallucination rate on your specific use case. Generic benchmarks measure performance on standardised test sets that may have little overlap with your actual queries. Build a test set of 50 to 100 representative queries from your use case, include questions the model should refuse or escalate, and measure accuracy against a human-reviewed ground truth. A vendor who scores well on public benchmarks but poorly on your test set is not the right vendor for you, regardless of what the sales deck says.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What data residency questions should I ask an AI vendor?</h3>
+      <p>Ask where your prompts and completions are processed and stored, how long they are retained, whether they are used to train future models, and what happens to your data if you terminate the contract. For regulated industries, also ask whether the vendor can provide a data processing agreement that meets your regulatory requirements, and whether they have completed a SOC 2 Type II audit or equivalent. Vendors who cannot answer these questions directly should not be in your shortlist.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I test an AI vendor's latency at scale?</h3>
+      <p>Request a load test environment or use the vendor's public API to run a realistic concurrent load test before signing any contract. Measure p50, p95, and p99 latency — the median and tail latencies tell you different things. A vendor with good median latency but high p99 latency will provide a poor experience in the cases that matter most. Also test latency under your realistic peak load, not your average load. Most vendors perform acceptably at low volumes and degrade unpredictably under concurrent demand.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What contract terms matter most in an AI vendor agreement?</h3>
+      <p>Three terms require specific attention. First, model version stability: get a written commitment on how much notice you will receive before the vendor changes the underlying model in a way that affects output behaviour. Second, data handling on termination: confirm that your data is deleted within a specified timeframe after contract end, and get this in writing. Third, liability caps: most AI vendor contracts cap liability at a multiple of fees paid, which can be inadequate if an AI error causes downstream business harm. Negotiate the cap or ensure your own business insurance covers the gap.</p>
+    </div>
+  </div>
+
+  <div class="cta-block"><h3>Get the next essay.</h3><p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p><a href="/#writing" class="btn">Subscribe →</a></div>
+</div></article>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 119 · 20 apr 2026 · Singapore</span></div></footer>
+<script>const root=document.documentElement;const saved=localStorage.getItem('tle-theme');if(saved==='dark')root.setAttribute('data-theme','dark');</script>
+</body>
+</html>

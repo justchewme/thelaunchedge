@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>When to Fine-Tune an LLM — and When Not To — Edge Notes · The Launch Edge</title>
+<meta name="description" content="Fine-tuning is oversold as the fix for AI reliability problems. Most business use cases are better served by better prompting, better RAG, or better output validation. When fine-tuning is genuinely the right tool, what it costs, and how to know you are ready." />
+<meta name="keywords" content="LLM fine-tuning, when to fine-tune, fine-tuning vs RAG, AI model customisation, prompt engineering, AI reliability, LLM cost, enterprise AI" />
+<link rel="canonical" href="https://www.thelaunchedge.com/essays/ai-native/when-to-fine-tune-and-when-not-to" />
+<meta property="og:type" content="article" /><meta property="og:title" content="When to Fine-Tune an LLM — and When Not To" /><meta property="og:description" content="Fine-tuning is oversold as the fix for AI reliability problems. Most business use cases are better served by better prompting, better RAG, or better output validation. When fine-tuning is genuinely the right tool, what it costs, and how to know you are ready." /><meta property="og:url" content="https://www.thelaunchedge.com/essays/ai-native/when-to-fine-tune-and-when-not-to" /><meta property="og:site_name" content="The Launch Edge" /><meta property="article:published_time" content="2026-04-20" /><meta property="article:section" content="AI-Native" />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="When to Fine-Tune an LLM — and When Not To" /><meta name="twitter:description" content="Fine-tuning is oversold as the fix for AI reliability problems. Most business use cases are better served by better prompting, better RAG, or better output validation. When fine-tuning is genuinely the right tool, what it costs, and how to know you are ready." />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"When to Fine-Tune an LLM — and When Not To","description":"Fine-tuning is oversold as the fix for AI reliability problems. Most business use cases are better served by better prompting, better RAG, or better output validation. When fine-tuning is genuinely the right tool, what it costs, and how to know you are ready.","datePublished":"2026-04-20","dateModified":"2026-04-20","author":{"@type":"Organization","name":"The Launch Edge","url":"https://www.thelaunchedge.com"},"publisher":{"@type":"Organization","name":"The Launch Edge","url":"https://www.thelaunchedge.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thelaunchedge.com/essays/ai-native/when-to-fine-tune-and-when-not-to"},"keywords":"LLM fine-tuning, when to fine-tune, fine-tuning vs RAG, AI model customisation, prompt engineering, AI reliability, LLM cost, enterprise AI","articleSection":"AI-Native","inLanguage":"en-SG"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does fine-tuning an LLM actually cost?","acceptedAnswer":{"@type":"Answer","text":"A fine-tuning run on a mid-sized model via a managed API such as OpenAI or Google Vertex typically costs between $500 and $5,000 for a well-prepared dataset of a few thousand examples. Infrastructure-based fine-tuning on open-weight models costs more in compute but less in per-token pricing long-term. The training cost is usually not the expensive part — evaluation, iteration, and ongoing maintenance of the fine-tuned model are. Budget for at least three training runs before you have a model you would use in production."}},{"@type":"Question","name":"How many examples do I need to fine-tune?","acceptedAnswer":{"@type":"Answer","text":"The minimum viable dataset depends on the task. For style and format adaptation, 200 to 500 high-quality examples often produce measurable improvement. For factual accuracy or reliable output structure, you typically need 1,000 to 5,000 carefully curated examples. More is better only if the additional examples are high quality and representative. A fine-tuning dataset of 10,000 noisy examples will underperform a clean dataset of 1,000 examples that accurately represents the target behaviour."}},{"@type":"Question","name":"Can fine-tuning fix a model that hallucinates?","acceptedAnswer":{"@type":"Answer","text":"Rarely. Hallucinations in LLMs arise from the model generating plausible-sounding content when it lacks the information to answer accurately. Fine-tuning teaches the model new patterns of behaviour — it does not give it new knowledge. If a model is hallucinating because it does not have access to your specific data, fine-tuning on more examples of the same type will not help. RAG, which gives the model access to your actual data at query time, addresses hallucination more directly in knowledge-intensive applications."}},{"@type":"Question","name":"Does fine-tuning lock me into a specific model version?","acceptedAnswer":{"@type":"Answer","text":"Effectively, yes — until you retrain. A fine-tuned model is tied to the base model weights it was trained from. When the foundation model provider releases a new version, your fine-tuning does not transfer automatically. You need to re-run your fine-tuning on the new base model, re-evaluate the results, and redeploy. For rapidly improving models, this creates a maintenance burden that many teams underestimate. Factor retraining cycles into your total cost of ownership before committing to a fine-tuning strategy."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thelaunchedge.com"},{"@type":"ListItem","position":2,"name":"Essays","item":"https://www.thelaunchedge.com/essays"},{"@type":"ListItem","position":3,"name":"AI-Native","item":"https://www.thelaunchedge.com/essays/ai-native"},{"@type":"ListItem","position":4,"name":"When to Fine-Tune an LLM — and When Not To","item":"https://www.thelaunchedge.com/essays/ai-native/when-to-fine-tune-and-when-not-to"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/article.css">
+</head>
+<body>
+<header class="masthead"><div class="wrap"><a href="/" class="back">← Edge <em>Notes</em></a><div class="meta"><span>№ 118 · AI-Native</span><span>20 apr 2026</span><span>12 min read</span></div></div></header>
+<article class="article"><div class="wrap">
+  <div class="kicker"><span class="bar"></span> Essay · ai-native</div>
+  <h1>When to fine-tune an LLM — <em>and when not to</em></h1>
+  <p class="deck">Fine-tuning is the answer to a specific question that most teams are not asking. They are asking a different question — why does our AI keep getting things wrong — and fine-tuning will not fix it. Here is how to tell the difference before you spend three months and thirty thousand dollars finding out.</p>
+
+  <h2>Why fine-tuning gets reached for first.</h2>
+
+  <p>The appeal of fine-tuning is intuitive. The base model does not know your business. Therefore, you train it on your business. The reasoning sounds correct. The mental model is broken.</p>
+
+  <p>Fine-tuning does not teach a model new facts in the way that human learning works. It adjusts the statistical weights inside the model based on patterns in your training examples. It teaches the model to behave differently — to respond in a certain style, to follow a certain output structure, to reason through a certain class of problem in a certain way. It does not reliably implant facts into the model's memory. If you fine-tune a model on your pricing table and your pricing changes next month, the model is wrong until you fine-tune it again.</p>
+
+  <p>The teams that reach for fine-tuning first are usually experiencing one of three problems: the model's answers are factually wrong (a knowledge problem), the model's answers are formatted incorrectly (a prompting problem), or the model's answers are inconsistent (an evaluation problem). Fine-tuning is the right fix for the second of these, in some cases. It is rarely the right fix for the first or third. But it feels like the most serious technical intervention, which gives it a credibility that the actual problem often does not warrant.</p>
+
+  <h2>The ladder you should climb before you touch fine-tuning.</h2>
+
+  <p>There is a sequence of interventions that should be exhausted before fine-tuning is considered. Most teams skip several rungs and wonder why their fine-tuned model did not solve the problem.</p>
+
+  <p>The first rung is prompt engineering. A surprising fraction of AI reliability problems are prompting problems. The model is capable of the behaviour you want — it needs clearer, more specific instructions to produce it consistently. Adding explicit output format requirements, worked examples of correct behaviour, and precise instructions for edge cases solves a large percentage of reliability complaints. Prompt engineering is free. It is debuggable. Changes take minutes. If you have not spent at least two focused weeks on your system prompt, you are not ready to fine-tune.</p>
+
+  <p>The second rung is retrieval-augmented generation. If the problem is factual accuracy — the model is giving wrong answers because it does not have access to your current information — RAG is almost always faster and cheaper to maintain than fine-tuning. Connect the model to your documents. Update the documents when they change. The model's answers stay current automatically. This is a better architectural choice than encoding facts into model weights that cannot be updated without retraining.</p>
+
+  <p>The third rung is output validation. Many AI reliability problems are not model problems — they are missing guardrails. The model sometimes produces output in the wrong format, with the wrong tone, outside the allowed scope. Before fine-tuning, add a validation layer that checks outputs against a schema, rejects out-of-scope content, and retries with a tighter prompt when the first attempt fails. You can eliminate an entire category of errors this way without touching the model at all.</p>
+
+  <p>Only after exhausting these three rungs does fine-tuning become a coherent option. And by the time you have done that work, you will have a much clearer understanding of what fine-tuning would actually need to fix — which makes the training dataset you need to produce dramatically better.</p>
+
+  <h2>When fine-tuning is genuinely the right answer.</h2>
+
+  <p>There are real use cases where fine-tuning outperforms the alternatives, and it is worth being precise about what they are.</p>
+
+  <p>The strongest case for fine-tuning is consistent style and voice. If you are generating content at scale — product descriptions, support responses, marketing copy, legal document summaries — and the base model's style is inconsistent in a way that prompt engineering cannot reliably fix, fine-tuning on curated examples of the correct style produces measurable improvement. This is a behaviour change, not a knowledge transfer, which is exactly what fine-tuning is good at.</p>
+
+  <p>The second strong case is structured output reliability. Some applications require the model to produce output in a precise machine-readable format — JSON with a specific schema, SQL queries, structured extraction from documents. The base model follows format instructions reasonably well, but not perfectly at high volume. Fine-tuning on format-correct examples reduces format error rates substantially. For applications that process thousands of outputs per day, even reducing format errors from 3 percent to 0.2 percent has significant downstream value.</p>
+
+  <p>The third case is domain-specific reasoning. In specialised fields — law, medicine, engineering, finance — the base model may reason correctly in most cases but make systematic errors that reflect the limits of its general training. Fine-tuning on domain expert examples can sharpen reasoning in the specific domain without degrading general capability. This is a legitimate use case, but it requires domain experts to produce and validate the training data, which is expensive.</p>
+
+  <p>The fourth case, less discussed but real, is latency and cost optimisation. A fine-tuned smaller model that matches the performance of a larger base model on your specific task will be cheaper to run and faster to respond. If you have proven that a specific output behaviour is valuable and you are running it at scale, fine-tuning a smaller model for that specific task is a legitimate cost reduction strategy.</p>
+
+  <div class="pullquote">Fine-tuning changes how the model behaves. It does not change what the model knows. Confusing these two will cost you months.</div>
+
+  <h2>What fine-tuning actually costs — the full accounting.</h2>
+
+  <p>The compute cost of a fine-tuning run is the number that appears on invoices and in blog posts. It is not the dominant cost. The dominant costs are the ones that do not appear on invoices.</p>
+
+  <p>Dataset creation is the most expensive part of a fine-tuning project. To fine-tune a model for a business application, you need hundreds to thousands of examples of the input-output behaviour you want. Each example needs to be correct, representative, and free of the errors you are trying to eliminate. If you are fine-tuning to improve a support response style, someone has to write or curate hundreds of examples of ideal support responses. If the examples are produced by domain experts, that is expert time. If they are produced by the model and then curated, that is engineering time plus a more subtle quality problem. Either way, dataset creation is weeks of work before training begins.</p>
+
+  <p>Evaluation is the second underestimated cost. After a training run, you need to evaluate whether the fine-tuned model is better than the base model on your target behaviour — and whether it has degraded on adjacent behaviours you care about. This evaluation cannot be fully automated for most use cases. It requires human reviewers with domain knowledge. It requires a test set that was not included in training. It requires a methodology for measuring the dimensions you care about. This is not a one-time cost: you repeat it every time you iterate on the training data or retrain on a new base model.</p>
+
+  <p>The maintenance cost is the most consistently underestimated. A fine-tuned model is a software dependency. When the base model provider updates the underlying model, your fine-tuning does not transfer. When your training data becomes outdated, the fine-tuned behaviour becomes wrong. When you discover that your evaluation missed an important failure mode, you need to update your training data and retrain. A fine-tuning investment is not a one-time cost — it is an ongoing commitment to a maintenance cycle that has no obvious end.</p>
+
+  <h2>The signal that you are not ready to fine-tune.</h2>
+
+  <p>The clearest signal is this: if you cannot write down, precisely and exhaustively, the behaviour you want the fine-tuned model to produce, you are not ready to fine-tune. The training data you create will reflect your ambiguity. The model you train will be ambiguous in the same ways your data is.</p>
+
+  <p>Fine-tuning compresses your training examples into the model's weights. It cannot compress examples of a behaviour you have not yet been able to specify. Teams that go into fine-tuning with a vague goal — make it better, make it sound more like us, make it less wrong — emerge from fine-tuning with a model that is no better and no more debuggable than what they started with, because they trained a model to reproduce a vague exemplar.</p>
+
+  <p>The prerequisite for fine-tuning is a precise behavioural specification: here is the input, here is the correct output, here is why it is correct, here is what incorrect outputs look like. If you can write that specification, you can create good training data. If you cannot write that specification, spending time and money on prompt engineering first will force you to develop it — and may solve the problem without fine-tuning at all.</p>
+
+  <ul class="rules">
+    <li><span class="n">01</span><div><b>Exhaust prompt engineering before you consider fine-tuning.</b> If you have not spent two focused weeks iterating on your system prompt with real user queries, you do not yet know what problem you are solving. Fine-tuning a model on a poorly specified problem produces a model that is confidently wrong in a new way.</div></li>
+    <li><span class="n">02</span><div><b>Use RAG for facts, fine-tuning for behaviours.</b> Fine-tuning cannot reliably implant facts into a model. Use it to change how the model responds — its format, its style, its reasoning pattern. Use RAG to give the model access to current, specific information it was not trained on.</div></li>
+    <li><span class="n">03</span><div><b>Budget for three training runs, not one.</b> The first fine-tuning run surfaces the flaws in your training data. The second run addresses those flaws. The third run is where you get a model you would actually use in production. Single-run fine-tuning projects almost always produce disappointing results.</div></li>
+    <li><span class="n">04</span><div><b>Account for the retraining cycle in your total cost of ownership.</b> When the base model updates, you retrain. When your training data becomes stale, you retrain. When you discover a new failure mode, you retrain. This is an ongoing cost, not a one-time investment. Factor it in before you commit.</div></li>
+    <li><span class="n">05</span><div><b>Build your evaluation framework before you start training.</b> Define the metrics that constitute success before you touch the training data. If you define success after you see the results, you will unconsciously define it in a way that flatters what you built.</div></li>
+  </ul>
+
+  <h2>Frequently asked questions.</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>How much does fine-tuning an LLM actually cost?</h3>
+      <p>A fine-tuning run on a mid-sized model via a managed API such as OpenAI or Google Vertex typically costs between $500 and $5,000 for a well-prepared dataset of a few thousand examples. Infrastructure-based fine-tuning on open-weight models costs more in compute but less in per-token pricing long-term. The training cost is usually not the expensive part — evaluation, iteration, and ongoing maintenance of the fine-tuned model are. Budget for at least three training runs before you have a model you would use in production.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many examples do I need to fine-tune?</h3>
+      <p>The minimum viable dataset depends on the task. For style and format adaptation, 200 to 500 high-quality examples often produce measurable improvement. For factual accuracy or reliable output structure, you typically need 1,000 to 5,000 carefully curated examples. More is better only if the additional examples are high quality and representative. A fine-tuning dataset of 10,000 noisy examples will underperform a clean dataset of 1,000 examples that accurately represents the target behaviour.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can fine-tuning fix a model that hallucinates?</h3>
+      <p>Rarely. Hallucinations in LLMs arise from the model generating plausible-sounding content when it lacks the information to answer accurately. Fine-tuning teaches the model new patterns of behaviour — it does not give it new knowledge. If a model is hallucinating because it does not have access to your specific data, fine-tuning on more examples of the same type will not help. RAG, which gives the model access to your actual data at query time, addresses hallucination more directly in knowledge-intensive applications.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does fine-tuning lock me into a specific model version?</h3>
+      <p>Effectively, yes — until you retrain. A fine-tuned model is tied to the base model weights it was trained from. When the foundation model provider releases a new version, your fine-tuning does not transfer automatically. You need to re-run your fine-tuning on the new base model, re-evaluate the results, and redeploy. For rapidly improving models, this creates a maintenance burden that many teams underestimate. Factor retraining cycles into your total cost of ownership before committing to a fine-tuning strategy.</p>
+    </div>
+  </div>
+
+  <div class="cta-block"><h3>Get the next essay.</h3><p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p><a href="/#writing" class="btn">Subscribe →</a></div>
+</div></article>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 118 · 20 apr 2026 · Singapore</span></div></footer>
+<script>const root=document.documentElement;const saved=localStorage.getItem('tle-theme');if(saved==='dark')root.setAttribute('data-theme','dark');</script>
+</body>
+</html>

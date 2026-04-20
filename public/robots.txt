@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thelaunchedge.vercel.app/sitemap.xml
+Sitemap: https://www.thelaunchedge.com/sitemap.xml

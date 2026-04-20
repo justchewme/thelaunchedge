@@ -6,22 +6,22 @@
 <title>Essays — Edge Notes · The Launch Edge</title>
 <meta name="description" content="Essays on product, growth, AI, and operating in Asia. One a week, most Sundays. Indexed by cluster: Founder Craft, Asia GTM, AI-Native, Growth & Retention, Fractional Leadership." />
 <meta name="keywords" content="operator consulting essays, GTM strategy Asia, fractional CPO articles, AI automation blog, Southeast Asia growth" />
-<link rel="canonical" href="https://thelaunchedge.vercel.app/essays" />
+<link rel="canonical" href="https://www.thelaunchedge.com/essays" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Essays — Edge Notes · The Launch Edge" />
 <meta property="og:description" content="Essays on product, growth, AI, and operating in Asia. One a week, most Sundays." />
-<meta property="og:url" content="https://thelaunchedge.vercel.app/essays" />
+<meta property="og:url" content="https://www.thelaunchedge.com/essays" />
 <meta property="og:site_name" content="The Launch Edge" />
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Edge Notes",
   "description": "Essays on product, growth, AI, and operating in Asia.",
-  "url": "https://thelaunchedge.vercel.app/essays",
+  "url": "https://www.thelaunchedge.com/essays",
   "publisher": {
     "@type": "Organization",
     "name": "The Launch Edge",
-    "url": "https://thelaunchedge.vercel.app"
+    "url": "https://www.thelaunchedge.com"
   },
   "inLanguage": "en-SG"
 }</script>
@@ -217,7 +217,7 @@ async function loadEssays() {
         const label = CLUSTER_LABELS[cluster] || cluster;
         const card = document.createElement('a');
         card.className = 'essay-card';
-        card.href = url.replace('https://thelaunchedge.vercel.app', '');
+        card.href = url.replace('https://www.thelaunchedge.com', '');
         card.innerHTML = `<div class="num">${label.toLowerCase()}</div><h3>${slug.replace(/-/g,' ')}</h3><div class="meta"><span></span><span class="chip">${label.toLowerCase()}</span></div>`;
         grid.appendChild(card);
 

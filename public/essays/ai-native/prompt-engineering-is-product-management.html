@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prompt engineering is product management — Edge Notes · The Launch Edge</title>
+<meta name="description" content="The best prompt engineers share everything with the best product managers: obsession with output specification, adversarial thinking, and deep humility about what the model cannot do." />
+<meta name="keywords" content="prompt engineering, product management, AI features, LLM prompting, AI product development, prompt design, production AI" />
+<link rel="canonical" href="https://www.thelaunchedge.com/essays/ai-native/prompt-engineering-is-product-management" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Prompt engineering is product management" />
+<meta property="og:description" content="The best prompt engineers share everything with the best product managers: obsession with output specification, adversarial thinking, and deep humility about what the model cannot do." />
+<meta property="og:url" content="https://www.thelaunchedge.com/essays/ai-native/prompt-engineering-is-product-management" />
+<meta property="og:site_name" content="The Launch Edge" />
+<meta property="article:published_time" content="2026-04-20" />
+<meta property="article:section" content="AI-Native" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Prompt engineering is product management" />
+<meta name="twitter:description" content="The best prompt engineers share everything with the best product managers: obsession with output specification, adversarial thinking, and deep humility about what the model cannot do." />
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Prompt engineering is product management",
+      "description": "The best prompt engineers share everything with the best product managers: obsession with output specification, adversarial thinking, and deep humility about what the model cannot do.",
+      "datePublished": "2026-04-20",
+      "dateModified": "2026-04-20",
+      "author": { "@type": "Organization", "name": "The Launch Edge", "url": "https://www.thelaunchedge.com" },
+      "publisher": { "@type": "Organization", "name": "The Launch Edge", "url": "https://www.thelaunchedge.com" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.thelaunchedge.com/essays/ai-native/prompt-engineering-is-product-management" },
+      "keywords": "prompt engineering, product management, AI features, LLM prompting, AI product development, prompt design, production AI",
+      "articleSection": "AI-Native",
+      "inLanguage": "en-SG"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why do companies separate prompt engineering from product management?", "acceptedAnswer": { "@type": "Answer", "text": "It typically happens for organisational reasons — prompt engineering gets assigned to an engineer or data scientist, while product management focuses on roadmap and requirements. The separation creates a gap where the person who understands what the product must do is not the same person specifying what the model must produce, which results in prompts that technically work but miss product requirements." } },
+        { "@type": "Question", "name": "What skills make someone good at prompt engineering?", "acceptedAnswer": { "@type": "Answer", "text": "Precise specification writing, adversarial thinking about edge cases, systematic testing discipline, and genuine understanding of the end user's context and expectations. These are identical to the skills of a good product manager. Technical knowledge of model architecture helps but is not primary — the ability to specify exact requirements clearly is what separates reliable prompts from unreliable ones." } },
+        { "@type": "Question", "name": "How should prompt changes be managed in a production system?", "acceptedAnswer": { "@type": "Answer", "text": "With the same rigour as code changes: version control, documented rationale, evaluation against a regression set before deployment, and rollback capability. Prompt changes have caused more production incidents in the teams I have worked with than code changes. Treat them accordingly." } },
+        { "@type": "Question", "name": "When does prompt engineering reach its limits and require fine-tuning?", "acceptedAnswer": { "@type": "Answer", "text": "When the context window required to specify the task precisely exceeds what is economically viable to send with every request, when the task requires consistent style or domain knowledge that is too large to include in a prompt, or when latency and cost constraints require a smaller model that needs task-specific training to perform adequately. Most teams reach for fine-tuning before exhausting what prompt engineering can do — a mistake that costs time and money." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thelaunchedge.com" },
+        { "@type": "ListItem", "position": 2, "name": "Essays", "item": "https://www.thelaunchedge.com/essays" },
+        { "@type": "ListItem", "position": 3, "name": "AI-Native", "item": "https://www.thelaunchedge.com/essays/ai-native" },
+        { "@type": "ListItem", "position": 4, "name": "Prompt engineering is product management", "item": "https://www.thelaunchedge.com/essays/ai-native/prompt-engineering-is-product-management" }
+      ]
+    }
+  ]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/article.css">
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+  <a href="/" class="back">← Edge <em>Notes</em></a>
+  <div class="meta"><span>№ 065 · AI-Native</span><span>20 apr 2026</span><span>11 min read</span></div>
+</div></header>
+<article class="article"><div class="wrap">
+  <div class="kicker"><span class="bar"></span> Essay · ai-native</div>
+  <h1>Prompt engineering is <em>product management</em></h1>
+  <p class="deck">The teams shipping reliable AI features have not hired better prompt engineers. They have stopped separating the job of specifying what the product must do from the job of specifying what the model must produce.</p>
+
+  <h2>The wrong person is writing your prompts.</h2>
+
+  <p>In most companies building AI-powered products, the prompt is written by whoever last touched the codebase. An engineer integrating the API writes a quick system prompt, tests it against a few examples, decides it looks reasonable, and ships it. The product manager reviews the feature output in a demo, says it seems good, and signs off. Nobody specified exactly what the output should look like in the twenty-three edge cases that will appear in the first week of production.</p>
+
+  <p>This is how you end up with a customer-facing AI feature that works beautifully in demos and produces embarrassing outputs when real users arrive with inputs that the demo never included. The embarrassing outputs were predictable. Nobody predicted them because nobody's job was to predict them.</p>
+
+  <p>The best prompt engineers I have worked with do not write better prompts in the sense of using cleverer language or more exotic techniques. They write better requirements. The prompt is the specification for a non-deterministic system that will encounter an enormous variety of inputs and must produce outputs that fall within acceptable bounds for all of them. Writing that specification well is a product management skill, not an engineering skill.</p>
+
+  <h2>What product management and prompt engineering share.</h2>
+
+  <p>Good product managers are obsessive about specifying the exact output required. They do not write user stories that say "the user should be able to see their order status." They write requirements that specify what information appears, in what order, with what formatting, with what error states, with what empty states, and with what edge cases handled how. Ambiguity in a product requirement produces disagreement and rework. Ambiguity in a prompt produces inconsistency and failure.</p>
+
+  <p>The prompt engineer who writes "you are a helpful customer service assistant, please help the user with their question" has produced approximately the same artefact as the product manager who writes "make it easy for users to get support." Both have specified the intent while leaving every consequential decision open. Both will generate enormous amounts of rework when the implementation turns out to not match what they actually wanted.</p>
+
+  <p>The prompt engineer who writes a system prompt that specifies: the exact persona and its limits, the output format down to punctuation conventions, the prohibited topics and how to handle them, the escalation language for cases outside scope, the handling of multiple questions in one message, the tone calibration for frustrated versus neutral users, and five examples of each response type — that person is writing a product requirements document that happens to execute at inference time.</p>
+
+  <p>Good product managers are also adversarial about failure modes. Before a feature ships, a good PM has asked: what happens when a user does the thing we did not design for? What is the worst case input? What does the error state look like? What happens if the user's intent is ambiguous or hostile? This adversarial discipline is identical to what separates reliable prompts from fragile ones.</p>
+
+  <h2>The separation that kills reliability.</h2>
+
+  <p>Most organisations that have separated prompt engineering from product management did so for understandable reasons. Prompt engineering sounds technical, so it goes to engineers. Product management handles requirements, so it sits upstream of implementation. The divide feels natural.</p>
+
+  <p>The problem is that a prompt is simultaneously a requirement and an implementation. It specifies what the output must be and it produces the output. When the requirement-writing and the implementation are done by different people in different conversations, you get prompts that technically function according to what the engineer understood the product manager wanted, rather than prompts that produce what the user actually needs.</p>
+
+  <p>I watched this play out at a company building an AI triage feature for a healthcare adjacent product. The PM wrote a brief describing what the feature should do: categorise incoming patient messages, identify urgency, route to the appropriate team. The engineer translated this into a prompt asking the model to classify messages on those dimensions. The feature worked. It also consistently miscategorised a specific class of message — patients describing symptoms they were embarrassed about, who used hedging and indirect language — as low urgency, because the prompt had not specified how to interpret indirect language in a medical communication context. The PM had not thought to specify it. The engineer had not thought to ask. Three months and one significant incident later, the fix was a single paragraph added to the system prompt. The incident was avoidable if the person who understood the product had written the prompt themselves.</p>
+
+  <div class="pullquote">A prompt is not a technical artefact handed from product to engineering. It is the product specification and the implementation simultaneously — and whoever writes it must be fluent in both what the user needs and what the model will do.</div>
+
+  <h2>How to unify the functions.</h2>
+
+  <p>The practical resolution is not to eliminate the distinction between PMs and engineers, but to change who owns the prompt and how it gets written.</p>
+
+  <p>The product manager should own the prompt specification — a document that defines the output with enough precision to be evaluated unambiguously. This is not a sentence or a paragraph. For a production customer-facing feature, it is typically a multi-page document that defines the output format, the tone requirements, the handling of edge cases, the prohibited behaviours, and the escalation paths. Writing this document well requires the PM to think adversarially about what could go wrong — which is a PM skill, not an engineering skill.</p>
+
+  <p>The engineer translates the specification into the actual prompt text and tests it against the evaluation set. When the prompt fails — when it produces output that does not meet the specification — the failure is surfaced to the PM as a requirements question: is the specification wrong, or does the prompt need to be rewritten to meet the specification? This question routes correctly. The PM holds the authority about what the product must do. The engineer holds the authority about what is technically achievable within the model's capabilities.</p>
+
+  <p>This collaboration requires something else: genuine humility on both sides about what the model can and cannot do. Product managers who have not worked closely with LLMs tend to write specifications that presuppose capabilities the model does not reliably have. Engineers who have worked closely with LLMs tend to narrow specifications to what they know the model handles well, missing edge cases the PM would care about. Both failure modes are addressable when the two functions are in the same room, reading the same evaluation results, looking at the same failure cases together.</p>
+
+  <h2>Prompts as versioned product artefacts.</h2>
+
+  <p>One of the clearest signals that an organisation has not internalised this principle is how they manage prompt changes. In most organisations, prompt changes happen in a Notion doc or a hard-coded string in the codebase, without version history, without documented rationale, and without evaluation against a regression set before deployment.</p>
+
+  <p>This is the equivalent of shipping code changes without tests or version control. The prompt is the most consequential specification in an AI product — it is what determines the product's behaviour for every user. Changing it without systematic evaluation is accepting unknown risk. I have seen more production incidents caused by undocumented prompt changes than by any other single source of failure in AI features.</p>
+
+  <p>Prompts should be version controlled with explicit commit messages explaining why the change was made. Every change to a production prompt should be evaluated against the regression set before deployment. There should be a rollback path for prompt changes with the same urgency as a rollback path for code. None of this is technically complicated. All of it requires treating the prompt as the product artefact it actually is.</p>
+
+  <h2>What model limitations require product decisions, not prompt solutions.</h2>
+
+  <p>Part of the value of unifying prompt engineering with product management is that it surfaces the cases where no prompt can solve the problem — where the limitation requires a product decision about what not to try to do with AI.</p>
+
+  <p>There are classes of task that current foundation models handle unreliably regardless of how the prompt is written: precise arithmetic with large numbers, reliable recall of specific facts without retrieval augmentation, consistent formatting in complex nested structures, and sustained coherence over very long outputs. A PM who understands this will design features that route around these limitations. A PM who does not understand this will write requirements that the model cannot reliably meet, and the engineer will ship something that fails in ways the PM considers unacceptable but did not anticipate.</p>
+
+  <p>The teams shipping the most reliable AI features have PMs who have spent significant time reading model outputs, understanding failure patterns, and designing features that exploit what the model does well while building workflow guardrails around what it does poorly. This knowledge cannot be fully delegated to the engineering team. It must live in the product function.</p>
+
+  <ul class="rules">
+    <li><span class="n">01</span><div><b>The PM should own the prompt specification, not just the brief.</b> A brief that says "summarise the document helpfully" is not a specification. The specification defines format, length, required elements, prohibited elements, edge case handling, and examples. If you are handing a brief to engineering and expecting a reliable prompt to emerge, you will be disappointed.</div></li>
+    <li><span class="n">02</span><div><b>Write the adversarial cases into the specification before the prompt is written.</b> What happens when the input is ambiguous? Too short? In the wrong language? Hostile? These cases are product decisions, not engineering decisions. They must be in the specification, not discovered in production.</div></li>
+    <li><span class="n">03</span><div><b>Version control prompts with the same discipline as code.</b> Every prompt change should have a commit message explaining why. Every production prompt change should be evaluated against a regression set before deployment. Treat undocumented prompt changes as the production risk they are.</div></li>
+    <li><span class="n">04</span><div><b>PMs must read model outputs, not just approve demo screenshots.</b> Understanding what the model does when given ambiguous inputs requires reading output, not slides. PMs who have never read raw model output from their own product will continue to write specifications that cannot be reliably implemented.</div></li>
+    <li><span class="n">05</span><div><b>When the prompt cannot solve it, that is a product decision.</b> If a class of input reliably produces bad outputs regardless of prompting, the product must decide how to handle it: block the input, disclose the limitation, route to a human, or not support the use case. This decision belongs to the PM, not the engineer.</div></li>
+    <li><span class="n">06</span><div><b>Measure prompt quality, not just feature usage.</b> Usage metrics tell you if users are engaging. Quality metrics tell you if the model is producing what the product requires. You need both, and the PM should own the quality metrics with the same rigour they apply to user satisfaction scores.</div></li>
+  </ul>
+
+  <h2>Frequently asked questions.</h2>
+  <div class="faq">
+    <div class="faq-item"><h3>Why do companies separate prompt engineering from product management?</h3><p>It typically happens for organisational reasons — prompt engineering gets assigned to an engineer or data scientist, while product management focuses on roadmap and requirements. The separation creates a gap where the person who understands what the product must do is not the same person specifying what the model must produce, which results in prompts that technically work but miss product requirements.</p></div>
+    <div class="faq-item"><h3>What skills make someone good at prompt engineering?</h3><p>Precise specification writing, adversarial thinking about edge cases, systematic testing discipline, and genuine understanding of the end user's context and expectations. These are identical to the skills of a good product manager. Technical knowledge of model architecture helps but is not primary — the ability to specify exact requirements clearly is what separates reliable prompts from unreliable ones.</p></div>
+    <div class="faq-item"><h3>How should prompt changes be managed in a production system?</h3><p>With the same rigour as code changes: version control, documented rationale, evaluation against a regression set before deployment, and rollback capability. Prompt changes have caused more production incidents in the teams I have worked with than code changes. Treat them accordingly.</p></div>
+    <div class="faq-item"><h3>When does prompt engineering reach its limits and require fine-tuning?</h3><p>When the context window required to specify the task precisely exceeds what is economically viable to send with every request, when the task requires consistent style or domain knowledge that is too large to include in a prompt, or when latency and cost constraints require a smaller model that needs task-specific training to perform adequately. Most teams reach for fine-tuning before exhausting what prompt engineering can do — a mistake that costs time and money.</p></div>
+  </div>
+
+  <div class="cta-block">
+    <h3>Get the next essay.</h3>
+    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
+    <a href="/#writing" class="btn">Subscribe →</a>
+  </div>
+</div></article>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 065 · 20 apr 2026 · Singapore</span></div></footer>
+<script>
+const root = document.documentElement;
+const saved = localStorage.getItem('tle-theme');
+if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+</script>
+</body>
+</html>

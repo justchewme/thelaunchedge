@@ -3,13 +3,13 @@
 
   <!-- Core pages -->
   <url>
-    <loc>https://thelaunchedge.vercel.app/</loc>
+    <loc>https://www.thelaunchedge.com/</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/essays</loc>
+    <loc>https://www.thelaunchedge.com/essays</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -17,37 +17,37 @@
 
   <!-- Service pages -->
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-flagship.html</loc>
+    <loc>https://www.thelaunchedge.com/article-flagship.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-ai-builds.html</loc>
+    <loc>https://www.thelaunchedge.com/article-ai-builds.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-gtm.html</loc>
+    <loc>https://www.thelaunchedge.com/article-gtm.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-modernisation.html</loc>
+    <loc>https://www.thelaunchedge.com/article-modernisation.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-counsel.html</loc>
+    <loc>https://www.thelaunchedge.com/article-counsel.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-advisory.html</loc>
+    <loc>https://www.thelaunchedge.com/article-advisory.html</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -55,29 +55,569 @@
 
   <!-- Existing essays -->
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-scope-memo.html</loc>
+    <loc>https://www.thelaunchedge.com/article-scope-memo.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-jakarta.html</loc>
+    <loc>https://www.thelaunchedge.com/article-jakarta.html</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-ai-hiring.html</loc>
+    <loc>https://www.thelaunchedge.com/article-ai-hiring.html</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thelaunchedge.vercel.app/article-activation.html</loc>
+    <loc>https://www.thelaunchedge.com/article-activation.html</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Generated essays appended below by scripts/generate-article.js -->
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/replace-three-workflows-with-one-agent</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/southeast-asia-market-entry-mistakes</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/why-your-consulting-engagement-failed</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/why-your-activation-rate-is-a-retention-problem</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/what-a-fractional-cpo-actually-does</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-strategy-that-fits-on-one-page</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/how-to-run-a-product-review-that-doesnt-waste-time</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-founder-who-cant-let-go-of-product</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/writing-a-good-product-brief</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-user-interview-mistake-that-invalidates-your-research</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/pricing-for-indonesia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/whatsapp-is-your-crm-in-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/why-vietnam-is-not-indonesia-with-better-coffee</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-distribution-channels-that-actually-work-in-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/how-to-hire-in-asia-without-importing-your-culture</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-llm-evaluation-framework-that-actually-works</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/why-your-ai-feature-is-not-an-ai-product</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/prompt-engineering-is-product-management</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-real-cost-of-building-on-top-of-a-foundation-model</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/what-small-businesses-should-actually-automate-with-ai</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-referral-program-that-actually-grows</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/churn-is-not-a-win-back-problem</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-cohort-analysis-every-product-team-should-be-running</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/pricing-is-a-retention-lever</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-notification-strategy-that-builds-habits</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/the-first-90-days-as-a-fractional-operator</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/how-to-manage-up-when-you-dont-have-the-title</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/when-to-tell-the-ceo-they-are-wrong</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/the-handover-that-makes-or-breaks-a-fractional-engagement</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/building-a-fractional-practice-from-scratch</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/how-to-run-a-weekly-operating-cadence</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-metrics-that-tell-you-your-startup-is-lying-to-itself</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/scope-creep-is-a-leadership-failure</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-art-of-the-no-that-builds-trust</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/what-a-great-product-manager-actually-does</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-philippines-market-entry-guide</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/why-b2b-saas-fails-in-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/localisation-is-not-translation</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-malaysia-gtm-that-most-founders-miss</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/fundraising-in-asia-what-local-vcs-actually-look-for</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/why-most-ai-chatbots-fail-in-production</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-ai-product-roadmap-for-non-technical-founders</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/building-ai-products-for-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-data-problem-that-blocks-every-ai-project</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/ai-governance-for-startups-without-a-legal-team</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-growth-model-canvas</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/paid-acquisition-in-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-product-led-growth-mistake-most-saas-companies-make</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/onboarding-email-sequences-that-actually-work</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/what-net-revenue-retention-actually-tells-you</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/how-to-price-your-fractional-engagement</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/the-fractional-operator-vs-the-management-consultant</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/running-multiple-clients-without-burning-out</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/when-fractional-is-the-wrong-answer</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/building-a-network-that-generates-fractional-work</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/how-to-write-a-fundraising-narrative</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-post-mortem-that-actually-changes-behaviour</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/what-board-meetings-are-actually-for</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-hiring-mistake-that-kills-product-velocity</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/when-to-fire-a-customer</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-quarterly-planning-process-that-doesnt-waste-three-weeks</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-decision-log-every-operator-should-keep</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/thailand-market-entry-what-works</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-government-relations-playbook-for-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/building-a-sales-team-in-indonesia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-content-marketing-playbook-for-southeast-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/building-partnerships-in-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-singapore-office-trap</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/how-to-close-enterprise-deals-in-asia</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-rag-architecture-for-non-engineers</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/when-to-fine-tune-and-when-not-to</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-ai-vendor-evaluation-checklist</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/how-ai-changes-the-product-manager-job</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-ai-automation-stack-for-a-10-person-company</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/measuring-roi-on-ai-investments</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-future-of-work-in-a-company-that-ships-ai</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-freemium-conversion-rate-benchmark-you-should-ignore</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/customer-success-is-a-product-strategy</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-growth-experiment-that-wastes-the-most-time</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/building-a-growth-team-that-doesnt-optimise-itself-into-a-corner</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/the-scope-of-work-that-protects-both-parties</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/how-to-transition-out-of-a-fractional-engagement</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/the-fractional-cmo-vs-the-full-time-marketer</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/the-operating-manual-for-your-company</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/ai-native/the-knowledge-base-that-powers-enterprise-ai</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-lifecycle-marketing-stack-that-scales</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/asia-gtm/the-indonesia-consumer-brief</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/the-equity-question-in-fractional-engagements</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/founder-craft/how-to-give-feedback-that-actually-changes-things</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thelaunchedge.com/essays/growth-retention/the-annual-plan-that-doesnt-become-fiction-by-february</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
