@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Launch Edge — Operator consulting, built for the AI era</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF8F5;
+    --bg-2: #F2EEE8;
+    --bg-3: #EBE4D5;
+    --cream-panel: #E8DFCC;
+    --fg: #0F1714;
+    --fg-muted: #5A5F5C;
+    --accent: #1E3A8A;
+    --accent-hover: #172E6B;
+    --line: #E2DCCD;
+    --line-strong: #C7BFAF;
+    --highlight: #C2410C;
+    --serif: 'Instrument Serif', 'Times New Roman', serif;
+    --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'Geist Mono', ui-monospace, monospace;
+  }
+  [data-theme="dark"] {
+    /* Warm, muted, editorial midnight — not flat black. Layered ink tones with a copper accent so whites don't feel clinical. */
+    --bg: #14110D;
+    --bg-2: #1B1813;
+    --bg-3: #23201A;
+    --cream-panel: #2A241B;
+    --fg: #EDE5D2;
+    --fg-muted: #8B8576;
+    --accent: #E8A674;
+    --accent-hover: #F4B888;
+    --line: #2C2820;
+    --line-strong: #3E3829;
+    --highlight: #C5916D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: var(--sans); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    transition: background 300ms ease, color 300ms ease;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+  [data-theme="dark"] body::before { mix-blend-mode: screen; opacity: 0.05; }
+
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+  ::selection { background: var(--accent); color: #FAF8F5; }
+
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 0 56px; }
+
+  .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
+  .mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: lowercase; color: var(--fg-muted); }
+
+  /* Top stripe — cream */
+  .stripe-top {
+    background: var(--bg-3); color: var(--fg);
+    padding: 10px 0; font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .stripe-top .inner { max-width: 1440px; margin: 0 auto; padding: 0 56px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .stripe-top .marq { display: flex; gap: 36px; overflow: hidden; flex: 1; }
+  .stripe-top .marq span { color: var(--fg-muted); white-space: nowrap; }
+  .stripe-top .marq span.acc { color: var(--accent); }
+  .stripe-top .marq span.acc::before { content:'●'; margin-right: 6px; color: var(--highlight); }
+
+  /* NAV */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    background: color-mix(in oklab, var(--bg) 85%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 20px 56px; display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; display: inline-flex; align-items: baseline; gap: 4px; }
+  .wordmark em { font-style: italic; color: var(--accent); }
+  .navlinks { display: flex; align-items: center; gap: 28px; }
+  .navlinks a.link { font-size: 14.5px; color: var(--fg); position: relative; padding: 4px 0; }
+  .navlinks a.link::before { content: attr(data-n); position: absolute; top: -11px; left: 0; font-family: var(--mono); font-size: 9px; color: var(--fg-muted); letter-spacing: 0.1em; }
+  .navlinks a.link:hover { color: var(--accent); }
+
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 2px; font-size: 14.5px; font-weight: 500; transition: all 180ms ease; white-space: nowrap; }
+  .btn-primary { background: var(--accent); color: #FAF8F5; border: 1px solid var(--accent); }
+  .btn-primary:hover { background: var(--accent-hover); }
+  [data-theme="dark"] .btn-primary { color: #12110E; }
+  .btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--fg); }
+  .btn-large { padding: 18px 26px; font-size: 15.5px; }
+
+  .theme-toggle { width: 38px; height: 38px; border: 1px solid var(--line-strong); border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; transition: all 180ms ease; }
+  .theme-toggle:hover { border-color: var(--fg); }
+  .theme-toggle svg { width: 15px; height: 15px; stroke: var(--fg); stroke-width: 1.5; fill: none; }
+  .theme-toggle .sun { display: none; }
+  [data-theme="dark"] .theme-toggle .sun { display: block; }
+  [data-theme="dark"] .theme-toggle .moon { display: none; }
+
+  /* HERO */
+  .hero { padding: 48px 0 0; border-bottom: 1px solid var(--line); }
+  .hero-meta {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center;
+    padding-bottom: 24px; border-bottom: 1px solid var(--line);
+  }
+  .hero-meta .issue { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); }
+  .hero-meta .issue b { color: var(--fg); font-weight: 500; }
+  .hero-meta .rule { height: 1px; background: var(--line-strong); }
+
+  .hero-headline {
+    padding: 64px 0 32px;
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(96px, 13.5vw, 200px);
+    line-height: 0.88; letter-spacing: -0.035em;
+    color: var(--fg);
+  }
+  .hero-headline .l1 { display: block; }
+  .hero-headline .l2 { display: block; text-indent: 10%; }
+  .hero-headline .l3 { display: block; text-indent: 3%; font-style: italic; color: var(--accent); }
+  .hero-headline .mark { display: inline-block; font-family: var(--mono); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); vertical-align: top; padding-top: 22px; margin-left: 10px; }
+
+  .hero-sub-row {
+    display: grid; grid-template-columns: 0.9fr 1.3fr 0.9fr; gap: 56px;
+    padding: 44px 0 72px; align-items: start; border-top: 1px solid var(--line);
+  }
+  .hero-sub-row .col-mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); line-height: 2; }
+  .hero-sub-row .col-mono b { color: var(--fg); font-weight: 500; display: block; margin-bottom: 6px; }
+  .hero-sub { font-size: 19px; line-height: 1.55; color: var(--fg); }
+  .hero-sub b { font-weight: 500; }
+  .hero-sub em { font-style: italic; color: var(--accent); font-family: var(--serif); font-size: 22px; }
+  .hero-sub .quote { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--fg); display: block; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .hero-ctas { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+  .hero-ctas .btn { justify-content: space-between; }
+
+  /* MARQUEE */
+  .marquee-wrap { background: var(--bg-2); color: var(--fg); padding: 24px 0; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .marquee { display: flex; gap: 56px; white-space: nowrap; animation: scroll 60s linear infinite; font-family: var(--sans); font-weight: 500; font-size: 26px; letter-spacing: -0.005em; align-items: center; }
+  .marquee span.dot { color: var(--accent); font-size: 10px; }
+  .marquee span.lbl { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); }
+  .marquee span em { font-family: var(--serif); font-style: italic; font-size: 30px; letter-spacing: -0.01em; }
+  .marquee span em { font-style: italic; color: var(--accent); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  section { padding: 140px 0; border-bottom: 1px solid var(--line); }
+  section.alt { background: var(--bg-2); }
+  section.deep { background: var(--bg-3); }
+
+  .sec-head { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 80px; align-items: end; padding-bottom: 72px; }
+  .sec-head .left { display: flex; flex-direction: column; gap: 18px; }
+  .sec-head .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); display: flex; align-items: center; gap: 12px; }
+  .sec-head .kicker .bar { width: 36px; height: 1px; background: var(--fg-muted); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 6.5vw, 92px); line-height: 0.96; letter-spacing: -0.022em; }
+  .sec-head h2 em { font-style: italic; color: var(--accent); }
+  .sec-head .aside { color: var(--fg-muted); font-size: 17px; line-height: 1.6; max-width: 460px; padding-bottom: 18px; }
+
+  /* BENTO */
+  .bento { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
+  .bento .cell { background: var(--bg); padding: 44px; display: flex; flex-direction: column; min-height: 340px; position: relative; transition: background 220ms ease; }
+  .bento .cell:hover { background: var(--bg-2); }
+  .bento .cell .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 28px; display: flex; justify-content: space-between; }
+  .bento .cell h3 { font-family: var(--serif); font-weight: 400; font-size: 46px; line-height: 1; letter-spacing: -0.022em; margin-bottom: 20px; }
+  .bento .cell h3 em { font-style: italic; color: var(--accent); }
+  .bento .cell .pitch { color: var(--fg-muted); font-size: 16px; line-height: 1.55; margin-bottom: 22px; }
+  .bento .cell .tag { display: inline-flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+  .bento .cell .tag span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; padding: 5px 10px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--fg-muted); text-transform: lowercase; }
+  /* Bento cells clickable */
+  .bento .cell { text-decoration: none; color: inherit; }
+  .bento .cell::after { content: '↗'; position: absolute; top: 24px; right: 28px; font-family: var(--serif); font-size: 24px; color: var(--fg-muted); opacity: 0; transition: opacity 200ms ease, transform 200ms ease; }
+  .bento .cell:hover::after { opacity: 1; color: var(--accent); transform: translate(2px, -2px); }
+  .bento .feature { grid-column: 1 / 2; grid-row: 1 / 3; background: var(--cream-panel); padding: 52px; overflow: hidden; position: relative; min-height: 700px; }
+  .bento .feature:hover { background: var(--bg-3); }
+  .bento .feature h3 { font-size: 76px; line-height: 0.94; }
+  .bento .feature .pitch { color: var(--fg-muted); font-size: 17px; max-width: 420px; }
+  .bento .feature .flagship-viz { margin-top: 36px; position: relative; border-top: 1px solid var(--line-strong); padding-top: 24px; }
+  .bento .feature .flagship-viz svg { width: 100%; height: auto; display: block; }
+  .bento .feature .flagship-viz .flagship-cap { display: flex; justify-content: space-between; margin-top: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); }
+
+  /* ===== SELECTED WORK — CLEAN EDITORIAL CASE CARDS ===== */
+  .work-intro {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px;
+    padding: 48px 0 60px;
+    border-top: 2px solid var(--fg); border-bottom: 1px solid var(--line-strong);
+    align-items: baseline;
+  }
+  .work-intro .deck {
+    font-family: var(--serif); font-size: 36px; line-height: 1.2; letter-spacing: -0.015em;
+    color: var(--fg); max-width: 620px;
+  }
+  .work-intro .deck em { font-style: italic; color: var(--accent); }
+  .work-intro .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    align-self: end;
+  }
+  .work-intro .stats .s { display: flex; flex-direction: column; gap: 6px; }
+  .work-intro .stats .s .n { font-family: var(--serif); font-size: 56px; line-height: 0.9; letter-spacing: -0.025em; color: var(--fg); }
+  .work-intro .stats .s .n em { font-style: italic; color: var(--accent); }
+  .work-intro .stats .s .l { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); }
+
+  .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-strong); margin-top: 56px; border: 1px solid var(--line-strong); }
+  .case {
+    background: var(--bg); padding: 48px 44px;
+    display: flex; flex-direction: column; gap: 28px;
+    min-height: 520px; position: relative;
+    transition: background 200ms ease;
+  }
+  .case:hover { background: var(--bg-2); }
+  .case .case-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 20px; border-bottom: 1px solid var(--line);
+  }
+  .case .case-head .no { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--accent); letter-spacing: -0.01em; }
+  .case .case-head .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); }
+  .case .sector { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg); font-weight: 500; }
+  .case .metric {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 168px; line-height: 0.82; letter-spacing: -0.045em;
+    color: var(--fg);
+  }
+  .case .metric em { font-style: italic; color: var(--accent); }
+  .case .metric .unit { font-family: var(--mono); font-size: 15px; letter-spacing: 0.12em; color: var(--fg-muted); vertical-align: top; margin-left: 10px; text-transform: uppercase; }
+  .case .deck { font-family: var(--serif); font-size: 28px; line-height: 1.2; letter-spacing: -0.012em; max-width: 520px; }
+  .case .body { font-size: 15.5px; line-height: 1.62; color: var(--fg-muted); max-width: 540px; }
+  .case .case-foot {
+    margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .case .case-foot .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .case .case-foot .tags span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; padding: 5px 10px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--fg-muted); text-transform: lowercase; }
+
+  /* MANIFESTO — cream */
+  .manifesto { padding: 180px 0; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+  .manifesto .kicker { color: var(--fg-muted); margin-bottom: 48px; display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+  .manifesto .kicker .bar { width: 36px; height: 1px; background: var(--fg-muted); }
+  .manifesto .big { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 6.4vw, 100px); line-height: 1.02; letter-spacing: -0.02em; max-width: 1100px; }
+  .manifesto .big em { font-style: italic; color: var(--accent); }
+  .manifesto .big .sub { color: var(--fg-muted); }
+  .manifesto .sig { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--line-strong); display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); }
+  .manifesto .sig .name { font-family: var(--serif); font-size: 24px; letter-spacing: -0.01em; color: var(--fg); text-transform: none; }
+  .manifesto .sig .right { text-align: right; }
+  .manifesto .glyph { position: absolute; top: 120px; right: 64px; font-family: var(--serif); font-size: 520px; line-height: 0.8; color: var(--accent); opacity: 0.08; pointer-events: none; font-style: italic; }
+
+  /* FIT */
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line-strong); }
+  .fit-col { padding: 56px 48px; }
+  .fit-col.yes { background: var(--cream-panel); border-right: 1px solid var(--line-strong); }
+  .fit-col h3 { font-family: var(--serif); font-size: 44px; line-height: 1; letter-spacing: -0.022em; margin-bottom: 12px; }
+  .fit-col .sub { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 40px; }
+  .fit-col ul { list-style: none; }
+  .fit-col li { padding: 22px 0; border-top: 1px solid var(--line-strong); display: flex; gap: 20px; align-items: flex-start; font-size: 17.5px; line-height: 1.5; }
+  .fit-col li:last-child { border-bottom: 1px solid var(--line-strong); }
+  .fit-col.yes li .mk { font-family: var(--serif); font-size: 22px; color: var(--accent); font-style: italic; flex-shrink: 0; width: 30px; }
+  .fit-col.no li { color: var(--fg-muted); }
+  .fit-col.no li .mk { font-family: var(--mono); color: var(--fg-muted); font-size: 14px; flex-shrink: 0; width: 30px; padding-top: 2px; }
+  .fit-col li b { font-weight: 500; color: var(--fg); }
+
+  /* ===== WRITING — PROPER MAGAZINE SPREAD ===== */
+  .writing-masthead {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: baseline;
+    padding: 36px 0 24px;
+    border-top: 2px solid var(--fg); border-bottom: 1px solid var(--line);
+    margin-bottom: 64px;
+  }
+  .writing-masthead .logo { font-family: var(--serif); font-size: 52px; letter-spacing: -0.02em; line-height: 1; }
+  .writing-masthead .logo em { font-style: italic; color: var(--accent); }
+  .writing-masthead .issue { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--fg-muted); text-transform: uppercase; text-align: center; }
+  .writing-masthead .issue b { color: var(--fg); font-weight: 500; display: block; margin-bottom: 4px; font-size: 12px; }
+  .writing-masthead .sub-link { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; }
+
+  .feature-spread {
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; padding-bottom: 64px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .feature-spread .lead-col > .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+  }
+  .feature-spread .lead-col > .badge::before { content:''; width: 28px; height: 1px; background: var(--accent); }
+  .feature-spread .lead-head { font-family: var(--serif); font-weight: 400; font-size: clamp(52px, 6vw, 84px); line-height: 0.96; letter-spacing: -0.025em; margin-bottom: 28px; }
+  .feature-spread .lead-head em { font-style: italic; color: var(--accent); }
+  .feature-spread .dropcap { font-size: 18.5px; line-height: 1.65; color: var(--fg); max-width: 560px; font-family: var(--serif); }
+  .feature-spread .dropcap::first-letter { font-family: var(--serif); font-size: 96px; line-height: 0.82; float: left; padding: 10px 16px 0 0; color: var(--accent); font-weight: 400; }
+  .feature-spread .byline { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line-strong); font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); display: flex; justify-content: space-between; }
+  .feature-spread .byline a { color: var(--accent); }
+  .feature-spread .pullbox { position: relative; padding: 56px 44px 44px; background: var(--bg); border: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: 28px; justify-content: center; }
+  .feature-spread .pullbox::before { content: '"'; position: absolute; top: -24px; left: 32px; font-family: var(--serif); font-size: 160px; line-height: 1; color: var(--accent); }
+  .feature-spread .pullbox .quote { font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1.22; letter-spacing: -0.012em; color: var(--fg); }
+  .feature-spread .pullbox .attrib { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--fg-muted); text-transform: uppercase; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+
+  .essay-archive { display: grid; grid-template-columns: repeat(3, 1fr); padding-top: 56px; }
+  .essay-archive .essay { padding: 32px 32px 32px 0; display: flex; flex-direction: column; gap: 16px; min-height: 280px; border-right: 1px solid var(--line); }
+  .essay-archive .essay + .essay { padding-left: 32px; }
+  .essay-archive .essay:last-child { border-right: none; }
+  .essay-archive .essay .no { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--fg-muted); text-transform: uppercase; display: flex; justify-content: space-between; }
+  .essay-archive .essay .no .acc { color: var(--accent); }
+  .essay-archive .essay h4 { font-family: var(--serif); font-size: 30px; line-height: 1.08; letter-spacing: -0.02em; font-weight: 400; }
+  .essay-archive .essay .excerpt { color: var(--fg-muted); font-size: 15.5px; line-height: 1.55; }
+  .essay-archive .essay .foot { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--fg-muted); text-transform: uppercase; }
+  .essay-archive .essay .foot .chip { color: var(--accent); }
+
+  .subscribe-block {
+    margin-top: 80px; background: var(--cream-panel); padding: 64px 56px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    border: 1px solid var(--line-strong);
+  }
+  .subscribe-block .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .subscribe-block .eyebrow::before { content:''; width: 28px; height: 1px; background: var(--accent); }
+  .subscribe-block h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 4.2vw, 56px); line-height: 1; letter-spacing: -0.02em; }
+  .subscribe-block h3 em { font-style: italic; color: var(--accent); }
+  .subscribe-block .note { color: var(--fg-muted); font-size: 14px; margin-top: 20px; font-family: var(--mono); letter-spacing: 0.1em; text-transform: lowercase; }
+  .archive-cta { display: flex; }
+  .archive-cta .arc-link { display: flex; flex-direction: column; gap: 14px; padding: 28px 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); width: 100%; transition: opacity 160ms ease; }
+  .archive-cta .arc-link:hover { opacity: 0.7; }
+  .archive-cta .arc-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .archive-cta .arc-title { font-family: var(--serif); font-size: 32px; line-height: 1.15; letter-spacing: -0.015em; color: var(--fg); }
+  .archive-cta .arc-go { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-top: 4px; }
+  .archive-cta .arc-go .arr { margin-left: 6px; transition: transform 200ms ease; display: inline-block; }
+  .archive-cta .arc-link:hover .arc-go .arr { transform: translateX(4px); }
+
+  /* DUAL CTA */
+  .dual { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .dual .card { padding: 120px 56px; display: flex; flex-direction: column; gap: 22px; position: relative; overflow: hidden; transition: background 220ms ease; }
+  .dual .card:first-child { border-right: 1px solid var(--line); }
+  .dual .card:hover { background: var(--bg-2); }
+  .dual .card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 6vw, 84px); line-height: 0.96; letter-spacing: -0.025em; max-width: 440px; }
+  .dual .card h3 em { font-style: italic; color: var(--accent); }
+  .dual .card .note { color: var(--fg-muted); font-size: 16px; max-width: 380px; line-height: 1.55; }
+  .dual .card .go { margin-top: 24px; font-size: 15px; font-weight: 500; color: var(--accent); display: inline-flex; gap: 10px; align-items: center; }
+  .dual .card:hover .go .arr { transform: translateX(6px); }
+  .dual .card .go .arr { transition: transform 200ms ease; }
+  .dual .card .shape { position: absolute; font-family: var(--serif); bottom: -40px; right: -20px; font-size: 360px; line-height: 0.8; color: var(--accent); opacity: 0.08; font-style: italic; pointer-events: none; }
+
+  /* FOOTER */
+  footer { padding: 120px 0 40px; background: var(--bg); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-bottom: 100px; border-bottom: 1px solid var(--line); align-items: start; }
+  .contact-left { display: flex; flex-direction: column; gap: 24px; }
+  .contact-left .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); display: flex; align-items: center; gap: 12px; }
+  .contact-left .kicker .bar { width: 36px; height: 1px; background: var(--fg-muted); }
+  .contact-left h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(52px, 5.4vw, 80px); line-height: 0.98; letter-spacing: -0.022em; color: var(--fg); }
+  .contact-left h3 em { font-style: italic; color: var(--accent); }
+  .contact-left .contact-note { color: var(--fg-muted); font-size: 17px; line-height: 1.55; max-width: 440px; }
+  .contact-left .contact-meta { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .contact-left .contact-meta > div { display: grid; grid-template-columns: 140px 1fr; gap: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .contact-left .contact-meta .l { color: var(--fg-muted); }
+  .contact-left .contact-meta .v { color: var(--fg); letter-spacing: 0.08em; }
+
+  .contact-form { background: var(--cream-panel); border: 1px solid var(--line-strong); padding: 40px 36px; display: flex; flex-direction: column; gap: 18px; }
+  .contact-form .field { display: flex; flex-direction: column; gap: 6px; }
+  .contact-form .field.row { display: grid; grid-template-columns: 130px 1fr; gap: 14px; }
+  .contact-form label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); }
+  .contact-form label .opt { color: var(--line-strong); text-transform: none; letter-spacing: 0.04em; font-size: 10.5px; }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea { font: inherit; font-size: 17px; background: transparent; border: none; border-bottom: 1px solid var(--fg); padding: 10px 0; outline: none; color: var(--fg); font-family: var(--sans); }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus { border-bottom-color: var(--accent); }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: var(--fg-muted); }
+  .contact-form textarea { resize: vertical; font-family: var(--sans); line-height: 1.5; }
+  .contact-form select { appearance: none; -webkit-appearance: none; background: transparent; cursor: pointer; font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; }
+  .contact-form button { margin-top: 14px; align-self: flex-start; padding: 16px 24px; background: var(--accent); color: #FAF8F5; font-size: 15px; font-weight: 500; border-radius: 2px; display: inline-flex; align-items: center; gap: 12px; transition: background 180ms ease; }
+  .contact-form button:hover { background: var(--accent-hover); }
+  [data-theme="dark"] .contact-form button { color: #14110D; }
+  .contact-form .sent { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; padding-top: 10px; }
+  .contact-form .smallprint { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--fg-muted); line-height: 1.7; margin-top: 4px; }
+  .foot-mega { margin-top: 80px; font-family: var(--serif); font-weight: 400; font-size: clamp(120px, 18vw, 260px); line-height: 0.82; letter-spacing: -0.035em; color: var(--fg); white-space: nowrap; overflow: hidden; }
+  .foot-mega em { font-style: italic; color: var(--accent); }
+  .foot-bottom { display: flex; justify-content: space-between; margin-top: 48px; font-family: var(--mono); font-size: 11px; color: var(--fg-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  .icon { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIPE -->
+<div class="stripe-top">
+  <div class="inner">
+    <span>Vol. 01 · №003</span>
+    <div class="marq">
+      <span class="acc">Currently taking 2 new engagements for Q3</span>
+      <span>Shipped across SEA · EU · Türkiye · Taiwan · Australia</span>
+      <span>1 advisory slot open</span>
+      <span class="acc">Scope memo turnaround: 3 business days</span>
+    </div>
+    <span>Singapore · 19 apr 2026</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="top" id="nav">
+  <div class="inner">
+    <a href="#" class="wordmark">The Launch&nbsp;<em>Edge</em></a>
+    <div class="navlinks">
+      <a href="#work" class="link" data-n="01">Work</a>
+      <a href="#writing" class="link" data-n="02">Writing</a>
+      <a href="#network" class="link" data-n="03">Network</a>
+      <a href="#about" class="link" data-n="04">About</a>
+      <a href="#book" class="btn btn-primary">Book a call
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <div class="issue"><b>01 / PRACTICE</b> — ESTABLISHED IN SG · 2022</div>
+      <div class="rule"></div>
+      <div class="issue">A SENIOR OPERATOR BENCH · FROM SINGAPORE · EMBEDDED IN MARKET · 4 CONTINENTS</div>
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="l1">Operator</span>
+      <span class="l2">consulting<span class="mark">est. ’26</span></span>
+      <span class="l3">built for the AI era.</span>
+    </h1>
+
+    <div class="hero-sub-row">
+      <div class="col-mono">
+        <b>What</b>
+        — Fractional growth<br/>
+        — Fractional product<br/>
+        — AI-native builds<br/>
+        — Global go-to-market<br/>
+        — Conglomerate modernisation<br/>
+        — Physical-product expansion<br/>
+        — Founder coaching<br/>
+        — Advisory
+      </div>
+      <div class="hero-sub">
+        <span class="quote">"We do. You ship."</span>
+        <em>The Launch Edge</em> is an operator-led consultancy for founders, CEOs, business owners, and <b>conglomerates trapped in archaic processes</b> — anyone who wants <b>AI-speed outcomes</b> without needing to understand the AI part. <b>From Singapore. Embedded in the market.</b> Our bench doesn't parachute in — we operate inside the room, on the ground, in the timezone. Across a decade, we've shipped inside <b>all of SEA</b> (Singapore, Indonesia, Vietnam, Philippines, Thailand, Malaysia), <b>Europe</b> (Austria, Czechia, Denmark, Norway, Sweden), <b>Türkiye</b>, <b>Taiwan</b>, and <b>Australia</b> — tech and consumer, digital and physical. Our principal has led <b>subscriptions, retention &amp; growth product</b> at a <b>YC-backed fintech live in 150+ countries</b>, and <b>global country launches</b> at <b>global on-demand platforms operating across 70+ countries</b>. Earlier, led <b>economic development &amp; investment strategy</b> with the <b>Singapore Government</b> — a very small team, by invitation only. <b>Partner at Reforge</b>. Product Coach at <b>Product School</b>.
+      </div>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-primary btn-large">
+          <span>Book a 30-min intro</span>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#network" class="btn btn-ghost btn-large">
+          <span>Join the bench</span>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="mono" style="margin-top: 10px; font-size: 11px;">no prices · no packages · scoped after intro</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span class="lbl">Shipped in —</span>
+    <span>Singapore</span><span class="dot">●</span>
+    <span>Indonesia</span><span class="dot">●</span>
+    <span>Vietnam</span><span class="dot">●</span>
+    <span>Philippines</span><span class="dot">●</span>
+    <span>Thailand</span><span class="dot">●</span>
+    <span>Malaysia</span><span class="dot">●</span>
+    <span><em>Austria</em></span><span class="dot">●</span>
+    <span>Czechia</span><span class="dot">●</span>
+    <span>Denmark</span><span class="dot">●</span>
+    <span>Norway</span><span class="dot">●</span>
+    <span>Sweden</span><span class="dot">●</span>
+    <span><em>Türkiye</em></span><span class="dot">●</span>
+    <span>Taiwan</span><span class="dot">●</span>
+    <span><em>Australia</em></span><span class="dot">●</span>
+    <span class="lbl">Shipped in —</span>
+    <span>Singapore</span><span class="dot">●</span>
+    <span>Indonesia</span><span class="dot">●</span>
+    <span>Vietnam</span><span class="dot">●</span>
+    <span>Philippines</span><span class="dot">●</span>
+    <span>Thailand</span><span class="dot">●</span>
+    <span>Malaysia</span><span class="dot">●</span>
+    <span><em>Austria</em></span><span class="dot">●</span>
+    <span>Czechia</span><span class="dot">●</span>
+    <span>Denmark</span><span class="dot">●</span>
+    <span>Norway</span><span class="dot">●</span>
+    <span>Sweden</span><span class="dot">●</span>
+    <span><em>Türkiye</em></span><span class="dot">●</span>
+    <span>Taiwan</span><span class="dot">●</span>
+    <span><em>Australia</em></span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="left">
+        <div class="kicker"><span class="bar"></span> 02 / what I do</div>
+        <h2>Four ways we work.<br/><em>One way we deliver.</em></h2>
+      </div>
+      <div class="aside">
+        No price lists. No packages. Every engagement is scoped after a 30-minute intro and written into a two-page memo — outcomes, timeline, a fixed quote. Sign it or walk. Our bench runs lean on purpose: fewer engagements, deeper contact, senior hands only.
+      </div>
+    </div>
+
+    <div class="bento">
+      <a class="cell feature" href="article-flagship.html">
+        <div class="num"><span>A / FLAGSHIP</span><span>3–6 MO</span></div>
+        <h3>Fractional<br/>Growth <em>&amp;</em><br/>Retention.</h3>
+        <p class="pitch">Embedded senior leadership for teams between seed and Series B. Subscriptions, retention, activation, and growth product — owned end-to-end. Two or three days a week, in your Slack, on your roadmap, for a quarter at a time. We ship alongside the team.</p>
+        <div class="tag">
+          <span>retainer</span><span>2–3 days/week</span><span>outcome-scoped</span>
+        </div>
+        <div class="flagship-viz" aria-hidden="true">
+          <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <pattern id="fgdot" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                <circle cx="1" cy="1" r="1" fill="currentColor" opacity="0.28"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="400" height="260" fill="url(#fgdot)" color="var(--fg-muted)"/>
+            <!-- horizon grid -->
+            <g stroke="currentColor" stroke-width="0.6" opacity="0.35" color="var(--line-strong)">
+              <line x1="0" y1="60" x2="400" y2="60"/>
+              <line x1="0" y1="130" x2="400" y2="130"/>
+              <line x1="0" y1="200" x2="400" y2="200"/>
+              <line x1="100" y1="0" x2="100" y2="260"/>
+              <line x1="200" y1="0" x2="200" y2="260"/>
+              <line x1="300" y1="0" x2="300" y2="260"/>
+            </g>
+            <!-- ascending curve = retention cohort metaphor -->
+            <path d="M10,220 Q120,210 180,170 T390,40" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
+            <!-- nodes -->
+            <g fill="var(--accent)">
+              <circle cx="10" cy="220" r="4"/>
+              <circle cx="180" cy="170" r="4"/>
+              <circle cx="390" cy="40" r="4"/>
+            </g>
+            <g fill="var(--bg)" stroke="var(--accent)" stroke-width="1.6">
+              <circle cx="95" cy="205" r="5"/>
+              <circle cx="285" cy="95" r="5"/>
+            </g>
+            <!-- mono labels -->
+            <g font-family="ui-monospace, Geist Mono, monospace" font-size="9" fill="var(--fg-muted)" letter-spacing="1">
+              <text x="10" y="240">M0</text>
+              <text x="172" y="190">M3</text>
+              <text x="360" y="32">M6</text>
+            </g>
+            <!-- ligature glyph as anchor -->
+            <text x="386" y="250" text-anchor="end" font-family="Instrument Serif, serif" font-style="italic" font-size="96" fill="var(--accent)" opacity="0.14">Æ</text>
+          </svg>
+          <div class="flagship-cap">
+            <span>retention curve · month 0 → month 6</span>
+            <span>flagship engagement shape</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="cell" href="article-ai-builds.html">
+        <div class="num"><span>B / SPRINT</span><span>4 WEEKS</span></div>
+        <h3>AI-Native<br/>Builds.</h3>
+        <p class="pitch">Four-week audits and done-with-you builds. LLM-driven workflows, long-running agents on VPS, real handover. We ship it. You own the code.</p>
+        <div class="tag"><span>fixed fee</span><span>you own the code</span></div>
+      </a>
+
+      <a class="cell" href="article-gtm.html">
+        <div class="num"><span>C / GTM</span><span>6 WEEKS</span></div>
+        <h3>Global Country<br/>Launches.</h3>
+        <p class="pitch">Pick the first market — SEA, Europe, the Gulf, or ANZ. Build the plan, hire the first operator, ship the first 30 days together. We've launched countries for platforms live in 70+ markets.</p>
+        <div class="tag"><span>sea</span><span>eu</span><span>anz</span><span>gulf</span></div>
+      </a>
+
+      <a class="cell" href="article-modernisation.html">
+        <div class="num"><span>D / LEGACY</span><span>8–16 WKS</span></div>
+        <h3>Conglomerate<br/><em>modernisation.</em></h3>
+        <p class="pitch">For regional groups and family conglomerates trapped in archaic processes. We map the bottlenecks, ship AI-native replacements for the worst three, and leave your teams owning them.</p>
+        <div class="tag"><span>enterprise</span><span>process → agent</span></div>
+      </a>
+
+      <a class="cell" href="article-counsel.html">
+        <div class="num"><span>E / COUNSEL</span><span>1:1 · QUARTERLY</span></div>
+        <h3>Principal<br/><em>Counsel.</em></h3>
+        <p class="pitch">Private, one-to-one guidance for C-suite and founders. Closed-door sessions on the decisions that don't belong in a standup — fundraise posture, org design, co-founder fractures, the next hire, the next market. Discreet. Off the record. On demand.</p>
+        <div class="tag"><span>c-suite</span><span>founders</span><span>confidential</span></div>
+      </a>
+
+      <a class="cell" href="article-advisory.html" style="grid-column: 1 / 4;">
+        <div class="num"><span>F / ADVISORY</span><span>12 MO RETAINER</span></div>
+        <h3>Advisory <em>retainer.</em></h3>
+        <p class="pitch" style="max-width: 680px;">On-demand Slack, warm intros, quarterly reviews. For seed founders, operators, and VCs who want us in their corner without a full engagement. A small number of slots — by referral or intro call only.</p>
+        <div class="tag"><span>monthly</span><span>slack + intros</span><span>by referral</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="left">
+        <div class="kicker"><span class="bar"></span> 03 / selected work</div>
+        <h2>A decade of<br/>engagements.<br/><em>Anonymised, not embellished.</em></h2>
+      </div>
+      <div class="aside">
+        Across a decade of operating — leading <b>subscriptions, retention &amp; growth product</b> at a YC-backed fintech live in 150+ countries, <b>global country launches</b> at on-demand platforms operating across 70+ countries, and earlier <b>economic development work with the Singapore Government</b> — we've shipped in fintech, food-tech, marketplaces, SaaS, healthtech, consumer apparel, lifestyle, and sporting goods. What follows is a small, anonymised sample from the last eighteen months. Fees and budgets are not on this page — on purpose.
+      </div>
+    </div>
+
+    <div class="work-intro">
+      <div class="deck">
+        Dozens of engagements. Eleven industries. Fourteen markets. One operating pattern — <em>short, scoped, shipped.</em>
+      </div>
+      <div class="stats">
+        <div class="s"><span class="n"><em>40</em>+</span><span class="l">engagements · 2017–26</span></div>
+        <div class="s"><span class="n"><em>15</em></span><span class="l">markets shipped in</span></div>
+        <div class="s"><span class="n"><em>100</em>%</span><span class="l">handover rate</span></div>
+      </div>
+    </div>
+
+    <div class="cases">
+      <!-- Case 01 — fintech -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№01</span>
+          <span class="meta">10 weeks · 2025</span>
+        </div>
+        <div class="sector">Series A fintech · Indonesia</div>
+        <div class="metric"><em>42</em><span class="unit">% lift</span></div>
+        <div class="deck">Activation rebuilt end-to-end — retained without a single paid-media change.</div>
+        <div class="body">Rebuilt the onboarding funnel and shipped a new first-trade flow. Team of four PMs ran the playbook after handover. Retention held at 90 days.</div>
+        <div class="case-foot">
+          <div class="tags"><span>fractional CPO</span><span>onboarding</span></div>
+        </div>
+      </div>
+
+      <!-- Case 02 — B2B SaaS GTM --><div class="case">
+        <div class="case-head">
+          <span class="no">№02</span>
+          <span class="meta">6 weeks · 2025</span>
+        </div>
+        <div class="sector">Seed B2B SaaS · Singapore</div>
+        <div class="metric"><em>3.1</em><span class="unit">× pipeline</span></div>
+        <div class="deck">Qualified pipeline per rep, after a done-with-you Asia GTM sprint.</div>
+        <div class="body">ICP rewrite, outbound sequence built in three languages, two founding AEs hired inside six weeks. Founder ran the second sprint alone.</div>
+        <div class="case-foot">
+          <div class="tags"><span>asia gtm</span><span>done-with-you</span></div>
+        </div>
+      </div>
+
+      <!-- Case 03 — AI-native marketplace -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№03</span>
+          <span class="meta">4 weeks · 2026</span>
+        </div>
+        <div class="sector">Series B marketplace · SEA</div>
+        <div class="metric"><em>11</em><span class="unit">hrs / PM</span></div>
+        <div class="deck">Returned to every PM on the team, every week.</div>
+        <div class="body">Four-week AI-native audit. Shipped three long-running agents on VPS for support triage, QA smoke runs, and weekly changelog generation. Full handover — their engineers own it now.</div>
+        <div class="case-foot">
+          <div class="tags"><span>ai-native</span><span>audit + build</span></div>
+        </div>
+      </div>
+
+      <!-- Case 04 — SME AI automation -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№04</span>
+          <span class="meta">ongoing · 2026</span>
+        </div>
+        <div class="sector">Family business · Bali</div>
+        <div class="metric"><em>0</em> → <em>1</em></div>
+        <div class="deck">From "we heard about AI" to shipping, in a fortnight.</div>
+        <div class="body">Pilates studio chain. Replaced two part-time staff workflows with an LLM-driven agent handling WhatsApp intake, reschedules, and weekly reporting. Owner hasn't touched a spreadsheet in ten weeks.</div>
+        <div class="case-foot">
+          <div class="tags"><span>ai-native</span><span>sme</span></div>
+        </div>
+      </div>
+
+      <!-- Case 05 — sporting goods / physical product expansion -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№05</span>
+          <span class="meta">14 weeks · 2024–25</span>
+        </div>
+        <div class="sector">Sporting-goods accessories · AU · TR · SG · ID</div>
+        <div class="metric"><em>4</em><span class="unit">markets</span></div>
+        <div class="deck">A physical-product brand, launched across four markets in a single cycle.</div>
+        <div class="body">Led multi-market expansion for a consumer sporting-goods accessory. Distributor selection, pricing architecture, landed-cost model, three separate retail partnerships, and the first sixty days of in-market operations. Not my first rodeo in apparel-adjacent categories.</div>
+        <div class="case-foot">
+          <div class="tags"><span>physical product</span><span>multi-market</span><span>distribution</span></div>
+        </div>
+      </div>
+
+      <!-- Case 06 — consumer apparel / founder coaching -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№06</span>
+          <span class="meta">9 months · 2024–25</span>
+        </div>
+        <div class="sector">Consumer apparel · Indonesia</div>
+        <div class="metric"><em>+180</em><span class="unit">% revenue</span></div>
+        <div class="deck">Founder-led fashion brand, scaled inside Indonesia.</div>
+        <div class="body">Directed a solo founder through a full growth cycle — brand positioning, channel mix, seasonal drops, influencer distribution, and hiring the first three operators. Revenue near-tripled inside the Indonesian market, now profitable month-on-month.</div>
+        <div class="case-foot">
+          <div class="tags"><span>consumer apparel</span><span>founder coaching</span><span>indonesia</span></div>
+        </div>
+      </div>
+
+      <!-- Case 07 — Global on-demand food-tech -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№07</span>
+          <span class="meta">multi-year · 2015–23</span>
+        </div>
+        <div class="sector">Global food-tech · foodpanda Asia · foodora Europe</div>
+        <div class="metric"><em>20+</em><span class="unit">countries</span></div>
+        <div class="deck">Operator inside the two biggest Western on-demand franchises — across Asia and Europe.</div>
+        <div class="body">Multi-year tour inside the foodpanda group (Singapore, Malaysia, Thailand, Philippines, Indonesia, Vietnam, Hong Kong, Taiwan, Japan, Pakistan, Bangladesh, Cambodia, Laos, Myanmar) and the foodora franchise in Europe (Austria, Germany, Czechia, Hungary, Denmark, Norway, Sweden, Finland). Ran launch, growth, and operations cycles — vendor activation, courier supply, pricing, and vertical expansion into grocery and quick-commerce. Teams on the ground in more than a dozen cities. This is where the playbook for country launches was written.</div>
+        <div class="case-foot">
+          <div class="tags"><span>growth leadership</span><span>asia + europe</span><span>on-demand</span></div>
+        </div>
+      </div>
+
+      <!-- Case 08 — Taiwan / Türkiye -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№08</span>
+          <span class="meta">multi-year · 2019–23</span>
+        </div>
+        <div class="sector">Marketplace &amp; fintech · Türkiye · Taiwan</div>
+        <div class="metric"><em>2</em><span class="unit">new mkts</span></div>
+        <div class="deck">Zero-to-one market entry in two very different cultures.</div>
+        <div class="body">Led market-entry strategy and first-year operations across Türkiye and Taiwan — regulatory mapping, local hiring, partner sourcing, and the first retention cohort. Neither market was a copy-paste of anywhere else.</div>
+        <div class="case-foot">
+          <div class="tags"><span>market entry</span><span>regulatory</span><span>hiring</span></div>
+        </div>
+      </div>
+
+      <!-- Case 09 — Claimback SaaS -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№09</span>
+          <span class="meta">6 months · 2025</span>
+        </div>
+        <div class="sector">FinOps · Claimback SaaS · SEA</div>
+        <div class="metric"><em>S$1.4</em><span class="unit">M recovered</span></div>
+        <div class="deck">An AI-native claimback engine, built from a blank editor.</div>
+        <div class="body">Done-with-you build of an automated insurance &amp; subscription claimback platform. LLM-driven extraction against statements, receipts, and contracts; ledger reconciliation; human-in-the-loop review. Shipped in six months, now recovering seven-figures a quarter for pilot clients. Client owns the code.</div>
+        <div class="case-foot">
+          <div class="tags"><span>ai-native</span><span>fintech</span><span>done-with-you</span></div>
+        </div>
+      </div>
+
+      <!-- Case 10 — MRI diagnostic imaging -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№10</span>
+          <span class="meta">9 months · 2024–25</span>
+        </div>
+        <div class="sector">Healthtech · diagnostic imaging · SG &middot; JP</div>
+        <div class="metric"><em>MRI</em><span class="unit">reader</span></div>
+        <div class="deck">A radiologist-assistive MRI reader — shipped into two hospital systems.</div>
+        <div class="body">Advised a healthtech team building a vision-model assistant for MRI reads. Data pipeline architecture, eval design against a panel of five radiologists, clinical partner onboarding in Singapore and Tokyo. Shipped into pilot across two hospital systems with a human-in-the-loop review discipline the clinicians trusted.</div>
+        <div class="case-foot">
+          <div class="tags"><span>healthtech</span><span>vision models</span><span>clinical</span></div>
+        </div>
+      </div>
+
+      <!-- Case 11 — Trading bots -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№11</span>
+          <span class="meta">ongoing · 2024–26</span>
+        </div>
+        <div class="sector">Quant trading · crypto · futures · US equities</div>
+        <div class="metric"><em>3</em><span class="unit">strategies live</span></div>
+        <div class="deck">Autonomous trading agents across three asset classes.</div>
+        <div class="body">Design and ops partner on a family of long-running trading agents — perpetuals on crypto venues, CME futures, and US cash equities. Strategy research, execution-layer engineering, risk rails, and the twenty-four-hour monitoring discipline that keeps them alive. Real capital, real P&amp;L, real scars.</div>
+        <div class="case-foot">
+          <div class="tags"><span>ai-native</span><span>trading</span><span>agents</span></div>
+        </div>
+      </div>
+
+      <!-- Case 12 — EDB Singapore -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№12</span>
+          <span class="meta">multi-year · pre-2018</span>
+        </div>
+        <div class="sector">National economic development agency · Singapore</div>
+        <div class="metric"><em>Gov</em><span class="unit">invite-only</span></div>
+        <div class="deck">Inside a Singapore Government institution, shaping the country's investment thesis.</div>
+        <div class="body">Served with Singapore's economic development arm — the team tasked with attracting inward investment and steering industry policy. Small cohort, by invitation. The bench instinct for how governments, family-owned conglomerates, and multinationals actually make decisions traces back here.</div>
+        <div class="case-foot">
+          <div class="tags"><span>public sector</span><span>policy &amp; strategy</span><span>singapore</span></div>
+        </div>
+      </div>
+
+      <!-- Case 13 — Solopreneur launch studio -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№13</span>
+          <span class="meta">ongoing · 2023–26</span>
+        </div>
+        <div class="sector">Solopreneur launch studio · ex-corporate operators</div>
+        <div class="metric"><em>ex-VPs</em><span class="unit">LV · Etihad</span></div>
+        <div class="deck">Websites, positioning, and a launch runway for senior operators leaving big-company careers.</div>
+        <div class="body">Quiet side of the practice: helping former VPs and directors reinvent as solo operators. Worked with a former VP at Louis Vuitton and a former VP at Etihad on naming, positioning, a first-class marketing site, and the ninety-day plan that turns a LinkedIn announcement into a booked calendar. Done-with-you, end-to-end.</div>
+        <div class="case-foot">
+          <div class="tags"><span>founder craft</span><span>positioning</span><span>done-with-you</span></div>
+        </div>
+      </div>
+
+      <!-- Case 14 — Flashback Coffee (declined) -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№14</span>
+          <span class="meta">declined · 2024</span>
+        </div>
+        <div class="sector">F&amp;B tech · Flashback Coffee · Indonesia</div>
+        <div class="metric"><em>No</em><span class="unit">(politely)</span></div>
+        <div class="deck">Turned down the build of Flashback Coffee's ordering app — and said why.</div>
+        <div class="body">A well-funded Jakarta specialty-coffee chain asked the practice to build their in-house ordering and loyalty app. Scoped the engagement, then declined — the right first move was a thin wrapper on an existing POS with a three-month runway, not a bespoke build. Sent the one-page memo that explained the cheaper path. A no is also an outcome.</div>
+        <div class="case-foot">
+          <div class="tags"><span>scope discipline</span><span>f&amp;b tech</span><span>indonesia</span></div>
+        </div>
+      </div>
+
+      <!-- Case 15 — Product coaching -->
+      <div class="case">
+        <div class="case-head">
+          <span class="no">№15</span>
+          <span class="meta">ongoing · 2021–26</span>
+        </div>
+        <div class="sector">Product coaching · SG · TW · DE</div>
+        <div class="metric"><em>30+</em><span class="unit">PMs coached</span></div>
+        <div class="deck">One-to-one coaching for product managers across three ecosystems.</div>
+        <div class="body">Private, monthly 1:1 work with senior and staff PMs in Singapore, Taipei, and Berlin — navigating first-time leadership, the jump to Group PM, hiring their first reports, and building the muscle to run a roadmap through political weather. No cohorts, no curriculum. Just the operator's version of the conversation.</div>
+        <div class="case-foot">
+          <div class="tags"><span>founder craft</span><span>coaching</span><span>pm leadership</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line-strong); display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted);">
+      <span>showing 15 of 40+ engagements — rest under NDA</span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="wrap">
+    <div class="kicker"><span class="bar"></span> a short note from the practice</div>
+    <div class="big">
+      Most consulting doesn't survive contact <em>with Jakarta.</em> <br/>
+      <span class="sub">The Launch Edge does.</span><br/><br/>
+      From Singapore. <em>Embedded in the market.</em> <br/>
+      <span class="sub">Ground truth beats frameworks, every time.</span>
+    </div>
+    <div class="sig">
+      <span>signed · the launch edge</span>
+      <span class="name"><em style="font-style: italic; color: var(--accent);">The Launch Edge</em></span>
+      <span class="right">19 apr 2026 · singapore</span>
+    </div>
+    <div class="glyph">"</div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="left">
+        <div class="kicker"><span class="bar"></span> 04 / fit</div>
+        <h2>This probably fits<br/><em>if you…</em></h2>
+      </div>
+      <div class="aside">
+        A small practice, by design. Taking on the wrong engagement is expensive for both sides — so here's the honest, up-front version before anyone gets on a call.
+      </div>
+    </div>
+
+    <div class="fit-grid">
+      <div class="fit-col yes">
+        <h3>A fit<br/>if you're —</h3>
+        <div class="sub">✓ green / four things</div>
+        <ul>
+          <li><span class="mk">i.</span><span>A <b>founder or CEO</b> who wants outcomes in weeks, not quarters.</span></li>
+          <li><span class="mk">ii.</span><span>Running a <b>startup, SME, or family business</b> anywhere in Asia.</span></li>
+          <li><span class="mk">iii.</span><span><b>Curious about AI</b> — but don't want to become an AI expert to benefit from it.</span></li>
+          <li><span class="mk">iv.</span><span>Tired of <b>consultants who deliver decks</b> instead of decisions.</span></li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>Not a fit<br/>if you need —</h3>
+        <div class="sub">× three things</div>
+        <ul>
+          <li><span class="mk">01</span><span>A <b>full-time hire</b> with a title and a headcount line.</span></li>
+          <li><span class="mk">02</span><span>A <b>60-page strategy document</b> with an executive summary.</span></li>
+          <li><span class="mk">03</span><span>A <b>"digital transformation program"</b> with a steering committee.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing" class="deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="left">
+        <div class="kicker"><span class="bar"></span> 05 / writing</div>
+        <h2>Notes from<br/><em>the work.</em></h2>
+      </div>
+      <div class="aside">
+        Essays on product, growth, AI, and operating in Asia. One a week, most Sundays. No listicles. No engagement bait. Roughly 1,200 operators and founders read them.
+      </div>
+    </div>
+
+    <div class="writing-masthead">
+      <div class="logo">Edge <em>Notes</em></div>
+      <div class="issue"><b>№ 047 · SUNDAY EDITION</b>05 april 2026 · singapore · 11 min read</div>
+      <a href="archive.html" class="sub-link">View archive →</a>
+    </div>
+
+    <div class="feature-spread">
+      <div class="lead-col">
+        <div class="badge">featured essay · founder craft</div>
+        <h3 class="lead-head">The scope memo is the <em>product.</em></h3>
+        <p class="dropcap">The deck was always a performance. A 60-slide artifact produced to justify the fee that paid for it. Somewhere in the last eighteen months we quietly stopped delivering them — and the work got faster, the clients got closer, and the memos got sharper. This is what we've learned replacing the deck with two pages a founder can read in the time it takes to drink an espresso.</p>
+        <div class="byline">
+          <span>by the launch edge</span>
+          <span>05 apr · 11 min</span>
+          <a href="article-scope-memo.html">continue reading →</a>
+        </div>
+      </div>
+      <aside class="pullbox">
+        <p class="quote">The deck was always a performance. The memo is the contract. Once we stopped performing, the work got faster and the clients got closer.</p>
+        <div class="attrib">
+          <span>— pull quote · §3</span>
+          <span>edge notes № 047</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="essay-archive">
+      <a href="article-jakarta.html" class="essay">
+        <div class="no"><span class="acc">№ 046</span><span>29 mar · 11 min</span></div>
+        <h4>Jakarta is not a second market.</h4>
+        <p class="excerpt">Five assumptions Western founders make about Indonesia — and the month spent unlearning each one.</p>
+        <div class="foot"><span class="chip">asia gtm</span></div>
+      </a>
+      <a href="article-ai-hiring.html" class="essay">
+        <div class="no"><span class="acc">№ 045</span><span>22 mar · 9 min</span></div>
+        <h4>You're not hiring AI. You're hiring judgement.</h4>
+        <p class="excerpt">The interesting question isn't which LLM — it's which decisions you're willing to delegate, and to whom.</p>
+        <div class="foot"><span class="chip">ai-native</span></div>
+      </a>
+      <a href="article-activation.html" class="essay">
+        <div class="no"><span class="acc">№ 044</span><span>15 mar · 7 min</span></div>
+        <h4>Activation is a retention problem in disguise.</h4>
+        <p class="excerpt">Why the teams with the best activation numbers are quietly running retention experiments on day one.</p>
+        <div class="foot"><span class="chip">growth</span></div>
+      </a>
+    </div>
+
+    <div class="subscribe-block">
+      <div>
+        <div class="eyebrow">the edge notes · weekly</div>
+        <h3>Essays, most Sundays.<br/><em>No listicles.</em></h3>
+        <div class="note">free · unsubscribe anytime · ~1,200 readers · no list bundling</div>
+      </div>
+      <div class="archive-cta">
+        <a href="archive.html" class="arc-link">
+          <span class="arc-label">Full archive</span>
+          <span class="arc-title">47 essays, indexed by topic &amp; market.</span>
+          <span class="arc-go">Open the archive <span class="arr">→</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL CTA -->
+<section style="padding: 0; border-bottom: none;" id="book">
+  <div class="dual">
+    <a href="#network" class="card">
+      <span class="mono">06a / for clients</span>
+      <h3>Book a <em>30-min intro.</em></h3>
+      <p class="note">No deck required. Leave with a written scope memo and a fixed quote within three business days.</p>
+      <span class="go">Leave your details below <span class="arr">↓</span></span>
+      <span class="shape">→</span>
+    </a>
+    <a href="#network" class="card">
+      <span class="mono">06b / for operators</span>
+      <h3>Join the <em>bench.</em></h3>
+      <p class="note">A small group of trusted senior operators brought into engagements. If you ship for a living in SEA, EU, or ANZ — leave a line.</p>
+      <span class="go">Apply below <span class="arr">↓</span></span>
+      <span class="shape">✦</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="network">
+  <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="kicker"><span class="bar"></span> contact</div>
+          <h3>Leave a line.<br/><em>We'll be in touch.</em></h3>
+          <p class="contact-note">Scope memo turnaround is three business days after the intro call. WhatsApp is how we move fastest — drop your number and we'll use it.</p>
+          <div class="contact-meta">
+            <div><span class="l">Singapore HQ</span><span class="v">Tanjong Pagar · SGT</span></div>
+            <div><span class="l">Embedded</span><span class="v">Jakarta · Vienna · Prague · Oslo · Istanbul · Taipei</span></div>
+            <div><span class="l">Availability</span><span class="v">2 engagements open for Q3 2026</span></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <div class="field row">
+            <div class="dial">
+              <label>Code</label>
+              <select name="dial">
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+62">🇮🇩 +62</option>
+                <option value="+60">🇲🇾 +60</option>
+                <option value="+66">🇹🇭 +66</option>
+                <option value="+84">🇻🇳 +84</option>
+                <option value="+63">🇵🇭 +63</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+90">🇹🇷 +90</option>
+                <option value="+43">🇦🇹 +43</option>
+                <option value="+420">🇨🇿 +420</option>
+                <option value="+46">🇸🇪 +46</option>
+                <option value="+47">🇳🇴 +47</option>
+                <option value="+45">🇩🇰 +45</option>
+                <option value="+886">🇹🇼 +886</option>
+                <option value="+other">Other</option>
+              </select>
+            </div>
+            <div class="phone">
+              <label>WhatsApp number</label>
+              <input type="tel" name="phone" placeholder="9123 4567" required />
+            </div>
+          </div>
+          <div class="field">
+            <label>What's the situation? <span class="opt">(optional)</span></label>
+            <textarea name="message" rows="3" placeholder="One or two lines. What you're building, where, and what's stuck."></textarea>
+          </div>
+          <button type="submit">
+            <span>Request an intro</span>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="sent" hidden>✓ Sent. We reply within 24 hours — check your WhatsApp.</div>
+          <div class="smallprint">By submitting, you agree to be contacted. No list, no spam, no newsletter bundling.</div>
+        </form>
+      </div>
+
+    <div class="foot-mega">The Launch <em>Edge.</em></div>
+
+    <div class="foot-bottom">
+      <span>from singapore · embedded globally</span>
+      <span>v1.0 · updated 19 apr 2026</span>
+      <span>operator-grade · AI-accelerated</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const saved = localStorage.getItem('tle-theme');
+  if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('tle-theme','light'); }
+    else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('tle-theme','dark'); }
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button');
+    const sent = form.querySelector('.sent');
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name.value,
+          email: form.email.value,
+          dial: form.dial.value,
+          phone: form.phone.value,
+          message: form.message.value,
+        }),
+      });
+      if (res.ok) {
+        sent.hidden = false;
+        btn.querySelector('span').textContent = 'Received — we\'ll reply within 24h';
+      } else {
+        btn.disabled = false;
+        btn.querySelector('span').textContent = 'Request an intro';
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.querySelector('span').textContent = 'Request an intro';
+      alert('Something went wrong. Please try again.');
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "public": true,
+  "rewrites": [
+    { "source": "/", "destination": "/public/index.html" },
+    { "source": "/((?!api/).*)\\.html", "destination": "/public/$1.html" },
+    { "source": "/article.css", "destination": "/public/article.css" },
+    { "source": "/uploads/(.*)", "destination": "/public/uploads/$1" }
+  ]
+}
