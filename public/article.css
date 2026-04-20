@@ -226,3 +226,22 @@ a { color: inherit; text-decoration: none; }
   .article .deck { font-size: 22px; }
   .article h2 { font-size: 30px; }
 }
+
+@media (max-width: 480px) {
+  .wrap { padding: 0 18px; }
+  .masthead .wrap { padding: 0 18px; }
+  .masthead .back { font-size: 17px; }
+  .article { padding: 48px 0 80px; }
+  .article h1 { font-size: clamp(36px, 10vw, 48px); margin-bottom: 24px; }
+  .article .deck { font-size: 19px; padding-bottom: 28px; margin-bottom: 32px; }
+  .article h2 { font-size: 24px; margin: 40px 0 16px; }
+  .article p { font-size: 17px; }
+  .article .rules li { grid-template-columns: 48px 1fr; gap: 14px; padding: 18px 0; }
+  .article .rules li .n { font-size: 22px; }
+  .cta-block { padding: 32px 24px; }
+  .cta-block h3 { font-size: 30px; }
+  .at-a-glance { grid-template-columns: 1fr; }
+  .faq-item h3 { font-size: 19px; }
+  .pullquote { font-size: 20px; padding: 28px 24px; margin: 32px 0; }
+  .foot .wrap { flex-direction: column; gap: 6px; text-align: center; }
+}

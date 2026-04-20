@@ -413,6 +413,80 @@
   .foot-bottom { display: flex; justify-content: space-between; margin-top: 48px; font-family: var(--mono); font-size: 11px; color: var(--fg-muted); letter-spacing: 0.12em; text-transform: uppercase; }
 
   .icon { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: middle; }
+
+  /* ─── MOBILE ──────────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .wrap { padding: 0 24px; }
+    .stripe-top .inner { padding: 0 24px; }
+    .stripe-top .marq { display: none; }
+    nav.top .inner { padding: 16px 24px; }
+    .navlinks a.link { display: none; }
+    section { padding: 80px 0; }
+
+    .hero { padding: 32px 0 0; }
+    .hero-meta { grid-template-columns: 1fr; gap: 6px; font-size: 10px; }
+    .hero-meta .rule { display: none; }
+    .hero-headline { padding: 32px 0 20px; }
+    .hero-sub-row { grid-template-columns: 1fr; gap: 28px; padding: 28px 0 40px; }
+    .hero-ctas .btn { justify-content: space-between; }
+
+    .sec-head { grid-template-columns: 1fr; gap: 24px; padding-bottom: 40px; }
+
+    .bento { grid-template-columns: 1fr; }
+    .bento .feature { grid-column: 1; grid-row: auto; min-height: auto; padding: 32px; }
+    .bento .feature h3 { font-size: 48px; }
+    .bento .cell { min-height: 260px; }
+    .bento .advisory-full { grid-column: 1 / 4; }
+    @media (max-width: 768px) { .bento .advisory-full { grid-column: 1; } }
+
+    .work-intro { grid-template-columns: 1fr; gap: 20px; padding: 32px 0 40px; }
+    .work-intro .stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .work-intro .stats .s .n { font-size: 36px; }
+    .cases { grid-template-columns: 1fr; }
+    .case { min-height: auto; }
+    .case .metric { font-size: 96px; }
+
+    .manifesto { padding: 100px 0; }
+    .manifesto .glyph { display: none; }
+    .manifesto .sig { grid-template-columns: 1fr; gap: 8px; text-align: left; }
+    .manifesto .sig .right { text-align: left; }
+
+    .fit-grid { grid-template-columns: 1fr; }
+    .fit-col.yes { border-right: none; border-bottom: 1px solid var(--line-strong); }
+
+    .feature-spread { grid-template-columns: 1fr; gap: 40px; }
+    .essay-archive { grid-template-columns: 1fr; }
+    .essay-archive .essay { border-right: none; border-bottom: 1px solid var(--line); padding: 24px 0; }
+    .essay-archive .essay + .essay { padding-left: 0; }
+    .subscribe-block { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px; }
+
+    .dual { grid-template-columns: 1fr; }
+    .dual .card { padding: 60px 24px; }
+    .dual .card:first-child { border-right: none; border-bottom: 1px solid var(--line); }
+    .dual .card h3 { font-size: clamp(44px, 10vw, 60px); }
+
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 80px 0 32px; }
+    .contact-grid { padding-bottom: 60px; }
+    .foot-mega { font-size: clamp(44px, 12vw, 100px); white-space: normal; line-height: 0.9; }
+    .foot-bottom { flex-direction: column; gap: 6px; }
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 18px; }
+    nav.top .inner { padding: 12px 18px; }
+    .stripe-top .inner { padding: 0 18px; }
+    .wordmark { font-size: 22px; }
+    .btn-primary { padding: 10px 14px; font-size: 13px; }
+    .work-intro .stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .work-intro .stats .s .n { font-size: 40px; }
+    section { padding: 60px 0; }
+    .manifesto { padding: 72px 0; }
+    .manifesto .big { font-size: clamp(36px, 8vw, 56px); }
+    .hero-sub-row .col-mono { font-size: 10px; }
+    .dual .card { padding: 48px 18px; }
+    .hero-ctas .btn { padding: 14px 16px; font-size: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -627,7 +701,7 @@
         <div class="tag"><span>c-suite</span><span>founders</span><span>confidential</span></div>
       </a>
 
-      <a class="cell" href="article-advisory.html" style="grid-column: 1 / 4;">
+      <a class="cell advisory-full" href="article-advisory.html">
         <div class="num"><span>F / ADVISORY</span><span>12 MO RETAINER</span></div>
         <h3>Advisory <em>retainer.</em></h3>
         <p class="pitch" style="max-width: 680px;">On-demand Slack, warm intros, quarterly reviews. For seed founders, operators, and VCs who want us in their corner without a full engagement. A small number of slots — by referral or intro call only.</p>

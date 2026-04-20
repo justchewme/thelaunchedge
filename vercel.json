@@ -1,6 +1,10 @@
 {
   "version": 2,
   "public": true,
+  "redirects": [
+    { "source": "/Home.html", "destination": "/", "permanent": true },
+    { "source": "/Home.html:anchor", "destination": "/:anchor", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/public/index.html" },
     { "source": "/sitemap.xml", "destination": "/public/sitemap.xml" },
