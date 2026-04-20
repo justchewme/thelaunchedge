@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Essays — Edge Notes · The Launch Edge</title>
-<meta name="description" content="Essays on product, growth, AI, and operating in Asia. One a week, most Sundays. Indexed by cluster: Founder Craft, Asia GTM, AI-Native, Growth & Retention, Fractional Leadership." />
+<meta name="description" content="90+ essays on product, growth, AI, and operating in Asia. One a week, most Sundays. Indexed by cluster: Founder Craft, Asia GTM, AI-Native, Growth & Retention, Fractional Leadership." />
 <meta name="keywords" content="operator consulting essays, GTM strategy Asia, fractional CPO articles, AI automation blog, Southeast Asia growth" />
 <link rel="canonical" href="https://www.thelaunchedge.com/essays" />
 <meta property="og:type" content="website" />
@@ -59,11 +59,15 @@
   .essay-card .meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--fg-muted); text-transform: uppercase; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
   .essay-card .meta .chip { color: var(--accent); }
 
-  /* Pre-existing essays grid (2-col legacy) */
-  .essay-grid-legacy { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
+  /* Pre-existing essays grid */
+  .essay-grid-legacy { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
 
+  @media (max-width: 1100px) {
+    .essay-grid-legacy { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 900px) {
-    .essay-grid, .essay-grid-legacy { grid-template-columns: 1fr 1fr; }
+    .essay-grid { grid-template-columns: 1fr 1fr; }
+    .essay-grid-legacy { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
     .essay-grid, .essay-grid-legacy { grid-template-columns: 1fr; }
@@ -89,9 +93,24 @@
           <div class="cluster-label">Featured</div>
           <div class="cluster-title">Recent <em>essays.</em></div>
         </div>
-        <span class="cluster-count">4 essays</span>
+        <span class="cluster-count">8 essays</span>
       </div>
       <div class="essay-grid-legacy">
+        <a class="essay-card" href="/essays/ai-native/replace-three-workflows-with-one-agent">
+          <div class="num">№ 050 · ai-native</div>
+          <h3>Replace three workflows with one <em>agent.</em></h3>
+          <div class="meta"><span>20 apr 2026 · 10 min</span><span class="chip">ai-native</span></div>
+        </a>
+        <a class="essay-card" href="/essays/asia-gtm/southeast-asia-market-entry-mistakes">
+          <div class="num">№ 049 · asia gtm</div>
+          <h3>The five SEA market entry mistakes that <em>kill</em> funded startups.</h3>
+          <div class="meta"><span>20 apr 2026 · 10 min</span><span class="chip">asia gtm</span></div>
+        </a>
+        <a class="essay-card" href="/essays/founder-craft/why-your-consulting-engagement-failed">
+          <div class="num">№ 048 · founder craft</div>
+          <h3>Why your consulting engagement <em>failed.</em></h3>
+          <div class="meta"><span>20 apr 2026 · 9 min</span><span class="chip">founder craft</span></div>
+        </a>
         <a class="essay-card" href="/article-scope-memo.html">
           <div class="num">№ 047 · founder craft</div>
           <h3>The scope memo is the <em>product.</em></h3>
@@ -111,6 +130,11 @@
           <div class="num">№ 044 · growth</div>
           <h3>Activation is a retention problem in disguise.</h3>
           <div class="meta"><span>15 mar 2026 · 7 min</span><span class="chip">growth</span></div>
+        </a>
+        <a class="essay-card" href="/essays/fractional-leadership/what-a-fractional-cpo-actually-does">
+          <div class="num">№ 052 · fractional leadership</div>
+          <h3>What a fractional CPO <em>actually</em> does.</h3>
+          <div class="meta"><span>20 apr 2026 · 10 min</span><span class="chip">fractional leadership</span></div>
         </a>
       </div>
     </div>

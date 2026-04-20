@@ -132,6 +132,15 @@
 const root = document.documentElement;
 const saved = localStorage.getItem('tle-theme');
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+// Reading progress bar
+const bar = document.createElement('div');
+bar.className = 'progress-bar';
+document.body.prepend(bar);
+window.addEventListener('scroll', () => {
+  const s = document.documentElement;
+  const pct = (s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100;
+  bar.style.width = Math.min(pct, 100) + '%';
+});
 </script>
 </body>
 </html>

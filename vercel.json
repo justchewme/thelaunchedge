@@ -3,7 +3,9 @@
   "public": true,
   "redirects": [
     { "source": "/Home.html", "destination": "/", "permanent": true },
-    { "source": "/Home.html:anchor", "destination": "/:anchor", "permanent": true }
+    { "source": "/Home.html:anchor", "destination": "/:anchor", "permanent": true },
+    { "source": "/archive.html", "destination": "/essays", "permanent": true },
+    { "source": "/archive", "destination": "/essays", "permanent": true }
   ],
   "rewrites": [
     { "source": "/", "destination": "/public/index.html" },
