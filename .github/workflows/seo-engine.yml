@@ -1,0 +1,52 @@
+name: SEO Engine — Weekly Article
+
+on:
+  schedule:
+    # Every Sunday at 07:00 SGT (23:00 UTC Saturday)
+    - cron: '0 23 * * 6'
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Specific article slug (leave blank for auto next)'
+        required: false
+        default: ''
+      mode:
+        description: 'Mode: auto (next unpublished) | seed (all seed articles)'
+        required: false
+        default: 'auto'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            node scripts/generate-article.js --slug=${{ github.event.inputs.slug }}
+          elif [ "${{ github.event.inputs.mode }}" = "seed" ]; then
+            node scripts/generate-article.js --seed
+          else
+            node scripts/generate-article.js --auto
+          fi
+
+      - name: Commit generated articles
+        run: |
+          git config user.name "SEO Engine"
+          git config user.email "seo@thelaunchedge.vercel.app"
+          git add public/essays/ public/sitemap.xml
+          git diff --staged --quiet || git commit -m "seo: auto-generate article(s) [$(date +'%Y-%m-%d')]"
+          git push

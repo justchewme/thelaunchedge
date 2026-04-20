@@ -17,6 +17,7 @@ module.exports = async (req, res) => {
     await resend.emails.send({
       from: 'The Launch Edge <onboarding@resend.dev>',
       to: 'justchewme@gmail.com',
+      replyTo: email,
       subject: `New intro request from ${name}`,
       html: `
         <div style="font-family: monospace; font-size: 14px; color: #0F1714; max-width: 600px; margin: 0 auto; padding: 32px;">

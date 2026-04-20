@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Essays — Edge Notes · The Launch Edge</title>
+<meta name="description" content="Essays on product, growth, AI, and operating in Asia. One a week, most Sundays. Indexed by cluster: Founder Craft, Asia GTM, AI-Native, Growth & Retention, Fractional Leadership." />
+<meta name="keywords" content="operator consulting essays, GTM strategy Asia, fractional CPO articles, AI automation blog, Southeast Asia growth" />
+<link rel="canonical" href="https://thelaunchedge.vercel.app/essays" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Essays — Edge Notes · The Launch Edge" />
+<meta property="og:description" content="Essays on product, growth, AI, and operating in Asia. One a week, most Sundays." />
+<meta property="og:url" content="https://thelaunchedge.vercel.app/essays" />
+<meta property="og:site_name" content="The Launch Edge" />
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Edge Notes",
+  "description": "Essays on product, growth, AI, and operating in Asia.",
+  "url": "https://thelaunchedge.vercel.app/essays",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Launch Edge",
+    "url": "https://thelaunchedge.vercel.app"
+  },
+  "inLanguage": "en-SG"
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/article.css">
+<style>
+  .essays-masthead {
+    background: var(--bg-3); border-bottom: 2px solid var(--fg);
+    padding: 64px 0 48px;
+  }
+  .essays-masthead .wrap { max-width: 1200px; }
+  .essays-masthead .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+  .essays-masthead .kicker .bar { width: 36px; height: 1px; background: var(--fg-muted); }
+  .essays-masthead h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(52px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 28px; }
+  .essays-masthead h1 em { font-style: italic; color: var(--accent); }
+  .essays-masthead p { font-size: 18px; color: var(--fg-muted); max-width: 560px; line-height: 1.55; }
+
+  .clusters { padding: 80px 0 120px; }
+  .clusters .wrap { max-width: 1200px; }
+  .cluster-section { margin-bottom: 72px; border-top: 1px solid var(--line-strong); padding-top: 32px; }
+  .cluster-section .cluster-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 32px; }
+  .cluster-section .cluster-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .cluster-section .cluster-title { font-family: var(--serif); font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
+  .cluster-section .cluster-title em { font-style: italic; color: var(--accent); }
+  .cluster-section .cluster-count { font-family: var(--mono); font-size: 11px; color: var(--fg-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  .essay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
+  .essay-card { background: var(--bg); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; min-height: 220px; transition: background 180ms ease; }
+  .essay-card:hover { background: var(--bg-2); }
+  .essay-card .num { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .essay-card h3 { font-family: var(--serif); font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; font-weight: 400; flex: 1; }
+  .essay-card h3 em { font-style: italic; color: var(--accent); }
+  .essay-card .meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--fg-muted); text-transform: uppercase; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .essay-card .meta .chip { color: var(--accent); }
+
+  /* Pre-existing essays grid (2-col legacy) */
+  .essay-grid-legacy { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
+
+  @media (max-width: 900px) {
+    .essay-grid, .essay-grid-legacy { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .essay-grid, .essay-grid-legacy { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="essays-masthead">
+  <div class="wrap">
+    <div class="kicker"><span class="bar"></span> edge notes · the archive</div>
+    <h1>Notes from<br/><em>the work.</em></h1>
+    <p>Essays on product, growth, AI, and operating in Asia. One a week, most Sundays. No listicles. No engagement bait.</p>
+  </div>
+</header>
+
+<section class="clusters">
+  <div class="wrap">
+
+    <!-- Existing essays (ungrouped) -->
+    <div class="cluster-section">
+      <div class="cluster-head">
+        <div>
+          <div class="cluster-label">Featured</div>
+          <div class="cluster-title">Recent <em>essays.</em></div>
+        </div>
+        <span class="cluster-count">4 essays</span>
+      </div>
+      <div class="essay-grid-legacy">
+        <a class="essay-card" href="/article-scope-memo.html">
+          <div class="num">№ 047 · founder craft</div>
+          <h3>The scope memo is the <em>product.</em></h3>
+          <div class="meta"><span>05 apr 2026 · 11 min</span><span class="chip">founder craft</span></div>
+        </a>
+        <a class="essay-card" href="/article-jakarta.html">
+          <div class="num">№ 046 · asia gtm</div>
+          <h3>Jakarta is not a second market.</h3>
+          <div class="meta"><span>29 mar 2026 · 11 min</span><span class="chip">asia gtm</span></div>
+        </a>
+        <a class="essay-card" href="/article-ai-hiring.html">
+          <div class="num">№ 045 · ai-native</div>
+          <h3>You're not hiring AI. You're hiring <em>judgement.</em></h3>
+          <div class="meta"><span>22 mar 2026 · 9 min</span><span class="chip">ai-native</span></div>
+        </a>
+        <a class="essay-card" href="/article-activation.html">
+          <div class="num">№ 044 · growth</div>
+          <h3>Activation is a retention problem in disguise.</h3>
+          <div class="meta"><span>15 mar 2026 · 7 min</span><span class="chip">growth</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Founder Craft cluster -->
+    <div class="cluster-section" id="founder-craft">
+      <div class="cluster-head">
+        <div>
+          <div class="cluster-label">01 / Founder Craft</div>
+          <div class="cluster-title">How operators <em>work.</em></div>
+        </div>
+      </div>
+      <div class="essay-grid" id="grid-founder-craft"></div>
+    </div>
+
+    <!-- Asia GTM cluster -->
+    <div class="cluster-section" id="asia-gtm">
+      <div class="cluster-head">
+        <div>
+          <div class="cluster-label">02 / Asia GTM</div>
+          <div class="cluster-title">How markets <em>actually work.</em></div>
+        </div>
+      </div>
+      <div class="essay-grid" id="grid-asia-gtm"></div>
+    </div>
+
+    <!-- AI-Native cluster -->
+    <div class="cluster-section" id="ai-native">
+      <div class="cluster-head">
+        <div>
+          <div class="cluster-label">03 / AI-Native</div>
+          <div class="cluster-title">What we build, <em>and why.</em></div>
+        </div>
+      </div>
+      <div class="essay-grid" id="grid-ai-native"></div>
+    </div>
+
+    <!-- Growth & Retention cluster -->
+    <div class="cluster-section" id="growth-retention">
+      <div class="cluster-head">
+        <div>
+          <div class="cluster-label">04 / Growth &amp; Retention</div>
+          <div class="cluster-title">Numbers that <em>compound.</em></div>
+        </div>
+      </div>
+      <div class="essay-grid" id="grid-growth-retention"></div>
+    </div>
+
+    <!-- Fractional Leadership cluster -->
+    <div class="cluster-section" id="fractional-leadership">
+      <div class="cluster-head">
+        <div>
+          <div class="cluster-label">05 / Fractional Leadership</div>
+          <div class="cluster-title">Senior hands, <em>lean model.</em></div>
+        </div>
+      </div>
+      <div class="essay-grid" id="grid-fractional-leadership"></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap" style="max-width:1200px"><a href="/">← Back to The Launch Edge</a><span>Edge Notes · The Archive · Singapore</span></div></footer>
+
+<script>
+const root = document.documentElement;
+const saved = localStorage.getItem('tle-theme');
+if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+
+// Dynamically discover essays by fetching the sitemap
+const CLUSTERS = ['founder-craft','asia-gtm','ai-native','growth-retention','fractional-leadership'];
+const CLUSTER_LABELS = {
+  'founder-craft': 'Founder Craft',
+  'asia-gtm': 'Asia GTM',
+  'ai-native': 'AI-Native',
+  'growth-retention': 'Growth & Retention',
+  'fractional-leadership': 'Fractional Leadership',
+};
+
+async function loadEssays() {
+  try {
+    const res = await fetch('/sitemap.xml');
+    const text = await res.text();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, 'text/xml');
+    const locs = Array.from(xml.querySelectorAll('loc')).map(l => l.textContent);
+
+    const essayUrls = locs.filter(l => l.includes('/essays/'));
+
+    for (const cluster of CLUSTERS) {
+      const urls = essayUrls.filter(u => u.includes(`/essays/${cluster}/`));
+      const grid = document.getElementById(`grid-${cluster}`);
+      if (!grid) continue;
+
+      if (urls.length === 0) {
+        grid.closest('.cluster-section').style.display = 'none';
+        continue;
+      }
+
+      grid.style.setProperty('grid-template-columns', `repeat(${Math.min(urls.length, 3)}, 1fr)`);
+
+      for (const url of urls) {
+        const slug = url.split('/').pop();
+        const label = CLUSTER_LABELS[cluster] || cluster;
+        const card = document.createElement('a');
+        card.className = 'essay-card';
+        card.href = url.replace('https://thelaunchedge.vercel.app', '');
+        card.innerHTML = `<div class="num">${label.toLowerCase()}</div><h3>${slug.replace(/-/g,' ')}</h3><div class="meta"><span></span><span class="chip">${label.toLowerCase()}</span></div>`;
+        grid.appendChild(card);
+
+        // Fetch real title from HTML
+        fetch(card.href).then(r => r.text()).then(html => {
+          const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+          const t = html.match(/<title>([\s\S]*?)<\/title>/);
+          const d = html.match(/meta.*?name="description".*?content="([^"]+)"/);
+          const date = html.match(/class="meta">.*?<span>([\s\S]*?)<\/span>/);
+          if (m) card.querySelector('h3').innerHTML = m[1];
+          if (date) card.querySelector('.meta span:first-child').textContent = date[1];
+        }).catch(() => {});
+      }
+    }
+  } catch (e) {
+    // Sitemap unavailable — hide dynamic clusters
+    CLUSTERS.forEach(c => {
+      const s = document.getElementById(c);
+      if (s) s.style.display = 'none';
+    });
+  }
+}
+
+loadEssays();
+</script>
+</body>
+</html>

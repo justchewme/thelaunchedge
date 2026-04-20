@@ -3,8 +3,15 @@
   "public": true,
   "rewrites": [
     { "source": "/", "destination": "/public/index.html" },
-    { "source": "/((?!api/).*)\\.html", "destination": "/public/$1.html" },
+    { "source": "/sitemap.xml", "destination": "/public/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/public/robots.txt" },
     { "source": "/article.css", "destination": "/public/article.css" },
-    { "source": "/uploads/(.*)", "destination": "/public/uploads/$1" }
+    { "source": "/uploads/(.*)", "destination": "/public/uploads/$1" },
+    { "source": "/essays", "destination": "/public/essays/index.html" },
+    { "source": "/essays/", "destination": "/public/essays/index.html" },
+    { "source": "/essays/:cluster", "destination": "/public/essays/:cluster/index.html" },
+    { "source": "/essays/:cluster/", "destination": "/public/essays/:cluster/index.html" },
+    { "source": "/essays/:cluster/:slug", "destination": "/public/essays/:cluster/:slug.html" },
+    { "source": "/((?!api/)(?!essays/).*)\\.html", "destination": "/public/$1.html" }
   ]
 }
