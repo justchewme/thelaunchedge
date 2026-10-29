@@ -36,8 +36,8 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "When does a user actually decide to churn?", "acceptedAnswer": { "@type": "Answer", "text": "Research from Amplitude and Mixpanel consistently shows that behavioural disengagement — measured as declining session frequency and feature usage — begins 3 to 6 weeks before a cancellation event in subscription software. The cancellation click is the final administrative step of a decision that was made much earlier, usually triggered by a specific moment when the user stopped getting value." } },
-        { "@type": "Question", "name": "Do win-back campaigns work at all?", "acceptedAnswer": { "@type": "Answer", "text": "For a small segment, yes. Users who churned due to a temporary constraint — budget freeze, job change, project end — are genuinely reactivatable and win-back campaigns reach them efficiently. But this group is typically 15–25% of churned users. The majority churned because the product stopped delivering value, and no discount or email sequence changes that underlying reality." } },
+        { "@type": "Question", "name": "When does a user actually decide to churn?", "acceptedAnswer": { "@type": "Answer", "text": "In subscription software, behavioural disengagement — declining session frequency and feature usage — typically begins weeks before the cancellation event. The cancellation click is the final administrative step of a decision that was made much earlier, usually triggered by a specific moment when the user stopped getting value." } },
+        { "@type": "Question", "name": "Do win-back campaigns work at all?", "acceptedAnswer": { "@type": "Answer", "text": "For a small segment, yes. Users who churned due to a temporary constraint — budget freeze, job change, project end — are genuinely reactivatable and win-back campaigns reach them efficiently. But this group is usually a minority of churned users. The majority churned because the product stopped delivering value, and no discount or email sequence changes that underlying reality." } },
         { "@type": "Question", "name": "What is the single most predictive leading indicator of churn?", "acceptedAnswer": { "@type": "Answer", "text": "It varies by product, but the most reliable universal signal is a sustained decline in the frequency of the product's core value action — whatever the user does when they're getting maximum value. In a project management tool, it's tasks created or completed. In an analytics tool, it's reports generated. When that action drops by more than 40% week-over-week for two consecutive weeks, that user is in the churn window." } },
         { "@type": "Question", "name": "How should you intervene once you identify a user in the churn window?", "acceptedAnswer": { "@type": "Answer", "text": "With a product intervention, not a marketing one. That means proactively surfacing a feature they haven't used that's likely to create value, offering a guided re-engagement with their actual data, or triggering a personal outreach from a customer success contact. A discount email to a user who has stopped using your product is not a retention strategy — it's a revenue-recovery tactic that occasionally works and never fixes the underlying problem." } }
       ]
@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 069 · Growth &amp; Retention</span><span>20 apr 2026</span><span>12 min read</span></div>
+  <div class="meta"><span>Growth &amp; Retention</span><span>9 min read</span></div>
 </div></header>
 <article class="article"><div class="wrap">
   <div class="kicker"><span class="bar"></span> Essay · growth &amp; retention</div>
@@ -74,7 +77,7 @@
 
   <p>This sequence is backwards. Not slightly off — structurally reversed. The cancellation event is not the beginning of the churn problem. It is the end of it. By the time a user clicks cancel, they've already completed a multi-week psychological process of disengagement, rationalisation, and decision-making. The click is bureaucratic. It's the paperwork at the end of a breakup, not the breakup itself.</p>
 
-  <p>Amplitude published research in 2023 tracking behavioural signals against cancellation events across a sample of SaaS products. The finding was consistent: in products with weekly or daily usage patterns, measurable behavioural disengagement — defined as declining session frequency and declining use of core features — began on average 28 days before the cancellation event. In products with monthly usage patterns, the gap was longer. The user had mentally left before you noticed they were leaving.</p>
+  <p>Look at the event logs of almost any subscription product and the pattern is the same: in products with weekly or daily usage, measurable disengagement — declining session frequency, declining use of core features — typically shows up weeks before the cancellation event. In products with monthly usage patterns, the gap is longer. The user had mentally left before you noticed they were leaving.</p>
 
   <p>Win-back campaigns are not without value — I'll come to that — but treating churn as a win-back problem is a category error. It's treating a symptom that presented weeks after the underlying condition developed, with a treatment that works on a different disease entirely.</p>
 
@@ -84,7 +87,7 @@
 
   <p>The problem is not that users lie on cancellation surveys — most are trying to be honest. The problem is that the answers they give reflect their rationalised explanation of the decision, not the actual sequence of events that caused it. A user who stopped engaging because they never fully understood how to use the core feature will often select "not using it enough" or "too expensive." They don't select "I got stuck in week two and never recovered" because that option doesn't exist and because they've already reframed their experience in a way that feels less like failure.</p>
 
-  <p>ProfitWell (now Paddle) ran an extensive analysis comparing cancellation survey data against actual behavioural event logs for a cohort of SaaS companies. The finding: "too expensive" as a stated churn reason correlates poorly with price sensitivity signals in the behavioural data. Users who selected "too expensive" had often stopped logging in weeks before any pricing communication. The real cause, in a significant portion of cases, was engagement failure — the product didn't build a strong enough habit to justify continued payment, and "too expensive" was the most socially acceptable exit narrative available.</p>
+  <p>Put cancellation survey answers next to behavioural event logs and a common pattern appears: "too expensive" as a stated churn reason often lines up poorly with any sign of price sensitivity in the behaviour. Users who select "too expensive" have frequently stopped logging in weeks before any pricing communication. The real cause, in many cases, is engagement failure — the product didn't build a strong enough habit to justify continued payment, and "too expensive" is the most socially acceptable exit narrative available.</p>
 
   <p>This matters because it means your product team is potentially building features to address stated churn reasons that don't reflect actual churn causes. And your pricing team may be over-indexing on discounting when the real intervention needed is onboarding improvement.</p>
 
@@ -94,11 +97,11 @@
 
   <p>In practice, this means pulling event logs for churned users and identifying: the last date they performed the product's core value action, the frequency trend in the three weeks before that date, and whether there was a specific session where usage dropped sharply versus a gradual fade. These three data points tell you radically different stories.</p>
 
-  <p>A sharp drop in a specific session usually indicates a friction event — something broke, something confused them, something they tried to do failed. These are the most recoverable churn events because they have an identifiable trigger. If you can identify users in this pattern within 48 hours of the friction event (not 28 days later at cancellation), you can intervene with something useful: a support outreach, a guided walkthrough, a bug fix communication.</p>
+  <p>A sharp drop in a specific session usually indicates a friction event — something broke, something confused them, something they tried to do failed. These are the most recoverable churn events because they have an identifiable trigger. If you can identify users in this pattern within 48 hours of the friction event (not weeks later at cancellation), you can intervene with something useful: a support outreach, a guided walkthrough, a bug fix communication.</p>
 
   <p>A gradual fade over three to four weeks is harder. It usually indicates that the product never fully embedded into the user's workflow — that the "aha moment" was either never reached or was reached but not reinforced. These users are churning because your activation sequence failed, not because something went wrong. Intervening after the fact with a win-back offer doesn't fix the activation failure. It temporarily re-acquires a user who will churn again for the same reasons, on the same timeline.</p>
 
-  <p>Intercom's data science team published a version of this finding when they were scaling their customer messaging platform. They found that users who reached what Intercom called "the triple milestone" — sent their first message, set up their first bot, and integrated with one external tool — retained at 2.4x the rate of users who completed only one or two of those actions. More importantly, users who had completed the triple milestone almost never appeared in their early churn cohorts. The churn problem was an activation problem wearing a retention mask.</p>
+  <p>The same pattern shows up on the activation side. In many products, users who complete a small cluster of core setup actions — in a messaging tool, say, sending a first message, setting up a first automation and connecting one external tool — retain at a multiple of the rate of users who complete only one or two, and rarely appear in early churn cohorts at all. In those cases, the churn problem is an activation problem wearing a retention mask.</p>
 
   <div class="pullquote">The cancellation click is the paperwork at the end of a breakup. If you're only intervening then, you're not running a retention programme — you're running a delayed-response triage unit for a problem that peaked three weeks ago.</div>
 
@@ -108,9 +111,9 @@
 
   <p>Most products perform poorly in this window not because they're bad products but because they've underinvested in it. The product team focuses on onboarding (days 1–7) and on advanced features (for power users). The 7–30 window — where the average user is trying to establish a usage habit and often struggling — receives the least design attention. It's the most consequential period for long-term retention and the least resourced.</p>
 
-  <p>Notion is an instructive case. They have an extraordinarily high day-1 activation rate and an extraordinarily ambitious product. But users who get through the initial template-selection experience and try to build their own system from scratch often hit a wall in the second week. Notion's response — progressively better templates, contextual tips, and an in-product "getting started" mission system — is an attempt to bridge exactly this gap. The work they do in the 7–30 window is structural retention work, not win-back work.</p>
+  <p>Flexible workspace tools like Notion illustrate the gap. Getting started is easy, but users who move past the starter templates and try to build their own system from scratch can hit a wall in the second week. Better templates, contextual tips and guided getting-started checklists are all attempts to bridge exactly this gap. That kind of work in the 7–30 window is structural retention work, not win-back work.</p>
 
-  <p>The intervention framework that actually works looks like this: map every core value action in your product, assign an expected completion date for each one relative to sign-up, monitor which users have not completed each action by that date, and trigger a product-native intervention (not a generic email) when they fall behind. Duolingo does this with sophisticated streak mechanics. Linear does it with keyboard shortcut prompts. Figma does it by surfacing collaborator invites when a solo user hits the design handoff stage. None of these are win-back campaigns. All of them are retention architecture.</p>
+  <p>The intervention framework that actually works looks like this: map every core value action in your product, assign an expected completion date for each one relative to sign-up, monitor which users have not completed each action by that date, and trigger a product-native intervention (not a generic email) when they fall behind. Duolingo's streak mechanics are the best-known version. A collaborative design tool might surface a collaborator invite at the moment a solo user reaches the handoff stage. None of these are win-back campaigns. All of them are retention architecture.</p>
 
   <h2>When win-back campaigns are actually appropriate.</h2>
 
@@ -133,22 +136,18 @@
 
   <h2>Frequently asked questions.</h2>
   <div class="faq">
-    <div class="faq-item"><h3>When does a user actually decide to churn?</h3><p>Research from Amplitude and Mixpanel consistently shows that behavioural disengagement — measured as declining session frequency and feature usage — begins 3 to 6 weeks before a cancellation event in subscription software. The cancellation click is the final administrative step of a decision that was made much earlier, usually triggered by a specific moment when the user stopped getting value from the product.</p></div>
-    <div class="faq-item"><h3>Do win-back campaigns work at all?</h3><p>For a small segment, yes. Users who churned due to a temporary constraint — budget freeze, job change, project end — are genuinely reactivatable and win-back campaigns reach them efficiently. But this group is typically 15–25% of churned users. The majority churned because the product stopped delivering value, and no discount or email sequence changes that underlying reality. Win-back campaigns for these users produce short-lived reactivations that churn again on the same timeline.</p></div>
+    <div class="faq-item"><h3>When does a user actually decide to churn?</h3><p>In subscription software, behavioural disengagement — declining session frequency and feature usage — typically begins weeks before the cancellation event. The cancellation click is the final administrative step of a decision that was made much earlier, usually triggered by a specific moment when the user stopped getting value from the product.</p></div>
+    <div class="faq-item"><h3>Do win-back campaigns work at all?</h3><p>For a small segment, yes. Users who churned due to a temporary constraint — budget freeze, job change, project end — are genuinely reactivatable and win-back campaigns reach them efficiently. But this group is usually a minority of churned users. The majority churned because the product stopped delivering value, and no discount or email sequence changes that underlying reality. Win-back campaigns for these users produce short-lived reactivations that churn again on the same timeline.</p></div>
     <div class="faq-item"><h3>What is the single most predictive leading indicator of churn?</h3><p>It varies by product, but the most reliable universal signal is a sustained decline in the frequency of the product's core value action — whatever the user does when they're getting maximum value. In a project management tool, it's tasks created or completed. In an analytics tool, it's reports generated. When that action drops by more than 40% week-over-week for two consecutive weeks, that user is entering the churn window and needs a product-native intervention immediately.</p></div>
     <div class="faq-item"><h3>How should you intervene once you identify a user in the churn window?</h3><p>With a product intervention, not a marketing one. That means proactively surfacing a feature they haven't used that is likely to create value, offering a guided re-engagement flow using their actual data, or triggering a personal outreach from a customer success contact who can identify the specific obstacle. A discount email to a user who has stopped using your product is not a retention strategy — it is a revenue-recovery tactic that occasionally works and never fixes the underlying problem.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 069 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

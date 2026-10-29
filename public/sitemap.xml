@@ -4,7 +4,7 @@
   <!-- Core pages -->
   <url>
     <loc>https://www.thelaunchedge.com/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -17,64 +17,64 @@
 
   <!-- Service pages -->
   <url>
-    <loc>https://www.thelaunchedge.com/article-flagship.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.thelaunchedge.com/article-flagship</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-ai-builds.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.thelaunchedge.com/article-ai-builds</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-gtm.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.thelaunchedge.com/article-gtm</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-modernisation.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.thelaunchedge.com/article-modernisation</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-counsel.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.thelaunchedge.com/article-counsel</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-advisory.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <loc>https://www.thelaunchedge.com/article-advisory</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Existing essays -->
   <url>
-    <loc>https://www.thelaunchedge.com/article-scope-memo.html</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://www.thelaunchedge.com/article-scope-memo</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-jakarta.html</loc>
-    <lastmod>2026-03-29</lastmod>
+    <loc>https://www.thelaunchedge.com/article-jakarta</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-ai-hiring.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://www.thelaunchedge.com/article-ai-hiring</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.thelaunchedge.com/article-activation.html</loc>
-    <lastmod>2026-03-15</lastmod>
+    <loc>https://www.thelaunchedge.com/article-activation</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -376,12 +376,6 @@
   </url>
   <url>
     <loc>https://www.thelaunchedge.com/essays/growth-retention/what-net-revenue-retention-actually-tells-you</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.thelaunchedge.com/essays/fractional-leadership/how-to-price-your-fractional-engagement</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 056 · Founder Craft</span><span>20 apr 2026</span><span>10 min read</span></div>
+  <div class="meta"><span>Founder Craft</span><span>9 min read</span></div>
 </div></header>
 
 <article class="article"><div class="wrap">
@@ -70,7 +73,7 @@
   <p class="deck">The brief is not the PRD. It is not the roadmap item. It is the document that forces every meaningful decision about a product investment before a single line of code is written — and in most teams, it either doesn't exist or is so vague it might as well not. Here is what makes one actually work.</p>
 
   <h2>The most important document almost nobody writes well.</h2>
-  <p>I have reviewed hundreds of product briefs across companies of different sizes and stages. The ones that work are rare. Not rare as in sophisticated or technically complex — rare as in honest and specific. The typical brief is vague in exactly the places where specificity matters most: the problem statement, the success metric, and the scope boundary. It is precise in exactly the places where precision is cheap: the timeline, the stakeholders, the links to related tickets.</p>
+  <p>Product briefs that work are rare. Not rare as in sophisticated or technically complex — rare as in honest and specific. The typical brief is vague in exactly the places where specificity matters most: the problem statement, the success metric, and the scope boundary. It is precise in exactly the places where precision is cheap: the timeline, the stakeholders, the links to related tickets.</p>
   <p>This is not accidental. Vagueness in a brief is a rational response to an uncomfortable environment. If you state your success metric precisely and miss it, you have demonstrably failed. If your success metric is "improve user satisfaction," you can never demonstrably fail — someone will always be able to argue that satisfaction improved in some dimension. Vagueness is survivable in a way that specificity is not. And so, over time, in teams where PMs are evaluated on whether things ship rather than whether things work, briefs drift toward comfortable ambiguity.</p>
   <p>The result is that most of the critical product decisions — what problem are we actually solving, for which user, at what cost, and how will we know we've succeeded — get made implicitly, by engineers in standups and designers in Figma comments, rather than explicitly, by the people with the context to make them well. The brief exists, technically. But it never forced the decisions. It was approved in a meeting where everyone nodded, nobody disagreed, and the work began on the same foundation of shared misunderstanding it always had.</p>
 
@@ -89,7 +92,7 @@
 
   <h2>Success metrics that commit to something.</h2>
   <p>Success metrics are where briefs go to die with dignity. "Increase engagement" commits to nothing. "Improve the user experience" commits to nothing. "Reduce support tickets related to onboarding by 30% over sixty days post-ship, measured against a baseline of the average weekly ticket volume in Q1" commits to something specific. You can fail against it. That's the point.</p>
-  <p>Two things make a metric usable. First: it must be measurable by a named person using named instrumentation that exists or will exist before launch. If you are relying on a metric that engineering hasn't instrumented yet, either the instrumentation must be in scope for this initiative or the metric isn't usable. I have seen companies ship major features with no way to measure whether they worked. The brief should prevent this. Second: the metric must be owned. "The team will track this" is not ownership. "Product Analytics will produce a dashboard by launch date and share it in the sprint review" is ownership.</p>
+  <p>Two things make a metric usable. First: it must be measurable by a named person using named instrumentation that exists or will exist before launch. If you are relying on a metric that engineering hasn't instrumented yet, either the instrumentation must be in scope for this initiative or the metric isn't usable. Companies regularly ship major features with no way to measure whether they worked. The brief should prevent this. Second: the metric must be owned. "The team will track this" is not ownership. "Product Analytics will produce a dashboard by launch date and share it in the sprint review" is ownership.</p>
   <p>The secondary metric — the guardrail — matters as much as the primary metric and is almost always missing from briefs. A guardrail metric is the thing you are explicitly watching to make sure you don't make it worse while chasing the primary metric. If your primary metric is onboarding completion rate, your guardrail might be account activation latency — you don't want to improve completion by simplifying the flow in a way that increases the time between signup and first meaningful use. The guardrail forces you to think about the second-order effects of your own intervention before it ships.</p>
 
   <h2>The scope section that makes engineers trust you.</h2>
@@ -114,17 +117,13 @@
     <div class="faq-item"><h3>Who should read and approve a product brief?</h3><p>Engineering lead, design lead, the product head or relevant founder, and — critically — at least one person from the commercial side who can validate that the problem being solved is one customers actually have and will pay to solve. Briefs reviewed only by product and engineering often solve the technically interesting version of a problem rather than the commercially meaningful one. Get the salesperson in the room before the brief is locked.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
 
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 056 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

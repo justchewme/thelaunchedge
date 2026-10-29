@@ -5,7 +5,8 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, dial, phone, message } = req.body;
+  const esc = (v) => String(v || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const { name, email, dial, phone, message } = req.body || {};
 
   if (!name || !email || !phone) {
     return res.status(400).json({ error: 'Name, email, and phone are required' });
@@ -18,15 +19,15 @@ module.exports = async (req, res) => {
       from: 'The Launch Edge <onboarding@resend.dev>',
       to: 'justchewme@gmail.com',
       replyTo: email,
-      subject: `New intro request from ${name}`,
+      subject: `New intro request from ${String(name).slice(0, 80)}`,
       html: `
         <div style="font-family: monospace; font-size: 14px; color: #0F1714; max-width: 600px; margin: 0 auto; padding: 32px;">
           <p style="font-size: 20px; margin: 0 0 24px;"><strong>New intro request — The Launch Edge</strong></p>
           <table style="width: 100%; border-collapse: collapse;">
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C; width: 140px;">Name</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${name}</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">Email</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${email}</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">WhatsApp</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${dial || ''} ${phone}</td></tr>
-            <tr><td style="padding: 10px 0; color: #5A5F5C; vertical-align: top;">Situation</td><td style="padding: 10px 0;">${message || '—'}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C; width: 140px;">Name</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${esc(name)}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">Email</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${esc(email)}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">WhatsApp</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${esc(dial)} ${esc(phone)}</td></tr>
+            <tr><td style="padding: 10px 0; color: #5A5F5C; vertical-align: top;">Situation</td><td style="padding: 10px 0;">${esc(message) || '—'}</td></tr>
           </table>
         </div>
       `,

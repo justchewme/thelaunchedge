@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 055 · Founder Craft</span><span>20 apr 2026</span><span>11 min read</span></div>
+  <div class="meta"><span>Founder Craft</span><span>9 min read</span></div>
 </div></header>
 
 <article class="article"><div class="wrap">
@@ -110,17 +113,13 @@
     <div class="faq-item"><h3>What happens when a founder holds product too long?</h3><p>Product velocity slows because decisions queue on the founder's availability. Good PMs leave because they have no real authority. The product team stops taking initiative because every bold proposal gets revised or overturned. The founder becomes the bottleneck and mistakes it for quality control. The company's ability to build independently of the founder never develops, which becomes catastrophic when the founder needs to focus on fundraising, sales, or a crisis.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
 
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 055 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

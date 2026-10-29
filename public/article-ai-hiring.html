@@ -3,15 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>You're not hiring AI. You're hiring judgement. — Edge Notes № 045</title>
+<title>You're not hiring AI. You're hiring judgement. — The Launch Edge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta name="description" content="The interesting question isn't which LLM — it's which decisions you're willing to delegate, and to whom." />
+<link rel="canonical" href="https://www.thelaunchedge.com/article-ai-hiring" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="You're not hiring AI. You're hiring judgement. — The Launch Edge" />
+<meta property="og:description" content="The interesting question isn't which LLM — it's which decisions you're willing to delegate, and to whom." />
+<meta property="og:url" content="https://www.thelaunchedge.com/article-ai-hiring" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
-  <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 045 · Sunday edition</span><span>22 mar 2026</span><span>9 min read</span></div>
+  <a href="/essays" class="back">← The Launch <em>Edge</em> · Essays</a>
+  <div class="meta"><span>Essay · AI-native</span><span>4 min read</span></div>
 </div></header>
 
 <article class="article"><div class="wrap">
@@ -30,16 +40,16 @@
   <div class="pullquote">Every agent your company ships is a new senior hire with a very specific job description. Treat it like one.</div>
 
   <h2>The hiring test.</h2>
-  <p>When we scope an AI workflow for a client, we run what we call the hiring test. We describe the agent's role as if we were writing the job posting for a human. If the job posting is vague — "handles AI-powered automation" — the agent will be vague and the results will be bad. If the job posting is precise — "reads inbound tickets, classifies them against a 14-row taxonomy, drafts a reply using the brand voice doc, flags anything outside the taxonomy for human review" — the agent has a fighting chance.</p>
+  <p>When I scope an agent workflow, I run what I call the hiring test: describe the agent's role as if you were writing the job posting for a human. If the job posting is vague — "handles AI-powered automation" — the agent will be vague and the results will be bad. If the job posting is precise — "reads inbound tickets, classifies them against a 14-row taxonomy, drafts a reply using the brand voice doc, flags anything outside the taxonomy for human review" — the agent has a fighting chance.</p>
 
   <p>This is why the model matters less than the people assume. GPT, Claude, Qwen, Gemini, Llama — any of them can do the job if the job is specified well. None of them can do it if the job is specified poorly. The hiring process is where the work is.</p>
 
   <h2>Four kinds of judgement, four deployment patterns.</h2>
   <ul class="rules">
-    <li><span class="n">01</span><div><b>Low-stakes, high-volume.</b> Ticket triage, content classification, form extraction. Deploy autonomous. Sample 1% for human review. Move on.</div></li>
+    <li><span class="n">01</span><div><b>Low-stakes, high-volume, internal.</b> Ticket triage, content classification, form extraction. Let the agent run, because nothing it does leaves the building. Sample a share of its work for human review.</div></li>
     <li><span class="n">02</span><div><b>Medium-stakes, medium-volume.</b> Drafting replies, writing first-pass reports, summarising meetings. Deploy in co-pilot mode. Human approves before sending.</div></li>
     <li><span class="n">03</span><div><b>High-stakes, low-volume.</b> Hiring decisions, pricing changes, legal interpretations. Don't deploy. Use the agent to prepare the brief for a human, never to replace the human.</div></li>
-    <li><span class="n">04</span><div><b>Adversarial.</b> Anything where a user might try to game the agent — refunds, fraud flags, contract generation. Requires a separate adversarial eval loop before any autonomous deployment. Most teams skip this step. Most teams regret it.</div></li>
+    <li><span class="n">04</span><div><b>Adversarial.</b> Anything where a user might try to game the agent — refunds, fraud flags, contract generation. Needs a separate adversarial eval loop, and a human approving the outcome. It is the step teams are most tempted to skip.</div></li>
   </ul>
 
   <h2>Evals are the interview.</h2>
@@ -53,11 +63,11 @@
   <p>Stop asking which model. Start asking which decision. The answer to the first will follow from the answer to the second, every single time.</p>
 
   <div class="cta-block">
-    <h3>Audit the workflows that matter.</h3>
-    <p>A 4-week AI-native build starts with a sober map of which decisions are actually ready to delegate.</p>
-    <a href="article-ai-builds.html" class="btn">See the scope →</a>
+    <h3>Map the decisions first.</h3>
+    <p>A leadership operating system starts with a sober map of who owns what, and which work is ready to hand to agents with a human approving. Book a 30-minute intro.</p>
+    <a href="/#network" class="btn">Book the call →</a>
   </div>
 </div></article>
 
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 045 · 22 mar 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 </body></html>

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Launch Edge — Operator Consulting for the AI Era · Singapore</title>
-<meta name="description" content="Fractional growth, AI-native builds, and global go-to-market for founders and CEOs in Southeast Asia. From Singapore. Embedded in the market." />
-<meta name="keywords" content="fractional CPO Singapore, operator consulting SEA, AI consulting Singapore, GTM strategy Southeast Asia, conglomerate modernisation, fractional growth consulting" />
+<title>The Launch Edge — Justin Chew · AI-run operating systems for founder-led companies</title>
+<meta name="description" content="Justin Chew installs AI-run leadership operating systems for founder-led companies (agents that brief, draft and chase, with every action human-approved) and leads fractional growth & product work. Singapore." />
+<meta name="keywords" content="AI operating system for CEOs, fractional CPO Singapore, fractional growth Singapore, AI agents for leadership teams, market entry Southeast Asia, Justin Chew" />
 <link rel="canonical" href="https://www.thelaunchedge.com/" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="The Launch Edge — Operator Consulting for the AI Era" />
-<meta property="og:description" content="Fractional growth, AI-native builds, and global go-to-market for founders and CEOs in Southeast Asia. From Singapore." />
+<meta property="og:title" content="The Launch Edge — You decide. Agents chase." />
+<meta property="og:description" content="Justin Chew installs AI-run leadership operating systems for founder-led companies (agents that brief, draft and chase, with every action human-approved) and leads fractional growth & product work. Singapore." />
 <meta property="og:url" content="https://www.thelaunchedge.com/" />
 <meta property="og:site_name" content="The Launch Edge" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="The Launch Edge — Operator Consulting for the AI Era" />
-<meta name="twitter:description" content="Fractional growth, AI-native builds, and global go-to-market for founders and CEOs in Southeast Asia. From Singapore." />
+<meta name="twitter:title" content="The Launch Edge — You decide. Agents chase." />
+<meta name="twitter:description" content="Justin Chew installs AI-run leadership operating systems for founder-led companies (agents that brief, draft and chase, with every action human-approved) and leads fractional growth & product work. Singapore." />
 <meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 <meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 <script type="application/ld+json">{
@@ -25,11 +25,11 @@
       "@id": "https://www.thelaunchedge.com/#org",
       "name": "The Launch Edge",
       "url": "https://www.thelaunchedge.com",
-      "description": "Operator-led consultancy for founders, CEOs, and conglomerates seeking AI-speed outcomes. From Singapore, embedded globally.",
-      "foundingDate": "2022",
-      "areaServed": ["Singapore","Indonesia","Vietnam","Philippines","Thailand","Malaysia","Australia","Austria","Czechia","Denmark","Norway","Sweden","Turkey","Taiwan"],
-      "serviceType": ["Fractional Growth Consulting","Fractional CPO","AI-Native Builds","Global Go-to-Market","Conglomerate Modernisation","Founder Coaching","Advisory"],
-      "address": { "@type": "PostalAddress", "addressLocality": "Tanjong Pagar", "addressRegion": "Singapore", "addressCountry": "SG" }
+      "description": "Justin Chew installs AI-run leadership operating systems for founder-led companies (agents that brief, draft and chase, with every action human-approved) and leads fractional growth & product work. Singapore.",
+      "founder": { "@type": "Person", "name": "Justin Chew", "sameAs": "https://www.linkedin.com/in/jcyw/" },
+      "areaServed": ["Singapore","Southeast Asia","Europe"],
+      "serviceType": ["Leadership operating systems","AI agents for leadership teams","Fractional growth","Fractional product","Market entry","Advisory"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Singapore", "addressCountry": "SG" }
     },
     {
       "@type": "WebSite",
@@ -215,6 +215,8 @@
   .bento .cell:hover::after { opacity: 1; color: var(--accent); transform: translate(2px, -2px); }
   .bento .feature { grid-column: 1 / 2; grid-row: 1 / 3; background: var(--cream-panel); padding: 52px; overflow: hidden; position: relative; min-height: 700px; }
   .bento .feature:hover { background: var(--bg-3); }
+  .bento .advisory-full { grid-column: 1 / -1; min-height: 0; }
+  .bento .cell:not(.feature):not(.advisory-full) { grid-column: 2 / 4; }
   .bento .feature h3 { font-size: 76px; line-height: 0.94; }
   .bento .feature .pitch { color: var(--fg-muted); font-size: 17px; max-width: 420px; }
   .bento .feature .flagship-viz { margin-top: 36px; position: relative; border-top: 1px solid var(--line-strong); padding-top: 24px; }
@@ -379,6 +381,8 @@
   /* FOOTER */
   footer { padding: 120px 0 40px; background: var(--bg); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-bottom: 100px; border-bottom: 1px solid var(--line); align-items: start; }
+  .contact-grid > * { min-width: 0; }
+  .dual .card { overflow: hidden; }
   .contact-left { display: flex; flex-direction: column; gap: 24px; }
   .contact-left .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); display: flex; align-items: center; gap: 12px; }
   .contact-left .kicker .bar { width: 36px; height: 1px; background: var(--fg-muted); }
@@ -392,7 +396,9 @@
 
   .contact-form { background: var(--cream-panel); border: 1px solid var(--line-strong); padding: 40px 36px; display: flex; flex-direction: column; gap: 18px; }
   .contact-form .field { display: flex; flex-direction: column; gap: 6px; }
-  .contact-form .field.row { display: grid; grid-template-columns: 130px 1fr; gap: 14px; }
+  .contact-form .field.row { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; }
+  .contact-form .field.row > * { min-width: 0; }
+  .contact-form .field.row input, .contact-form .field.row select { width: 100%; box-sizing: border-box; }
   .contact-form label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); }
   .contact-form label .opt { color: var(--line-strong); text-transform: none; letter-spacing: 0.04em; font-size: 10.5px; }
   .contact-form input,
@@ -438,8 +444,8 @@
     .bento .feature { grid-column: 1; grid-row: auto; min-height: auto; padding: 32px; }
     .bento .feature h3 { font-size: 48px; }
     .bento .cell { min-height: 260px; }
-    .bento .advisory-full { grid-column: 1 / 4; }
-    @media (max-width: 768px) { .bento .advisory-full { grid-column: 1; } }
+    .bento .advisory-full { grid-column: 1; }
+    .bento .cell:not(.feature):not(.advisory-full) { grid-column: 1; }
 
     .work-intro { grid-template-columns: 1fr; gap: 20px; padding: 32px 0 40px; }
     .work-intro .stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -490,20 +496,20 @@
     .hero-ctas .btn { padding: 14px 16px; font-size: 14px; }
   }
 </style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
 
 <!-- TOP STRIPE -->
 <div class="stripe-top">
   <div class="inner">
-    <span>Vol. 01 · №003</span>
+    <span>The Launch Edge</span>
     <div class="marq">
-      <span class="acc">Currently taking 2 new engagements for Q3</span>
-      <span>Shipped across SEA · EU · Türkiye · Taiwan · Australia</span>
-      <span>1 advisory slot open</span>
-      <span class="acc">Scope memo turnaround: 3 business days</span>
+      <span class="acc">One fractional engagement at a time</span>
+      <span>Leadership operating systems · Growth &amp; product · Market entry</span>
+      <span class="acc">Written scope after a 30-minute intro</span>
     </div>
-    <span>Singapore · 20 apr 2026</span>
+    <span>Singapore · SGT</span>
   </div>
 </div>
 
@@ -513,10 +519,10 @@
     <a href="/" class="wordmark">The Launch&nbsp;<em>Edge</em></a>
     <div class="navlinks">
       <a href="#work" class="link" data-n="01">Work</a>
-      <a href="#writing" class="link" data-n="02">Writing</a>
-      <a href="#network" class="link" data-n="03">Network</a>
+      <a href="#record" class="link" data-n="02">Record</a>
+      <a href="#writing" class="link" data-n="03">Writing</a>
       <a href="#about" class="link" data-n="04">About</a>
-      <a href="#book" class="btn btn-primary">Book a call
+      <a href="#network" class="btn btn-primary">Request an intro
         <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -531,43 +537,40 @@
 <header class="hero">
   <div class="wrap">
     <div class="hero-meta">
-      <div class="issue"><b>01 / PRACTICE</b> — ESTABLISHED IN SG · 2022</div>
+      <div class="issue"><b>01 / PRACTICE</b> — SINGAPORE</div>
       <div class="rule"></div>
-      <div class="issue">A SENIOR OPERATOR BENCH · FROM SINGAPORE · EMBEDDED IN MARKET · 4 CONTINENTS</div>
+      <div class="issue">ONE PRINCIPAL · FOUNDERS &amp; CEOs · SOUTHEAST ASIA</div>
     </div>
 
     <h1 class="hero-headline">
-      <span class="l1">Operator</span>
-      <span class="l2">consulting<span class="mark">est. ‘22</span></span>
-      <span class="l3">built for the AI era.</span>
+      <span class="l1">You decide.</span>
+      <span class="l2">Agents</span>
+      <span class="l3">chase.</span>
     </h1>
 
     <div class="hero-sub-row">
       <div class="col-mono">
         <b>What</b>
-        — Fractional growth<br/>
-        — Fractional product<br/>
-        — AI-native builds<br/>
-        — Global go-to-market<br/>
-        — Conglomerate modernisation<br/>
-        — Physical-product expansion<br/>
-        — Founder coaching<br/>
-        — Advisory
+        — Leadership operating systems<br/>
+        — Fractional growth &amp; product<br/>
+        — Market entry<br/>
+        — Counsel &amp; advisory
       </div>
       <div class="hero-sub">
-        <span class="quote">"We do. You ship."</span>
-        <em>The Launch Edge</em> is an operator-led consultancy for founders, CEOs, business owners, and <b>conglomerates trapped in archaic processes</b> — anyone who wants <b>AI-speed outcomes</b> without needing to understand the AI part. <b>From Singapore. Embedded in the market.</b> Our bench doesn't parachute in — we operate inside the room, on the ground, in the timezone. Across a decade, we've shipped inside <b>all of SEA</b> (Singapore, Indonesia, Vietnam, Philippines, Thailand, Malaysia), <b>Europe</b> (Austria, Czechia, Denmark, Norway, Sweden), <b>Türkiye</b>, <b>Taiwan</b>, and <b>Australia</b> — tech and consumer, digital and physical. Our principal has led <b>subscriptions, retention &amp; growth product</b> at a <b>YC-backed fintech live in 150+ countries</b>, and <b>global country launches</b> at <b>global on-demand platforms operating across 70+ countries</b>. Earlier, led <b>economic development &amp; investment strategy</b> with the <b>Singapore Government</b> — a very small team, by invitation only. <b>Partner at Reforge</b>. Product Coach at <b>Product School</b>.
+        Most leadership teams don't have a strategy problem. They have a <b>follow-through problem</b>: decisions lost in chat, unclear owners, a CEO who spends the week chasing.
+        <br/><br/>
+        I'm <b>Justin Chew</b>. I install <b>AI-run operating systems</b> for founder-led companies: agents that brief, draft and chase, with every action approved by a human and logged. I also lead <b>fractional growth &amp; product</b> work for consumer and fintech teams. Day job: <b>Chief Growth &amp; Product Officer at Gotrade (YC S19)</b>. Before that, I led Subscriptions &amp; Retention across APAC and Europe at <b>Delivery Hero</b>, and growth strategy with Singapore's largest groups at the <b>Economic Development Board</b>.
       </div>
       <div class="hero-ctas">
-        <a href="#book" class="btn btn-primary btn-large">
+        <a href="#network" class="btn btn-primary btn-large">
           <span>Book a 30-min intro</span>
           <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#network" class="btn btn-ghost btn-large">
-          <span>Join the bench</span>
+        <a href="#record" class="btn btn-ghost btn-large">
+          <span>See the record</span>
           <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <div class="mono" style="margin-top: 10px; font-size: 11px;">no prices · no packages · scoped after intro</div>
+        <div class="mono" style="margin-top: 10px; font-size: 11px;">no packages · scoped after the intro · fixed quote</div>
       </div>
     </div>
   </div>
@@ -576,36 +579,24 @@
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee">
-    <span class="lbl">Shipped in —</span>
+    <span class="lbl">Built across —</span>
     <span>Singapore</span><span class="dot">●</span>
-    <span>Indonesia</span><span class="dot">●</span>
-    <span>Vietnam</span><span class="dot">●</span>
-    <span>Philippines</span><span class="dot">●</span>
-    <span>Thailand</span><span class="dot">●</span>
-    <span>Malaysia</span><span class="dot">●</span>
-    <span><em>Austria</em></span><span class="dot">●</span>
-    <span>Czechia</span><span class="dot">●</span>
-    <span>Denmark</span><span class="dot">●</span>
-    <span>Norway</span><span class="dot">●</span>
-    <span>Sweden</span><span class="dot">●</span>
-    <span><em>Türkiye</em></span><span class="dot">●</span>
-    <span>Taiwan</span><span class="dot">●</span>
-    <span><em>Australia</em></span><span class="dot">●</span>
-    <span class="lbl">Shipped in —</span>
+    <span><em>APAC</em></span><span class="dot">●</span>
+    <span>Southeast Asia</span><span class="dot">●</span>
+    <span><em>Europe</em></span><span class="dot">●</span>
+    <span>Subscriptions</span><span class="dot">●</span>
+    <span>Retention</span><span class="dot">●</span>
+    <span>Payments</span><span class="dot">●</span>
+    <span><em>AI agents</em></span><span class="dot">●</span>
+    <span class="lbl">Built across —</span>
     <span>Singapore</span><span class="dot">●</span>
-    <span>Indonesia</span><span class="dot">●</span>
-    <span>Vietnam</span><span class="dot">●</span>
-    <span>Philippines</span><span class="dot">●</span>
-    <span>Thailand</span><span class="dot">●</span>
-    <span>Malaysia</span><span class="dot">●</span>
-    <span><em>Austria</em></span><span class="dot">●</span>
-    <span>Czechia</span><span class="dot">●</span>
-    <span>Denmark</span><span class="dot">●</span>
-    <span>Norway</span><span class="dot">●</span>
-    <span>Sweden</span><span class="dot">●</span>
-    <span><em>Türkiye</em></span><span class="dot">●</span>
-    <span>Taiwan</span><span class="dot">●</span>
-    <span><em>Australia</em></span><span class="dot">●</span>
+    <span><em>APAC</em></span><span class="dot">●</span>
+    <span>Southeast Asia</span><span class="dot">●</span>
+    <span><em>Europe</em></span><span class="dot">●</span>
+    <span>Subscriptions</span><span class="dot">●</span>
+    <span>Retention</span><span class="dot">●</span>
+    <span>Payments</span><span class="dot">●</span>
+    <span><em>AI agents</em></span><span class="dot">●</span>
   </div>
 </div>
 
@@ -615,20 +606,20 @@
     <div class="sec-head">
       <div class="left">
         <div class="kicker"><span class="bar"></span> 02 / what I do</div>
-        <h2>Four ways we work.<br/><em>One way we deliver.</em></h2>
+        <h2>Three ways I work.<br/><em>One way I deliver.</em></h2>
       </div>
       <div class="aside">
-        No price lists. No packages. Every engagement is scoped after a 30-minute intro and written into a two-page memo — outcomes, timeline, a fixed quote. Sign it or walk. Our bench runs lean on purpose: fewer engagements, deeper contact, senior hands only.
+        No price lists. Every engagement is scoped after a 30-minute intro and written into a short memo: outcomes, timeline and a fixed quote. Sign it or walk. I take a few engagements at a time, on purpose.
       </div>
     </div>
 
     <div class="bento">
-      <a class="cell feature" href="article-flagship.html">
-        <div class="num"><span>A / FLAGSHIP</span><span>3–6 MO</span></div>
-        <h3>Fractional<br/>Growth <em>&amp;</em><br/>Retention.</h3>
-        <p class="pitch">Embedded senior leadership for teams between seed and Series B. Subscriptions, retention, activation, and growth product — owned end-to-end. Two or three days a week, in your Slack, on your roadmap, for a quarter at a time. We ship alongside the team.</p>
+      <a class="cell feature" href="article-ai-builds.html">
+        <div class="num"><span>A / FLAGSHIP</span><span>4–6 WEEKS</span></div>
+        <h3>Leadership<br/>operating <em>system.</em></h3>
+        <p class="pitch">Agents that read what's open across your team's chats, email and tools, brief you each morning, draft the replies and chase the owners. Nothing goes out without a human's approval, and every step is logged. We map who owns what, I install the agents, we train your team, and I hand it over. You own it.</p>
         <div class="tag">
-          <span>retainer</span><span>2–3 days/week</span><span>outcome-scoped</span>
+          <span>fixed scope</span><span>human-approved</span><span>you own it</span>
         </div>
         <div class="flagship-viz" aria-hidden="true">
           <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid meet">
@@ -638,7 +629,6 @@
               </pattern>
             </defs>
             <rect x="0" y="0" width="400" height="260" fill="url(#fgdot)" color="var(--fg-muted)"/>
-            <!-- horizon grid -->
             <g stroke="currentColor" stroke-width="0.6" opacity="0.35" color="var(--line-strong)">
               <line x1="0" y1="60" x2="400" y2="60"/>
               <line x1="0" y1="130" x2="400" y2="130"/>
@@ -647,9 +637,7 @@
               <line x1="200" y1="0" x2="200" y2="260"/>
               <line x1="300" y1="0" x2="300" y2="260"/>
             </g>
-            <!-- ascending curve = retention cohort metaphor -->
             <path d="M10,220 Q120,210 180,170 T390,40" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
-            <!-- nodes -->
             <g fill="var(--accent)">
               <circle cx="10" cy="220" r="4"/>
               <circle cx="180" cy="170" r="4"/>
@@ -659,313 +647,140 @@
               <circle cx="95" cy="205" r="5"/>
               <circle cx="285" cy="95" r="5"/>
             </g>
-            <!-- mono labels -->
             <g font-family="ui-monospace, Geist Mono, monospace" font-size="9" fill="var(--fg-muted)" letter-spacing="1">
-              <text x="10" y="240">M0</text>
-              <text x="172" y="190">M3</text>
-              <text x="360" y="32">M6</text>
+              <text x="10" y="240">OPEN</text>
+              <text x="160" y="190">DRAFTED</text>
+              <text x="352" y="32">DONE</text>
             </g>
-            <!-- ligature glyph as anchor -->
             <text x="386" y="250" text-anchor="end" font-family="Instrument Serif, serif" font-style="italic" font-size="96" fill="var(--accent)" opacity="0.14">Æ</text>
           </svg>
           <div class="flagship-cap">
-            <span>retention curve · month 0 → month 6</span>
-            <span>flagship engagement shape</span>
+            <span>open → drafted → approved → done</span>
+            <span>every step logged</span>
           </div>
         </div>
       </a>
 
-      <a class="cell" href="article-ai-builds.html">
-        <div class="num"><span>B / SPRINT</span><span>4 WEEKS</span></div>
-        <h3>AI-Native<br/>Builds.</h3>
-        <p class="pitch">Four-week audits and done-with-you builds. LLM-driven workflows, long-running agents on VPS, real handover. We ship it. You own the code.</p>
-        <div class="tag"><span>fixed fee</span><span>you own the code</span></div>
+      <a class="cell" href="article-flagship.html">
+        <div class="num"><span>B / FRACTIONAL</span><span>3–6 MO</span></div>
+        <h3>Growth <em>&amp;</em><br/>Product.</h3>
+        <p class="pitch">Senior growth and product leadership for teams between seed and Series B: subscriptions, retention, activation, loyalty and payments. About a day a week plus async, a quarter at a time. One fractional client at a time, and never one that competes with my day job.</p>
+        <div class="tag"><span>retainer</span><span>~1 day/week</span></div>
       </a>
 
       <a class="cell" href="article-gtm.html">
         <div class="num"><span>C / GTM</span><span>6 WEEKS</span></div>
-        <h3>Global Country<br/>Launches.</h3>
-        <p class="pitch">Pick the first market — SEA, Europe, the Gulf, or ANZ. Build the plan, hire the first operator, ship the first 30 days together. We've launched countries for platforms live in 70+ markets.</p>
-        <div class="tag"><span>sea</span><span>eu</span><span>anz</span><span>gulf</span></div>
+        <h3>Market<br/>entry.</h3>
+        <p class="pitch">Pick the first market in Southeast Asia, Europe or Taiwan. Build the plan, adapt the product to local rules, choose the first hire and get to launch. I launched subscriptions in 7 European countries in 6 months at Delivery Hero.</p>
+        <div class="tag"><span>sea</span><span>europe</span><span>taiwan</span></div>
       </a>
 
-      <a class="cell" href="article-modernisation.html">
-        <div class="num"><span>D / LEGACY</span><span>8–16 WKS</span></div>
-        <h3>Conglomerate<br/><em>modernisation.</em></h3>
-        <p class="pitch">For regional groups and family conglomerates trapped in archaic processes. We map the bottlenecks, ship AI-native replacements for the worst three, and leave your teams owning them.</p>
-        <div class="tag"><span>enterprise</span><span>process → agent</span></div>
-      </a>
-
-      <a class="cell" href="article-counsel.html">
-        <div class="num"><span>E / COUNSEL</span><span>1:1 · QUARTERLY</span></div>
-        <h3>Principal<br/><em>Counsel.</em></h3>
-        <p class="pitch">Private, one-to-one guidance for C-suite and founders. Closed-door sessions on the decisions that don't belong in a standup — fundraise posture, org design, co-founder fractures, the next hire, the next market. Discreet. Off the record. On demand.</p>
-        <div class="tag"><span>c-suite</span><span>founders</span><span>confidential</span></div>
-      </a>
-
-      <a class="cell advisory-full" href="article-advisory.html">
-        <div class="num"><span>F / ADVISORY</span><span>12 MO RETAINER</span></div>
-        <h3>Advisory <em>retainer.</em></h3>
-        <p class="pitch" style="max-width: 680px;">On-demand Slack, warm intros, quarterly reviews. For seed founders, operators, and VCs who want us in their corner without a full engagement. A small number of slots — by referral or intro call only.</p>
-        <div class="tag"><span>monthly</span><span>slack + intros</span><span>by referral</span></div>
-      </a>
+      <div class="cell advisory-full">
+        <div class="num"><span>D · E · F / OTHER WAYS TO WORK</span><span>BY CONVERSATION</span></div>
+        <h3>Smaller <em>shapes.</em></h3>
+        <p class="pitch" style="max-width: 860px;"><a href="article-modernisation.html" style="color:inherit;text-decoration:underline">Family-group modernisation</a>: replace the three worst manual workflows with agent-run ones. <a href="article-counsel.html" style="color:inherit;text-decoration:underline">Principal counsel</a>: private 1:1 sessions on org design, the next hire, the next market. <a href="article-advisory.html" style="color:inherit;text-decoration:underline">Advisory</a>: on-call product and growth judgment with a quarterly review.</p>
+        <div class="tag"><span>modernisation</span><span>1:1 counsel</span><span>advisory</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SELECTED WORK -->
-<section class="alt">
+<!-- RECORD -->
+<section class="alt" id="record">
   <div class="wrap">
     <div class="sec-head">
       <div class="left">
-        <div class="kicker"><span class="bar"></span> 03 / selected work</div>
-        <h2>A decade of<br/>engagements.<br/><em>Anonymised, not embellished.</em></h2>
+        <div class="kicker"><span class="bar"></span> 03 / record</div>
+        <h2>A record<br/>you can <em>check.</em></h2>
       </div>
       <div class="aside">
-        Across a decade of operating — leading <b>subscriptions, retention &amp; growth product</b> at a YC-backed fintech live in 150+ countries, <b>global country launches</b> at on-demand platforms operating across 70+ countries, and earlier <b>economic development work with the Singapore Government</b> — we've shipped in fintech, food-tech, marketplaces, SaaS, healthtech, consumer apparel, lifestyle, and sporting goods. What follows is a small, anonymised sample from the last eighteen months. Fees and budgets are not on this page — on purpose.
+        These are roles, not anonymised clients. Every number below comes from work I led in-house, and I'm happy to walk through any of it on a call.
       </div>
     </div>
 
     <div class="work-intro">
       <div class="deck">
-        Dozens of engagements. Eleven industries. Fourteen markets. One operating pattern — <em>short, scoped, shipped.</em>
+        Fintech, food delivery and government. One pattern: <em>own the outcome, ship, hand over.</em>
       </div>
       <div class="stats">
-        <div class="s"><span class="n"><em>40</em>+</span><span class="l">engagements · 2017–26</span></div>
-        <div class="s"><span class="n"><em>15</em></span><span class="l">markets shipped in</span></div>
-        <div class="s"><span class="n"><em>100</em>%</span><span class="l">handover rate</span></div>
+        <div class="s"><span class="n"><em>4M</em>+</span><span class="l">subscribers on products I led</span></div>
+        <div class="s"><span class="n"><em>7</em></span><span class="l">EU countries in 6 months</span></div>
+        <div class="s"><span class="n"><em>$600M</em>+</span><span class="l">investment secured · EDB</span></div>
       </div>
     </div>
 
     <div class="cases">
-      <!-- Case 01 — fintech -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№01</span>
-          <span class="meta">10 weeks · 2025</span>
-        </div>
-        <div class="sector">Series A fintech · Indonesia</div>
-        <div class="metric"><em>42</em><span class="unit">% lift</span></div>
-        <div class="deck">Activation rebuilt end-to-end — retained without a single paid-media change.</div>
-        <div class="body">Rebuilt the onboarding funnel and shipped a new first-trade flow. Team of four PMs ran the playbook after handover. Retention held at 90 days.</div>
-        <div class="case-foot">
-          <div class="tags"><span>fractional CPO</span><span>onboarding</span></div>
-        </div>
+        <div class="case-head"><span class="no">№01</span><span class="meta">2022–2024</span></div>
+        <div class="sector">Delivery Hero · foodpanda · APAC + Europe</div>
+        <div class="metric"><em>4M</em><span class="unit">+ subscribers</span></div>
+        <div class="deck">Led Subscriptions &amp; Retention for pandapro and Foodora Pro.</div>
+        <div class="body">Owned the roadmap, strategy and quarterly priorities for the subscriptions domain, with a core team of 14, coordinating 15+ teams.</div>
+        <div class="case-foot"><div class="tags"><span>subscriptions</span><span>retention</span></div></div>
       </div>
 
-      <!-- Case 02 — B2B SaaS GTM --><div class="case">
-        <div class="case-head">
-          <span class="no">№02</span>
-          <span class="meta">6 weeks · 2025</span>
-        </div>
-        <div class="sector">Seed B2B SaaS · Singapore</div>
-        <div class="metric"><em>3.1</em><span class="unit">× pipeline</span></div>
-        <div class="deck">Qualified pipeline per rep, after a done-with-you Asia GTM sprint.</div>
-        <div class="body">ICP rewrite, outbound sequence built in three languages, two founding AEs hired inside six weeks. Founder ran the second sprint alone.</div>
-        <div class="case-foot">
-          <div class="tags"><span>asia gtm</span><span>done-with-you</span></div>
-        </div>
-      </div>
-
-      <!-- Case 03 — AI-native marketplace -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№03</span>
-          <span class="meta">4 weeks · 2026</span>
-        </div>
-        <div class="sector">Series B marketplace · SEA</div>
-        <div class="metric"><em>11</em><span class="unit">hrs / PM</span></div>
-        <div class="deck">Returned to every PM on the team, every week.</div>
-        <div class="body">Four-week AI-native audit. Shipped three long-running agents on VPS for support triage, QA smoke runs, and weekly changelog generation. Full handover — their engineers own it now.</div>
-        <div class="case-foot">
-          <div class="tags"><span>ai-native</span><span>audit + build</span></div>
-        </div>
+        <div class="case-head"><span class="no">№02</span><span class="meta">Delivery Hero</span></div>
+        <div class="sector">Market entry · Europe</div>
+        <div class="metric"><em>7</em><span class="unit">countries · 6 months</span></div>
+        <div class="deck">Launched subscriptions across Europe in half a year.</div>
+        <div class="body">Turned each country's legal requirements into product requirements and coordinated 15+ teams across Business, Legal, Billing, SAP and Fintech to ship.</div>
+        <div class="case-foot"><div class="tags"><span>gtm</span><span>compliance</span></div></div>
       </div>
 
-      <!-- Case 04 — SME AI automation -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№04</span>
-          <span class="meta">ongoing · 2026</span>
-        </div>
-        <div class="sector">Family business · Bali</div>
-        <div class="metric"><em>0</em> → <em>1</em></div>
-        <div class="deck">From "we heard about AI" to shipping, in a fortnight.</div>
-        <div class="body">Pilates studio chain. Replaced two part-time staff workflows with an LLM-driven agent handling WhatsApp intake, reschedules, and weekly reporting. Owner hasn't touched a spreadsheet in ten weeks.</div>
-        <div class="case-foot">
-          <div class="tags"><span>ai-native</span><span>sme</span></div>
-        </div>
+        <div class="case-head"><span class="no">№03</span><span class="meta">Delivery Hero</span></div>
+        <div class="sector">Pricing · APAC</div>
+        <div class="metric"><em>+28</em><span class="unit">% profitability</span></div>
+        <div class="deck">Rebuilt the subscription model so plans could change mid-cycle.</div>
+        <div class="body">Cohort-based plans let the business cut incentives and tune plans for profitability without breaking billing for existing subscribers.</div>
+        <div class="case-foot"><div class="tags"><span>pricing</span><span>plans</span></div></div>
       </div>
 
-      <!-- Case 05 — sporting goods / physical product expansion -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№05</span>
-          <span class="meta">14 weeks · 2024–25</span>
-        </div>
-        <div class="sector">Sporting-goods accessories · AU · TR · SG · ID</div>
-        <div class="metric"><em>4</em><span class="unit">markets</span></div>
-        <div class="deck">A physical-product brand, launched across four markets in a single cycle.</div>
-        <div class="body">Led multi-market expansion for a consumer sporting-goods accessory. Distributor selection, pricing architecture, landed-cost model, three separate retail partnerships, and the first sixty days of in-market operations. Not my first rodeo in apparel-adjacent categories.</div>
-        <div class="case-foot">
-          <div class="tags"><span>physical product</span><span>multi-market</span><span>distribution</span></div>
-        </div>
+        <div class="case-head"><span class="no">№04</span><span class="meta">Delivery Hero</span></div>
+        <div class="sector">Payments · recurring charges</div>
+        <div class="metric"><em>−40</em><span class="unit">% failures</span></div>
+        <div class="deck">Fewer failed recurring payments, so less involuntary churn.</div>
+        <div class="body">Three-stage approach: prevent failures before the charge, recover at the moment of failure, and win back users afterwards.</div>
+        <div class="case-foot"><div class="tags"><span>fintech</span><span>churn</span></div></div>
       </div>
 
-      <!-- Case 06 — consumer apparel / founder coaching -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№06</span>
-          <span class="meta">9 months · 2024–25</span>
-        </div>
-        <div class="sector">Consumer apparel · Indonesia</div>
-        <div class="metric"><em>+180</em><span class="unit">% revenue</span></div>
-        <div class="deck">Founder-led fashion brand, scaled inside Indonesia.</div>
-        <div class="body">Directed a solo founder through a full growth cycle — brand positioning, channel mix, seasonal drops, influencer distribution, and hiring the first three operators. Revenue near-tripled inside the Indonesian market, now profitable month-on-month.</div>
-        <div class="case-foot">
-          <div class="tags"><span>consumer apparel</span><span>founder coaching</span><span>indonesia</span></div>
-        </div>
+        <div class="case-head"><span class="no">№05</span><span class="meta">Delivery Hero</span></div>
+        <div class="sector">Loyalty &amp; referrals</div>
+        <div class="metric"><em>+45</em><span class="unit">% points burn</span></div>
+        <div class="deck">Moved loyalty to a new platform and rebuilt Refer-a-Friend.</div>
+        <div class="body">Points burn rose 45% after the migration. Referral targeting and anti-fraud lifted quality referrals by 18%.</div>
+        <div class="case-foot"><div class="tags"><span>loyalty</span><span>referrals</span></div></div>
       </div>
 
-      <!-- Case 07 — Global on-demand food-tech -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№07</span>
-          <span class="meta">multi-year · 2015–23</span>
-        </div>
-        <div class="sector">Global food-tech · foodpanda Asia · foodora Europe</div>
-        <div class="metric"><em>20+</em><span class="unit">countries</span></div>
-        <div class="deck">Operator inside the two biggest Western on-demand franchises — across Asia and Europe.</div>
-        <div class="body">Multi-year tour inside the foodpanda group (Singapore, Malaysia, Thailand, Philippines, Indonesia, Vietnam, Hong Kong, Taiwan, Japan, Pakistan, Bangladesh, Cambodia, Laos, Myanmar) and the foodora franchise in Europe (Austria, Germany, Czechia, Hungary, Denmark, Norway, Sweden, Finland). Ran launch, growth, and operations cycles — vendor activation, courier supply, pricing, and vertical expansion into grocery and quick-commerce. Teams on the ground in more than a dozen cities. This is where the playbook for country launches was written.</div>
-        <div class="case-foot">
-          <div class="tags"><span>growth leadership</span><span>asia + europe</span><span>on-demand</span></div>
-        </div>
+        <div class="case-head"><span class="no">№06</span><span class="meta">2017–2022</span></div>
+        <div class="sector">Singapore Economic Development Board</div>
+        <div class="metric"><em>$600M</em><span class="unit">+ investment</span></div>
+        <div class="deck">Growth and new-business strategy with Singapore's largest groups.</div>
+        <div class="body">Worked with C-suites on internationalisation, corporate venturing and new businesses. Also cut due-diligence time by 70% with new metrics for digitalisation investments, and led the product team behind the Singapore Global Network's CRM.</div>
+        <div class="case-foot"><div class="tags"><span>conglomerates</span><span>government</span></div></div>
       </div>
 
-      <!-- Case 08 — Taiwan / Türkiye -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№08</span>
-          <span class="meta">multi-year · 2019–23</span>
-        </div>
-        <div class="sector">Marketplace &amp; fintech · Türkiye · Taiwan</div>
-        <div class="metric"><em>2</em><span class="unit">new mkts</span></div>
-        <div class="deck">Zero-to-one market entry in two very different cultures.</div>
-        <div class="body">Led market-entry strategy and first-year operations across Türkiye and Taiwan — regulatory mapping, local hiring, partner sourcing, and the first retention cohort. Neither market was a copy-paste of anywhere else.</div>
-        <div class="case-foot">
-          <div class="tags"><span>market entry</span><span>regulatory</span><span>hiring</span></div>
-        </div>
+        <div class="case-head"><span class="no">№07</span><span class="meta">today</span></div>
+        <div class="sector">My own leadership desk</div>
+        <div class="metric"><em>Daily</em><span class="unit">brief by 7am</span></div>
+        <div class="deck">I run my own follow-through on the same system I install.</div>
+        <div class="body">Each morning, agents brief me on what's open, draft the replies and send me only the decisions that need me, each with context, options and a recommendation. I approve. They do the rest and log every step.</div>
+        <div class="case-foot"><div class="tags"><span>ai agents</span><span>operating system</span></div></div>
       </div>
 
-      <!-- Case 09 — Claimback SaaS -->
       <div class="case">
-        <div class="case-head">
-          <span class="no">№09</span>
-          <span class="meta">6 months · 2025</span>
-        </div>
-        <div class="sector">FinOps · Claimback SaaS · SEA</div>
-        <div class="metric"><em>S$1.4</em><span class="unit">M recovered</span></div>
-        <div class="deck">An AI-native claimback engine, built from a blank editor.</div>
-        <div class="body">Done-with-you build of an automated insurance &amp; subscription claimback platform. LLM-driven extraction against statements, receipts, and contracts; ledger reconciliation; human-in-the-loop review. Shipped in six months, now recovering seven-figures a quarter for pilot clients. Client owns the code.</div>
-        <div class="case-foot">
-          <div class="tags"><span>ai-native</span><span>fintech</span><span>done-with-you</span></div>
-        </div>
+        <div class="case-head"><span class="no">№08</span><span class="meta">teaching</span></div>
+        <div class="sector">Reforge · Product School</div>
+        <div class="metric"><em>60</em><span class="unit">+ PMs mentored</span></div>
+        <div class="deck">Partner at Reforge. Featured speaker at Product School.</div>
+        <div class="body">Teach growth, retention and how to persuade executives. Mentored 60+ product managers.</div>
+        <div class="case-foot"><div class="tags"><span>teaching</span><span>product craft</span></div></div>
       </div>
-
-      <!-- Case 10 — MRI diagnostic imaging -->
-      <div class="case">
-        <div class="case-head">
-          <span class="no">№10</span>
-          <span class="meta">9 months · 2024–25</span>
-        </div>
-        <div class="sector">Healthtech · diagnostic imaging · SG &middot; JP</div>
-        <div class="metric"><em>MRI</em><span class="unit">reader</span></div>
-        <div class="deck">A radiologist-assistive MRI reader — shipped into two hospital systems.</div>
-        <div class="body">Advised a healthtech team building a vision-model assistant for MRI reads. Data pipeline architecture, eval design against a panel of five radiologists, clinical partner onboarding in Singapore and Tokyo. Shipped into pilot across two hospital systems with a human-in-the-loop review discipline the clinicians trusted.</div>
-        <div class="case-foot">
-          <div class="tags"><span>healthtech</span><span>vision models</span><span>clinical</span></div>
-        </div>
-      </div>
-
-      <!-- Case 11 — Trading bots -->
-      <div class="case">
-        <div class="case-head">
-          <span class="no">№11</span>
-          <span class="meta">ongoing · 2024–26</span>
-        </div>
-        <div class="sector">Quant trading · crypto · futures · US equities</div>
-        <div class="metric"><em>3</em><span class="unit">strategies live</span></div>
-        <div class="deck">Autonomous trading agents across three asset classes.</div>
-        <div class="body">Design and ops partner on a family of long-running trading agents — perpetuals on crypto venues, CME futures, and US cash equities. Strategy research, execution-layer engineering, risk rails, and the twenty-four-hour monitoring discipline that keeps them alive. Real capital, real P&amp;L, real scars.</div>
-        <div class="case-foot">
-          <div class="tags"><span>ai-native</span><span>trading</span><span>agents</span></div>
-        </div>
-      </div>
-
-      <!-- Case 12 — EDB Singapore -->
-      <div class="case">
-        <div class="case-head">
-          <span class="no">№12</span>
-          <span class="meta">multi-year · pre-2018</span>
-        </div>
-        <div class="sector">National economic development agency · Singapore</div>
-        <div class="metric"><em>Gov</em><span class="unit">invite-only</span></div>
-        <div class="deck">Inside a Singapore Government institution, shaping the country's investment thesis.</div>
-        <div class="body">Served with Singapore's economic development arm — the team tasked with attracting inward investment and steering industry policy. Small cohort, by invitation. The bench instinct for how governments, family-owned conglomerates, and multinationals actually make decisions traces back here.</div>
-        <div class="case-foot">
-          <div class="tags"><span>public sector</span><span>policy &amp; strategy</span><span>singapore</span></div>
-        </div>
-      </div>
-
-      <!-- Case 13 — Solopreneur launch studio -->
-      <div class="case">
-        <div class="case-head">
-          <span class="no">№13</span>
-          <span class="meta">ongoing · 2023–26</span>
-        </div>
-        <div class="sector">Solopreneur launch studio · ex-corporate operators</div>
-        <div class="metric"><em>ex-VPs</em><span class="unit">LV · Etihad</span></div>
-        <div class="deck">Websites, positioning, and a launch runway for senior operators leaving big-company careers.</div>
-        <div class="body">Quiet side of the practice: helping former VPs and directors reinvent as solo operators. Worked with a former VP at Louis Vuitton and a former VP at Etihad on naming, positioning, a first-class marketing site, and the ninety-day plan that turns a LinkedIn announcement into a booked calendar. Done-with-you, end-to-end.</div>
-        <div class="case-foot">
-          <div class="tags"><span>founder craft</span><span>positioning</span><span>done-with-you</span></div>
-        </div>
-      </div>
-
-      <!-- Case 14 — Flashback Coffee (declined) -->
-      <div class="case">
-        <div class="case-head">
-          <span class="no">№14</span>
-          <span class="meta">declined · 2024</span>
-        </div>
-        <div class="sector">F&amp;B tech · Flashback Coffee · Indonesia</div>
-        <div class="metric"><em>No</em><span class="unit">(politely)</span></div>
-        <div class="deck">Turned down the build of Flashback Coffee's ordering app — and said why.</div>
-        <div class="body">A well-funded Jakarta specialty-coffee chain asked the practice to build their in-house ordering and loyalty app. Scoped the engagement, then declined — the right first move was a thin wrapper on an existing POS with a three-month runway, not a bespoke build. Sent the one-page memo that explained the cheaper path. A no is also an outcome.</div>
-        <div class="case-foot">
-          <div class="tags"><span>scope discipline</span><span>f&amp;b tech</span><span>indonesia</span></div>
-        </div>
-      </div>
-
-      <!-- Case 15 — Product coaching -->
-      <div class="case">
-        <div class="case-head">
-          <span class="no">№15</span>
-          <span class="meta">ongoing · 2021–26</span>
-        </div>
-        <div class="sector">Product coaching · SG · TW · DE</div>
-        <div class="metric"><em>30+</em><span class="unit">PMs coached</span></div>
-        <div class="deck">One-to-one coaching for product managers across three ecosystems.</div>
-        <div class="body">Private, monthly 1:1 work with senior and staff PMs in Singapore, Taipei, and Berlin — navigating first-time leadership, the jump to Group PM, hiring their first reports, and building the muscle to run a roadmap through political weather. No cohorts, no curriculum. Just the operator's version of the conversation.</div>
-        <div class="case-foot">
-          <div class="tags"><span>founder craft</span><span>coaching</span><span>pm leadership</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line-strong); display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted);">
-      <span>showing 15 of 40+ engagements — rest under NDA</span>
-      <span></span>
     </div>
   </div>
 </section>
@@ -973,17 +788,17 @@
 <!-- MANIFESTO -->
 <section class="manifesto">
   <div class="wrap">
-    <div class="kicker"><span class="bar"></span> a short note from the practice</div>
+    <div class="kicker"><span class="bar"></span> a short note</div>
     <div class="big">
-      Most consulting doesn't survive contact <em>with Jakarta.</em> <br/>
-      <span class="sub">The Launch Edge does.</span><br/><br/>
-      From Singapore. <em>Embedded in the market.</em> <br/>
+      Most consulting ends with a deck. <em>Mine ends with a handover.</em> <br/>
+      <span class="sub">The system runs. Your team owns it.</span><br/><br/>
+      From Singapore. <em>In your timezone.</em> <br/>
       <span class="sub">Ground truth beats frameworks, every time.</span>
     </div>
     <div class="sig">
-      <span>signed · the launch edge</span>
-      <span class="name"><em style="font-style: italic; color: var(--accent);">The Launch Edge</em></span>
-      <span class="right">20 apr 2026 · singapore</span>
+      <span>signed</span>
+      <span class="name"><em style="font-style: italic; color: var(--accent);">Justin Chew</em></span>
+      <span class="right">singapore</span>
     </div>
     <div class="glyph">"</div>
   </div>
@@ -998,18 +813,18 @@
         <h2>This probably fits<br/><em>if you…</em></h2>
       </div>
       <div class="aside">
-        A small practice, by design. Taking on the wrong engagement is expensive for both sides — so here's the honest, up-front version before anyone gets on a call.
+        A small practice, by design. Taking on the wrong engagement is expensive for both sides, so here's the honest version before anyone gets on a call.
       </div>
     </div>
 
     <div class="fit-grid">
       <div class="fit-col yes">
         <h3>A fit<br/>if you're —</h3>
-        <div class="sub">✓ green / four things</div>
+        <div class="sub">✓ four things</div>
         <ul>
           <li><span class="mk">i.</span><span>A <b>founder or CEO</b> who wants outcomes in weeks, not quarters.</span></li>
-          <li><span class="mk">ii.</span><span>Running a <b>startup, SME, or family business</b> anywhere in Asia.</span></li>
-          <li><span class="mk">iii.</span><span><b>Curious about AI</b> — but don't want to become an AI expert to benefit from it.</span></li>
+          <li><span class="mk">ii.</span><span>Running a <b>startup, scale-up or family business</b> in Asia.</span></li>
+          <li><span class="mk">iii.</span><span>Growing faster than your <b>management system</b>: too many threads, too few owners.</span></li>
           <li><span class="mk">iv.</span><span>Tired of <b>consultants who deliver decks</b> instead of decisions.</span></li>
         </ul>
       </div>
@@ -1019,7 +834,7 @@
         <ul>
           <li><span class="mk">01</span><span>A <b>full-time hire</b> with a title and a headcount line.</span></li>
           <li><span class="mk">02</span><span>A <b>60-page strategy document</b> with an executive summary.</span></li>
-          <li><span class="mk">03</span><span>A <b>"digital transformation program"</b> with a steering committee.</span></li>
+          <li><span class="mk">03</span><span>AI that acts <b>without a human approving it</b>.</span></li>
         </ul>
       </div>
     </div>
@@ -1035,67 +850,41 @@
         <h2>Notes from<br/><em>the work.</em></h2>
       </div>
       <div class="aside">
-        Essays on product, growth, AI, and operating in Asia. One a week, most Sundays. No listicles. No engagement bait. Roughly 1,200 operators and founders read them.
+        Essays on product, growth, AI and operating in Asia. Practical, short, no listicles.
       </div>
-    </div>
-
-    <div class="writing-masthead">
-      <div class="logo">Edge <em>Notes</em></div>
-      <div class="issue"><b>№ 050 · SUNDAY EDITION</b>20 april 2026 · singapore · 10 min read</div>
-      <a href="/essays" class="sub-link">View archive →</a>
-    </div>
-
-    <div class="feature-spread">
-      <div class="lead-col">
-        <div class="badge">featured essay · ai-native</div>
-        <h3 class="lead-head">Replace three workflows with one <em>agent.</em></h3>
-        <p class="dropcap">A pilates studio in Bali. Four locations, 200 active members each. Two part-time staff handling WhatsApp intake, class reschedules, and a weekly report compiled by hand. We replaced all three with a single agent on a VPS the owner controls. Running cost: SGD 200 a month. Previous staff cost: SGD 5,400. Ten weeks later, the owner told us she hadn't touched a spreadsheet. This is what actually happens when you automate real workflows — including the parts that fail.</p>
-        <div class="byline">
-          <span>by the launch edge</span>
-          <span>20 apr · 10 min</span>
-          <a href="/essays/ai-native/replace-three-workflows-with-one-agent">continue reading →</a>
-        </div>
-      </div>
-      <aside class="pullbox">
-        <p class="quote">Automate the boring ones first. The glamorous AI projects fail because nobody agreed on what success looked like. The boring ones succeed because it is obvious when the spreadsheet populates itself correctly.</p>
-        <div class="attrib">
-          <span>— pull quote · §2</span>
-          <span>edge notes № 050</span>
-        </div>
-      </aside>
     </div>
 
     <div class="essay-archive">
-      <a href="/essays/asia-gtm/southeast-asia-market-entry-mistakes" class="essay">
-        <div class="no"><span class="acc">№ 049</span><span>20 apr · 10 min</span></div>
-        <h4>The five SEA market entry mistakes that <em>kill</em> funded startups.</h4>
-        <p class="excerpt">Five assumptions that flush Series A capital in Southeast Asia. We've been inside the room when each of them was made.</p>
-        <div class="foot"><span class="chip">asia gtm</span></div>
-      </a>
       <a href="/essays/fractional-leadership/what-a-fractional-cpo-actually-does" class="essay">
-        <div class="no"><span class="acc">№ 052</span><span>20 apr · 10 min</span></div>
+        <div class="no"><span class="acc">fractional</span><span>10 min</span></div>
         <h4>What a fractional CPO <em>actually</em> does.</h4>
-        <p class="excerpt">The most misunderstood role in the startup ecosystem. Here is the honest version — what it involves, when it works, and the hiring mistake that wastes the engagement.</p>
+        <p class="excerpt">The most misunderstood role in startups. What it involves, when it works, and the hiring mistake that wastes the engagement.</p>
         <div class="foot"><span class="chip">fractional leadership</span></div>
       </a>
       <a href="/essays/growth-retention/why-your-activation-rate-is-a-retention-problem" class="essay">
-        <div class="no"><span class="acc">№ 051</span><span>20 apr · 9 min</span></div>
+        <div class="no"><span class="acc">growth</span><span>9 min</span></div>
         <h4>Your activation rate is a <em>retention</em> problem.</h4>
-        <p class="excerpt">Most teams optimise activation and retention as separate funnels. The products that compound treat them as one problem — and the connecting insight is not in your dashboard.</p>
+        <p class="excerpt">Most teams treat activation and retention as separate funnels. The products that compound treat them as one problem.</p>
         <div class="foot"><span class="chip">growth</span></div>
+      </a>
+      <a href="/essays/asia-gtm/southeast-asia-market-entry-mistakes" class="essay">
+        <div class="no"><span class="acc">asia gtm</span><span>10 min</span></div>
+        <h4>The five SEA market-entry mistakes that <em>kill</em> funded startups.</h4>
+        <p class="excerpt">Five assumptions that burn Series A capital in Southeast Asia, and what to do instead.</p>
+        <div class="foot"><span class="chip">asia gtm</span></div>
       </a>
     </div>
 
     <div class="subscribe-block">
       <div>
-        <div class="eyebrow">the edge notes · weekly</div>
-        <h3>Essays, most Sundays.<br/><em>No listicles.</em></h3>
-        <div class="note">free · unsubscribe anytime · ~1,200 readers · no list bundling</div>
+        <div class="eyebrow">the archive</div>
+        <h3>Essays by topic.<br/><em>No listicles.</em></h3>
+        <div class="note">product · growth · ai · asia go-to-market · fractional leadership</div>
       </div>
       <div class="archive-cta">
         <a href="/essays" class="arc-link">
           <span class="arc-label">Full archive</span>
-          <span class="arc-title">90+ essays across 5 clusters. Indexed by topic.</span>
+          <span class="arc-title">Five clusters, indexed by topic.</span>
           <span class="arc-go">Open the archive <span class="arr">→</span></span>
         </a>
       </div>
@@ -1107,17 +896,17 @@
 <section style="padding: 0; border-bottom: none;" id="book">
   <div class="dual">
     <a href="#network" class="card">
-      <span class="mono">06a / for clients</span>
+      <span class="mono">06a / start here</span>
       <h3>Book a <em>30-min intro.</em></h3>
-      <p class="note">No deck required. Leave with a written scope memo and a fixed quote within three business days.</p>
+      <p class="note">No deck required. After the call you get a short written scope with a fixed quote.</p>
       <span class="go">Leave your details below <span class="arr">↓</span></span>
       <span class="shape">→</span>
     </a>
-    <a href="#network" class="card">
-      <span class="mono">06b / for operators</span>
-      <h3>Join the <em>bench.</em></h3>
-      <p class="note">A small group of trusted senior operators brought into engagements. If you ship for a living in SEA, EU, or ANZ — leave a line.</p>
-      <span class="go">Apply below <span class="arr">↓</span></span>
+    <a href="https://www.linkedin.com/in/jcyw/" class="card" target="_blank" rel="noopener">
+      <span class="mono">06b / prefer linkedin?</span>
+      <h3>Message me <em>on LinkedIn.</em></h3>
+      <p class="note">One line on what's stuck is enough. I read every message.</p>
+      <span class="go">Open my profile <span class="arr">↗</span></span>
       <span class="shape">✦</span>
     </a>
   </div>
@@ -1129,15 +918,15 @@
       <div class="contact-grid">
         <div class="contact-left">
           <div class="kicker"><span class="bar"></span> contact</div>
-          <h3>Leave a line.<br/><em>We'll be in touch.</em></h3>
-          <p class="contact-note">Scope memo turnaround is three business days after the intro call. WhatsApp is how we move fastest — drop your number and we'll use it.</p>
+          <h3>Leave a line.<br/><em>I'll be in touch.</em></h3>
+          <p class="contact-note">Tell me what you're building and what's stuck. I reply within two business days, usually on WhatsApp.</p>
           <div class="contact-meta">
-            <div><span class="l">Singapore HQ</span><span class="v">Tanjong Pagar · SGT</span></div>
-            <div><span class="l">Embedded</span><span class="v">Jakarta · Vienna · Prague · Oslo · Istanbul · Taipei</span></div>
-            <div><span class="l">Availability</span><span class="v">2 engagements open for Q3 2026</span></div>
+            <div><span class="l">Based</span><span class="v">Singapore · SGT</span></div>
+            <div><span class="l">Works</span><span class="v">Remote across SEA and Europe · in person in Singapore</span></div>
+            <div><span class="l">Availability</span><span class="v">A few engagements at a time</span></div>
           </div>
         </div>
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" method="post" action="/api/contact">
           <div class="field">
             <label>Name</label>
             <input type="text" name="name" placeholder="Your full name" required />
@@ -1183,7 +972,7 @@
             <span>Request an intro</span>
             <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
-          <div class="sent" hidden>✓ Sent. We reply within 24 hours — check your WhatsApp.</div>
+          <div class="sent" hidden>✓ Sent. I'll reply within two business days.</div>
           <div class="smallprint">By submitting, you agree to be contacted. No list, no spam, no newsletter bundling.</div>
         </form>
       </div>
@@ -1191,21 +980,22 @@
     <div class="foot-mega">The Launch <em>Edge.</em></div>
 
     <div class="foot-bottom">
-      <span>from singapore · embedded globally</span>
-      <span>v1.0 · updated 20 apr 2026</span>
-      <span>operator-grade · AI-accelerated</span>
+      <span>The Launch Edge · Justin Chew · Singapore</span>
+      <span><a href="https://www.linkedin.com/in/jcyw/" target="_blank" rel="noopener" style="color:inherit">linkedin.com/in/jcyw</a></span>
+      <span>operator-led · human-approved AI</span>
     </div>
   </div>
 </footer>
 
 <script>
   const root = document.documentElement;
-  const saved = localStorage.getItem('tle-theme');
+  let saved = null;
+  try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
   if (saved === 'dark') root.setAttribute('data-theme', 'dark');
   document.getElementById('themeToggle').addEventListener('click', () => {
     const isDark = root.getAttribute('data-theme') === 'dark';
-    if (isDark) { root.removeAttribute('data-theme'); localStorage.setItem('tle-theme','light'); }
-    else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('tle-theme','dark'); }
+    if (isDark) { root.removeAttribute('data-theme'); try { localStorage.setItem('tle-theme','light'); } catch (e) {} }
+    else { root.setAttribute('data-theme', 'dark'); try { localStorage.setItem('tle-theme','dark'); } catch (e) {} }
   });
 
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
@@ -1229,7 +1019,7 @@
       });
       if (res.ok) {
         sent.hidden = false;
-        btn.querySelector('span').textContent = 'Received — we\'ll reply within 24h';
+        btn.querySelector('span').textContent = 'Received. I\'ll be in touch';
       } else {
         btn.disabled = false;
         btn.querySelector('span').textContent = 'Request an intro';

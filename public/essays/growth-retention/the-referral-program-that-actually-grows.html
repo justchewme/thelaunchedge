@@ -38,7 +38,7 @@
       "mainEntity": [
         { "@type": "Question", "name": "What metric should a referral program actually optimise for?", "acceptedAnswer": { "@type": "Answer", "text": "Retained referred users at day 30 or day 60, not invites sent or even sign-ups. A referral program that produces 1,000 sign-ups with 12% retention is destroying brand capital. One that produces 300 sign-ups with 68% retention is compounding." } },
         { "@type": "Question", "name": "Why do double-sided reward programs produce poor retention?", "acceptedAnswer": { "@type": "Answer", "text": "Because the reward is the reason the referred user shows up, not the product. When the reward clears — typically at the end of the first billing cycle — there's no accumulated habit or value to keep them. You've paid for attendance, not commitment." } },
-        { "@type": "Question", "name": "When is the right moment to ask a user to refer someone?", "acceptedAnswer": { "@type": "Answer", "text": "After they've experienced a clear value moment — not at sign-up, not at the end of onboarding, and never on day one. The trigger should be behavioral: after their third session, after they complete a milestone, after they get a result. Dropbox asked after users successfully synced their first file. That sequence matters." } },
+        { "@type": "Question", "name": "When is the right moment to ask a user to refer someone?", "acceptedAnswer": { "@type": "Answer", "text": "After they've experienced a clear value moment — not at sign-up, not at the end of onboarding, and never on day one. The trigger should be behavioral: after their third session, after they complete a milestone, after they get a result. For a file-sync product, that might be right after the first successful sync. That sequence matters." } },
         { "@type": "Question", "name": "What makes a referral loop structurally defensible versus cosmetic?", "acceptedAnswer": { "@type": "Answer", "text": "A defensible loop embeds the referral into the product's core value — sharing is part of the experience, not a detour from it. Slack spreads because work requires colleagues. Figma spreads because design requires handoffs. The referral is the product use case, not a promotional overlay on top of it." } }
       ]
     },
@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 068 · Growth &amp; Retention</span><span>20 apr 2026</span><span>11 min read</span></div>
+  <div class="meta"><span>Growth &amp; Retention</span><span>9 min read</span></div>
 </div></header>
 <article class="article"><div class="wrap">
   <div class="kicker"><span class="bar"></span> Essay · growth &amp; retention</div>
@@ -74,29 +77,29 @@
 
   <p>They are almost entirely useless as signals of whether the program is actually compounding.</p>
 
-  <p>Here is what the data looks like when you disaggregate referral cohorts properly. Take a B2B SaaS product with a mature referral program — think the shape of what Dropbox or HubSpot built, not the intention but the mechanics. You'll typically find that referred users have a day-1 activation rate 15–25% higher than organic users. This looks excellent. It feels like validation. Product teams cite it in board decks. But when you pull the 60-day retention curve for that same cohort and overlay it against organic sign-ups from the same period, you find something uncomfortable: by day 45, the retention curves have converged. Often, the referred cohort is slightly below organic.</p>
+  <p>Here is what the data looks like when you disaggregate referral cohorts properly. Take a B2B SaaS product with a mature referral program — think the shape of what Dropbox or HubSpot built, not the intention but the mechanics. You'll often find that referred users activate on day 1 at a noticeably higher rate than organic users. This looks excellent. It feels like validation. Product teams cite it in board decks. But when you pull the 60-day retention curve for that same cohort and overlay it against organic sign-ups from the same period, you find something uncomfortable: by day 45, the retention curves have converged. Often, the referred cohort is slightly below organic.</p>
 
   <p>What happened? The referral brought them in, but the product didn't hold them. The activation spike was real — referred users often arrive with higher intent and better context because a trusted person explained the product to them. But if the referral reward was the dominant reason they signed up, there's no residual motivation once the reward clears.</p>
 
   <h2>Why the double-sided reward is a trap.</h2>
 
-  <p>The double-sided reward — give the referrer $20, give the referred user $20 — became the canonical referral structure after Paypal's famous growth hack in 1999. Paypal grew to a million users in a matter of months. The structure got cargo-culted into almost every consumer product that tried to grow programmatically in the following two decades.</p>
+  <p>The double-sided reward — give the referrer $20, give the referred user $20 — became the canonical referral structure after PayPal's famous growth hack around 1999–2000. PayPal grew to a million users in a matter of months. The structure got cargo-culted into almost every consumer product that tried to grow programmatically in the following two decades.</p>
 
-  <p>What the cargo-culting missed: Paypal's referral worked not because of the reward, but because getting money into a new digital wallet was itself the first value moment. The $10 they gave you wasn't decorative — it was the product. You needed money in your account to use the product. The reward and the activation were the same event.</p>
+  <p>What the cargo-culting missed: PayPal's referral worked not because of the reward, but because getting money into a new digital wallet was itself the first value moment. The cash they gave you wasn't decorative — it was the product. You needed money in your account to use the product. The reward and the activation were the same event.</p>
 
   <p>Almost no other product has that structure. For most SaaS, the cash reward and the product's first value moment are separated by a gap — sometimes a small gap, sometimes a canyon. When someone signs up for your project management tool because their friend sent them a $30 credit, the $30 credit is their first experience. They haven't yet experienced the product's actual value. The reward sets the wrong frame entirely. It signals "this is the kind of product that has to pay you to try it" rather than "this is the kind of product your peers vouch for."</p>
 
-  <p>Uber's referral program in its 2014–2017 hyper-growth phase produced extraordinary volume. They were also simultaneously acquiring users with a marginal cost that made unit economics deeply negative in most markets. The referral program accelerated acquisition — it did not improve it. When the ride-hailing market matured and price competition intensified, those referred cohorts churned at roughly the same rate as paid acquisition cohorts. The referral had done nothing to create a more committed user.</p>
+  <p>Heavily subsidised ride-hailing referral credits in the mid-2010s are the cautionary version: extraordinary volume, alongside acquisition costs that made unit economics deeply negative. Cash-led referral of that kind accelerates acquisition — it does not improve it. A user who came for the credit has no special reason to stay once price competition intensifies. The referral does nothing to create a more committed user.</p>
 
   <h2>The mechanic that actually compounds.</h2>
 
   <p>The referral programs that produce durable retention share one structural feature: the referral is embedded in the product's core use case, not layered on top of it as a promotion.</p>
 
-  <p>Slack is the clearest example. Slack grows through referral because you cannot use Slack alone. The product's entire value proposition requires other people to be in your workspace. When someone installs Slack and invites their team, they're not participating in a referral program — they're using the product. The growth loop and the product loop are the same loop. This is why Slack reached 500,000 daily active users in 24 hours after launch without a structured referral incentive. The product's architecture made referral the only viable use pattern.</p>
+  <p>Slack is the clearest example. Slack grows through referral because you cannot use Slack alone. The product's entire value proposition requires other people to be in your workspace. When someone installs Slack and invites their team, they're not participating in a referral program — they're using the product. The growth loop and the product loop are the same loop. This is why Slack could grow so fast without a structured referral incentive. The product's architecture made referral the only viable use pattern.</p>
 
-  <p>Figma works the same way. When a designer sends a Figma link to a developer for a handoff review, the developer has to create an account to comment. That's product-led referral — the use case creates the loop. The referred user arrives in context, with a clear job to do, and the activation moment is immediate. Figma's enterprise sales motion was essentially a post-hoc formalisation of a viral loop that had already run for years through organic product use.</p>
+  <p>Figma works the same way. When a designer sends a Figma link to a developer for a handoff review, the developer has to create an account to comment. That's product-led referral — the use case creates the loop. The referred user arrives in context, with a clear job to do, and the activation moment is immediate. Figma's enterprise sales motion was built on top of a viral loop that had already been running through organic product use.</p>
 
-  <p>Most products don't have that inherent collaborative structure. But the lesson generalises: the strongest referral mechanic is one where sharing the product with someone else makes the product more valuable for the referrer, not just for the referred user. Monzo's referral in 2016–2017 worked partly because getting friends onto Monzo meant you could split bills with them using the app's native payment feature. The referral improved your own product experience. That's the alignment you're looking for.</p>
+  <p>Most products don't have that inherent collaborative structure. But the lesson generalises: the strongest referral mechanic is one where sharing the product with someone else makes the product more valuable for the referrer, not just for the referred user. Payment and banking apps like Monzo show the principle: getting friends onto the app means you can split bills and pay each other inside it. The referral improved your own product experience. That's the alignment you're looking for.</p>
 
   <div class="pullquote">A referral program that your best users want to use is a product feature. A referral program that needs promotional incentives to run is a marketing spend pretending to be a growth loop.</div>
 
@@ -108,9 +111,9 @@
 
   <p>The best timing data comes from running A/B tests on referral prompt placement and measuring not just referral conversion rate, but the 30-day retention of users who were referred by someone who converted at each prompt placement. What you typically find:</p>
 
-  <p>Users referred by someone who was prompted after their first "aha moment" — their first meaningful engagement with the product's core feature — retain at 40–60% better rates than users referred by someone who was prompted at sign-up. The reason is that the referrer's recommendation is qualitatively different. When someone refers you after they've experienced value, they say different things. They're specific. They say "you should try this because I just used it to do X and it saved me three hours." That context travels with the referred user and sets a better frame for their own activation.</p>
+  <p>Users referred by someone who was prompted after their first "aha moment" — their first meaningful engagement with the product's core feature — tend to retain noticeably better than users referred by someone who was prompted at sign-up. The reason is that the referrer's recommendation is qualitatively different. When someone refers you after they've experienced value, they say different things. They're specific. They say "you should try this because I just used it to do X and it saved me three hours." That context travels with the referred user and sets a better frame for their own activation.</p>
 
-  <p>Dropbox's growth team under Sean Ellis figured this out early. They moved the referral prompt to trigger after a user had successfully synced their first file — not after account creation, not after installing the desktop app, but after the core product event. Their K-factor (viral coefficient) went up. More importantly, their referred cohort retention went up. Both moved because they fixed the timing, not just the incentive.</p>
+  <p>The fix is simple to state: move the referral prompt so it fires after the core product event. For a file-sync product, that means after the first successful sync — not after account creation, not after installing the desktop app. Done well, that can lift both the viral coefficient and the retention of the referred cohort, because the fix is to the timing, not just the incentive.</p>
 
   <h2>What to measure instead.</h2>
 
@@ -135,22 +138,18 @@
 
   <h2>Frequently asked questions.</h2>
   <div class="faq">
-    <div class="faq-item"><h3>What metric should a referral program actually optimise for?</h3><p>Retained referred users at day 30 or day 60, not invites sent or even sign-ups. A referral program that produces 1,000 sign-ups with 12% retention is destroying brand capital. One that produces 300 sign-ups with 68% retention is compounding. The downstream revenue impact of the second scenario will be three to five times larger within six months.</p></div>
+    <div class="faq-item"><h3>What metric should a referral program actually optimise for?</h3><p>Retained referred users at day 30 or day 60, not invites sent or even sign-ups. A referral program that produces 1,000 sign-ups with 12% retention is destroying brand capital. One that produces 300 sign-ups with 68% retention is compounding. The second produces more retained users — roughly 200 versus 120 — from less than a third of the sign-ups.</p></div>
     <div class="faq-item"><h3>Why do double-sided reward programs produce poor retention?</h3><p>Because the reward is the reason the referred user shows up, not the product. When the reward clears — typically at the end of the first billing cycle — there's no accumulated habit or value to keep them. You've paid for attendance, not commitment. The exceptions are products where the reward is itself the first value moment, which describes very few products outside of financial services.</p></div>
-    <div class="faq-item"><h3>When is the right moment to ask a user to refer someone?</h3><p>After they've experienced a clear value moment — not at sign-up, not at the end of onboarding, and never on day one. The trigger should be behavioural: after their third session, after they complete a milestone, after they get a result. Dropbox asked after users successfully synced their first file. That sequence matters — the referrer needs to have something real to say about the product before they can be a credible advocate.</p></div>
+    <div class="faq-item"><h3>When is the right moment to ask a user to refer someone?</h3><p>After they've experienced a clear value moment — not at sign-up, not at the end of onboarding, and never on day one. The trigger should be behavioural: after their third session, after they complete a milestone, after they get a result. For a file-sync product, that might be right after the first successful sync. That sequence matters — the referrer needs to have something real to say about the product before they can be a credible advocate.</p></div>
     <div class="faq-item"><h3>What makes a referral loop structurally defensible versus cosmetic?</h3><p>A defensible loop embeds the referral into the product's core value — sharing is part of the experience, not a detour from it. Slack spreads because work requires colleagues. Figma spreads because design requires handoffs. The referral is the product use case, not a promotional overlay on top of it. If you removed the incentive from your referral program tomorrow and sharing stopped entirely, you have a cosmetic loop.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 068 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

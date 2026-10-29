@@ -37,9 +37,9 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "What's wrong with standard acquisition cohort analysis?", "acceptedAnswer": { "@type": "Answer", "text": "Acquisition cohorts tell you how many users from a given sign-up period are still active over time. They don't tell you why some retain and others don't. Grouping January sign-ups together obscures the fact that users who found you through SEO, a referral, and a paid ad have entirely different retention profiles — and conflating them produces an average that's misleading for every decision it influences." } },
-        { "@type": "Question", "name": "What is a behavioural cohort and how is it different?", "acceptedAnswer": { "@type": "Answer", "text": "A behavioural cohort groups users by what they did, not when they signed up. First-action cohorts group users by the first meaningful thing they did in the product — the first feature they used, the first workflow they completed. These cohorts consistently show retention variance of 2x to 4x depending on which first action a user took, which gives you a direct product intervention to design: route more users toward the high-retention first action." } },
+        { "@type": "Question", "name": "What is a behavioural cohort and how is it different?", "acceptedAnswer": { "@type": "Answer", "text": "A behavioural cohort groups users by what they did, not when they signed up. First-action cohorts group users by the first meaningful thing they did in the product — the first feature they used, the first workflow they completed. These cohorts often show retention differences of a multiple depending on which first action a user took, which gives you a direct product intervention to design: route more users toward the high-retention first action." } },
         { "@type": "Question", "name": "How do you build a first-action cohort analysis?", "acceptedAnswer": { "@type": "Answer", "text": "Pull event logs for your first 1,000 retained users (90+ day retention) and identify the first meaningful product action each took within their first session. Then do the same for your first 1,000 churned users. Compare the distributions. The actions that appear disproportionately in the retained group are your activation targets. Build onboarding flows that route new users toward those actions specifically." } },
-        { "@type": "Question", "name": "Which cohort dimension produces the most actionable insight?", "acceptedAnswer": { "@type": "Answer", "text": "For most products, acquisition channel cohorts produce the most immediately actionable insight because they directly inform where to allocate growth budget. Finding that organic search users retain at 2x the rate of paid social users doesn't just tell you something about retention — it tells you that your paid social CAC calculations are wrong because LTV is overstated. That's a decision worth millions." } }
+        { "@type": "Question", "name": "Which cohort dimension produces the most actionable insight?", "acceptedAnswer": { "@type": "Answer", "text": "For most products, acquisition channel cohorts produce the most immediately actionable insight because they directly inform where to allocate growth budget. Finding that organic search users retain at 2x the rate of paid social users doesn't just tell you something about retention — it tells you that your paid social CAC calculations are wrong because LTV is overstated. That finding justifies revisiting your entire channel allocation." } }
       ]
     },
     {
@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 070 · Growth &amp; Retention</span><span>20 apr 2026</span><span>13 min read</span></div>
+  <div class="meta"><span>Growth &amp; Retention</span><span>9 min read</span></div>
 </div></header>
 <article class="article"><div class="wrap">
   <div class="kicker"><span class="bar"></span> Essay · growth &amp; retention</div>
@@ -80,13 +83,13 @@
 
   <h2>The first-action cohort: where the insight lives.</h2>
 
-  <p>A first-action cohort groups users not by when they signed up but by what they did first — specifically, the first meaningful product action they took in their first session. This is the single most revealing cohort dimension I've seen across product analytics work.</p>
+  <p>A first-action cohort groups users not by when they signed up but by what they did first — specifically, the first meaningful product action they took in their first session. It is often the single most revealing cohort dimension in product analytics.</p>
 
   <p>Here's why it matters. Every product has multiple entry paths into its core value. In a tool like Loom, a new user might record a video first, watch a video they received first, or browse templates first. In a tool like Notion, they might start from a blank page, import from another tool, or duplicate a template. In a tool like Webflow, they might start with a tutorial project, a blank canvas, or by cloning a community site. These are not equivalent experiences. They produce radically different first-session outcomes, and radically different long-term retention curves.</p>
 
-  <p>When you run a first-action cohort analysis on a mature product, you typically find retention variance of 2x to 4x between the highest and lowest retention first-action cohorts. Users who took action A in their first session retain at twice the rate of users who took action B. This is the most actionable insight in product analytics because it gives you a direct design target: route more new users toward action A in their first session, and your overall retention improves without changing anything else.</p>
+  <p>When you run a first-action cohort analysis on a mature product, you often find that the highest-retention first-action cohort retains at a multiple of the lowest. Users who took action A in their first session might retain at twice the rate of users who took action B. This is the most actionable insight in product analytics because it gives you a direct design target: route more new users toward action A in their first session, and your overall retention improves without changing anything else.</p>
 
-  <p>Dropbox's early growth team discovered that users who installed the desktop sync client in their first session had dramatically higher 90-day retention than users who only used the web interface. This wasn't surprising in retrospect — the desktop client embedded Dropbox into their daily workflow, while the web interface kept it as an occasional destination. The actionable insight was to redesign onboarding to make desktop client installation the primary first-session goal. Retention improved across the board.</p>
+  <p>Take a file-sync product. You would expect users who install the desktop sync client in their first session to retain far better than users who only use the web interface — the desktop client embeds the product into their daily workflow, while the web interface keeps it an occasional destination. If the first-action cohort confirms it, the action is clear: redesign onboarding to make desktop client installation the primary first-session goal.</p>
 
   <p>Twitter's growth team, under Josh Elman, found that users who followed 30 or more accounts in their first session retained at dramatically higher rates than those who followed fewer. This discovery drove the "suggested users" feature and its prominence in the onboarding flow. The insight came from a first-action cohort analysis — specifically, from correlating depth of onboarding actions with long-term retention curves.</p>
 
@@ -94,7 +97,7 @@
 
   <p>The second cohort analysis most teams aren't running is an acquisition channel cohort — grouping users by the channel that brought them in and tracking their retention curves separately. This analysis has enormous financial implications that most growth teams are ignoring.</p>
 
-  <p>When you run acquisition channel cohorts for a typical B2B SaaS product, you find a retention spread that makes the blended average almost meaningless. Organic search users — who arrived because they were actively searching for a solution to a specific problem — typically retain at 1.8x to 2.5x the rate of paid social users. Referral users (from other customers) typically retain at 1.5x to 2x. Content-attributed users (came through a blog post or guide) typically retain somewhere between organic search and referral. Paid search users sit closer to organic search than paid social. Display and retargeting users typically have the lowest retention of all.</p>
+  <p>When you run acquisition channel cohorts for a typical B2B SaaS product, you find a retention spread that makes the blended average almost meaningless. Organic search users — who arrived because they were actively searching for a solution to a specific problem — often retain far better than paid social users. Referral users (from other customers) typically retain well too. Content-attributed users (came through a blog post or guide) typically retain somewhere between organic search and referral. Paid search users sit closer to organic search than paid social. Display and retargeting users typically have the lowest retention of all.</p>
 
   <p>This has direct implications for customer acquisition cost calculations that most finance teams are getting wrong. If you're using a blended average LTV in your CAC payback calculations, you are almost certainly overstating LTV for paid social and display, and potentially understating it for organic. This means you are:</p>
 
@@ -110,9 +113,9 @@
 
   <p>This seems counterintuitive. Surely direct-to-paid users are higher intent? They are — at the moment of sign-up. But the users who converted from free to paid did something more valuable: they used the product enough in the free tier to decide it was worth paying for. They've completed a self-selection process that filtered out users who were curious but not committed. Their retention is better because their commitment is based on demonstrated value, not on intent at sign-up.</p>
 
-  <p>Canva's data on this is instructive. Canva has been public about the fact that their pro conversion rate from free is low — around 3-4% of free users convert. But those who do convert have extremely high retention. The freemium tier functions as a long, low-friction retention filter: it lets users accumulate enough value experience to make a high-confidence paid commitment. Canva's plan-tier cohort analysis informed their decision to invest heavily in the free tier experience rather than aggressively gating features — a counterintuitive conclusion that their retention data supported clearly.</p>
+  <p>Large freemium products like Canva illustrate the logic. Only a small fraction of free users ever convert, but a generous free tier functions as a long, low-friction retention filter: it lets users accumulate enough value experience to make a high-confidence paid commitment. Investing heavily in the free experience rather than aggressively gating features is a counterintuitive choice — and exactly the kind that plan-tier cohort analysis can support or refute.</p>
 
-  <p>Annual versus monthly plan retention cohorts are equally revealing and rarely tracked separately. Annual plan users churn at 30–50% lower rates than monthly plan users in most subscription products, even controlling for selection effects. The reasons are partly psychological (sunk cost and commitment) and partly practical (the renewal decision happens once instead of twelve times). But the magnitude of the retention differential is consistently larger than teams expect when they first run this analysis.</p>
+  <p>Annual versus monthly plan retention cohorts are equally revealing and rarely tracked separately. Annual plan users churn at materially lower rates than monthly plan users in most subscription products, even allowing for selection effects. The reasons are partly psychological (sunk cost and commitment) and partly practical (the renewal decision happens once instead of twelve times). But the magnitude of the retention differential is consistently larger than teams expect when they first run this analysis.</p>
 
   <h2>How to build these cohorts if your analytics stack is basic.</h2>
 
@@ -124,7 +127,7 @@
 
   <ul class="rules">
     <li><span class="n">01</span><div><b>Run first-action cohorts before you optimise anything else.</b> Pull the first meaningful product event for your first 1,000 retained users and first 1,000 churned users. Compare the distributions. The action that appears most in retained users is your activation target — redesign onboarding to route everyone there.</div></li>
-    <li><span class="n">02</span><div><b>Disaggregate retention by acquisition channel immediately.</b> If you're making growth budget decisions on blended LTV, you are making them incorrectly. Calculate channel-specific LTVs and rebuild your CAC payback models. This single change often reallocates 20–40% of growth spend.</div></li>
+    <li><span class="n">02</span><div><b>Disaggregate retention by acquisition channel immediately.</b> If you're making growth budget decisions on blended LTV, you are making them incorrectly. Calculate channel-specific LTVs and rebuild your CAC payback models. This single change often reallocates a meaningful share of growth spend.</div></li>
     <li><span class="n">03</span><div><b>Track annual versus monthly plan retention separately.</b> Most teams know annual churns less — few have quantified the magnitude. Run this cohort and use the differential to inform how aggressively you discount annual plans at the point of conversion.</div></li>
     <li><span class="n">04</span><div><b>Track free-to-paid conversion cohorts by the month they upgraded, not the month they signed up.</b> Users who upgrade in month two have a different retention profile than those who upgrade in month six. The timing of the upgrade decision is itself a retention signal.</div></li>
     <li><span class="n">05</span><div><b>Run your cohort analysis on revenue, not just users.</b> A 60-day retained user on the growth plan is worth more than a 90-day retained user on the starter plan. Weight your cohort analysis by revenue to identify which user profiles to prioritise in both product investment and acquisition spend.</div></li>
@@ -134,21 +137,17 @@
   <h2>Frequently asked questions.</h2>
   <div class="faq">
     <div class="faq-item"><h3>What's wrong with standard acquisition cohort analysis?</h3><p>Acquisition cohorts tell you how many users from a given sign-up period are still active over time. They don't tell you why some retain and others don't. Grouping January sign-ups together obscures the fact that users who found you through SEO, a referral, and a paid ad have entirely different retention profiles — and conflating them produces an average that is misleading for every decision it influences. The standard cohort chart tells you your retention is 32% at day 30. It does not tell you what to do differently tomorrow.</p></div>
-    <div class="faq-item"><h3>What is a behavioural cohort and how is it different?</h3><p>A behavioural cohort groups users by what they did, not when they signed up. First-action cohorts group users by the first meaningful thing they did in the product — the first feature they used, the first workflow they completed. These cohorts consistently show retention variance of 2x to 4x depending on which first action a user took, which gives you a direct product intervention: route more users toward the high-retention first action through onboarding redesign.</p></div>
+    <div class="faq-item"><h3>What is a behavioural cohort and how is it different?</h3><p>A behavioural cohort groups users by what they did, not when they signed up. First-action cohorts group users by the first meaningful thing they did in the product — the first feature they used, the first workflow they completed. These cohorts often show retention differences of a multiple depending on which first action a user took, which gives you a direct product intervention: route more users toward the high-retention first action through onboarding redesign.</p></div>
     <div class="faq-item"><h3>How do you build a first-action cohort analysis without advanced tooling?</h3><p>Pull event logs for your first 1,000 retained users (90+ day retention) and identify the first meaningful product action each took within their first session. Then do the same for your first 1,000 churned users. Compare the distributions. The actions that appear disproportionately in the retained group are your activation targets. This can be done with basic SQL against your event log — you don't need an enterprise analytics platform.</p></div>
-    <div class="faq-item"><h3>Which cohort dimension produces the most actionable insight?</h3><p>For most products, acquisition channel cohorts produce the most immediately actionable insight because they directly inform where to allocate growth budget. Finding that organic search users retain at 2x the rate of paid social users doesn't just tell you something about retention — it tells you that your paid social CAC calculations are wrong because LTV is overstated. That finding is worth revisiting your entire channel allocation, often worth millions of dollars in redeployed spend.</p></div>
+    <div class="faq-item"><h3>Which cohort dimension produces the most actionable insight?</h3><p>For most products, acquisition channel cohorts produce the most immediately actionable insight because they directly inform where to allocate growth budget. Finding that organic search users retain at 2x the rate of paid social users doesn't just tell you something about retention — it tells you that your paid social CAC calculations are wrong because LTV is overstated. That finding justifies revisiting your entire channel allocation.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 070 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

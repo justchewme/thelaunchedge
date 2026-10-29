@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 063 · AI-Native</span><span>20 apr 2026</span><span>11 min read</span></div>
+  <div class="meta"><span>AI-Native</span><span>9 min read</span></div>
 </div></header>
 <article class="article"><div class="wrap">
   <div class="kicker"><span class="bar"></span> Essay · ai-native</div>
@@ -70,7 +73,7 @@
 
   <h2>The benchmark trap.</h2>
 
-  <p>I have sat in more than a dozen AI project kick-offs where the model selection conversation goes roughly like this: someone opens a leaderboard, the team debates whether GPT-4o or Claude Sonnet is "smarter," someone else suggests running both through a few demo prompts, and within forty minutes a decision is made that will govern every output the product ships for the next twelve months.</p>
+  <p>In a lot of AI project kick-offs, the model selection conversation goes roughly like this: someone opens a leaderboard, the team debates which frontier model is "smarter," someone else suggests running both through a few demo prompts, and within forty minutes a decision is made that will govern every output the product ships for the next twelve months.</p>
 
   <p>Then, two months into production, the support queue fills up with the exact failure mode nobody thought to test for. The model is technically "better" on MMLU. It is still confidently wrong about the specific thing your users actually ask.</p>
 
@@ -84,9 +87,9 @@
 
   <p>Vague success criteria — "the outputs should be high quality," "the responses should be helpful," "the model should be accurate" — produce vague evaluation results. When the team sits down to review model outputs and disagrees about which is better, the problem is not the model. The problem is that nobody specified what better meant before looking at the outputs.</p>
 
-  <p>For a B2B document summarisation feature we deployed, the initial brief said "the summaries should be accurate and concise." After one sprint of evaluation work, we had a checklist with twelve specific criteria: maximum sentence count by document type, required inclusion of monetary figures and dates, prohibited language patterns, handling of ambiguous attribution, formatting requirements for bullet points, and four edge cases involving redacted content. Annotators who used the checklist agreed with each other 91% of the time. Annotators who used the original brief agreed 61% of the time.</p>
+  <p>Take a B2B document summarisation feature whose initial brief says "the summaries should be accurate and concise." A sprint of evaluation work should turn that into a checklist of specific criteria: maximum sentence count by document type, required inclusion of monetary figures and dates, prohibited language patterns, handling of ambiguous attribution, formatting requirements for bullet points, and the edge cases involving redacted content. Reviewers working from a checklist like that agree with each other far more often than reviewers working from the one-line brief — and agreement between reviewers is what makes an evaluation result mean anything.</p>
 
-  <p>The checklist became the evaluation rubric. The rubric became the prompt specification. The prompt specification became the acceptance criteria for every model upgrade. One document, used three ways.</p>
+  <p>The checklist becomes the evaluation rubric. The rubric becomes the prompt specification. The prompt specification becomes the acceptance criteria for every model upgrade. One document, used three ways.</p>
 
   <h2>The architecture of a working eval set.</h2>
 
@@ -116,7 +119,7 @@
 
   <p>This means thinking about your input distribution the way a security researcher thinks about an attack surface. What inputs, if they arrived, would cause the most damage? What assumptions does your prompt make that a real user will violate? Where does the model's training data distribution diverge from your user's language and context?</p>
 
-  <p>For a WhatsApp-based customer intake system we built, we knew our primary users were non-native English speakers in Southeast Asia. Our adversarial set included: messages in Singlish and Manglish, intentional misspellings common to mobile autocorrect, requests that mixed English and Bahasa Indonesia, messages that were screenshots of text (which the model could not read), and voice-memo transcripts with characteristic disfluencies. None of these appeared in the initial golden set. All of them showed up in the first two weeks of production.</p>
+  <p>Consider a WhatsApp-based customer intake system whose primary users are non-native English speakers in Southeast Asia. Its adversarial set should include: messages in Singlish and Manglish, misspellings common to mobile autocorrect, requests that mix English and Bahasa Indonesia, messages that are screenshots of text, and voice-memo transcripts with characteristic disfluencies. None of these tend to appear in an initial golden set written by the team. All of them are the kind of input real users send from the first week.</p>
 
   <p>The adversarial set does not need to be exhaustive. It needs to be systematic. If you can articulate the axes of variation in your input distribution, you can generate adversarial examples that stress-test each axis. Inputs that are too long, too short, too formal, too casual, ambiguous about intent, clear about the wrong intent, in the wrong language, in no language at all.</p>
 
@@ -145,16 +148,12 @@
     <div class="faq-item"><h3>How often should evaluation sets be refreshed?</h3><p>Continuously. Your evaluation set should be a living artifact. Every production failure that reaches a human reviewer is a candidate for the eval set. Every model upgrade or significant prompt change should trigger a full regression run. Teams that treat evals as a one-time pre-launch activity consistently get surprised by post-deployment degradation.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 063 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

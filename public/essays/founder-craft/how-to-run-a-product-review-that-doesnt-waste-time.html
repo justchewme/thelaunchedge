@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 054 · Founder Craft</span><span>20 apr 2026</span><span>10 min read</span></div>
+  <div class="meta"><span>Founder Craft</span><span>10 min read</span></div>
 </div></header>
 
 <article class="article"><div class="wrap">
@@ -71,12 +74,12 @@
 
   <h2>What a product review is actually for.</h2>
   <p>The purpose of a product review is to make decisions — specifically, the decisions that require the people in the room to be in the same room. That sounds obvious until you sit in enough of them and realise that most reviews don't make decisions. They share information. They surface concerns. They generate action items that get assigned to the PM to "follow up on" and are never heard from again. The calendar event says "Product Review." The actual meeting was a briefing with questions.</p>
-  <p>I have never seen a product stall because a team lacked information. I have seen dozens stall because a decision that required sign-off from two senior people was never structured as a decision that required sign-off from two senior people. It floated in the roadmap as a "TBD" or a "pending alignment" and continued floating, sprint over sprint, until someone got frustrated enough to force it. The product review is the mechanism to prevent that. When it doesn't work, the drift resumes.</p>
+  <p>Products rarely stall because a team lacked information. They stall because a decision that required sign-off from two senior people was never structured as a decision that required sign-off from two senior people. It floated in the roadmap as a "TBD" or a "pending alignment" and continued floating, sprint over sprint, until someone got frustrated enough to force it. The product review is the mechanism to prevent that. When it doesn't work, the drift resumes.</p>
   <p>The reason this matters structurally: product reviews are expensive. Get five or six senior people in a room for an hour and you've spent the better part of a working day in aggregate payroll. That cost is only justified if the meeting produces something those people couldn't produce asynchronously. Information can be shared asynchronously. Decisions — the kind that require reading the room, testing a recommendation, and getting explicit commitment from the person who has the authority to change it — usually cannot.</p>
 
   <h2>The meeting most teams are actually running.</h2>
   <p>The typical product review goes like this. The PM has prepared slides. The slides cover what shipped last sprint, what the metrics show, what is planned for the next sprint, and a list of "open questions" at the end. The meeting starts with the PM sharing their screen. Senior people scroll on their phones for the first five minutes while the PM walks through last sprint's output. Around minute eight, someone asks a question about a metric that the PM doesn't have the answer to. The PM says they'll follow up. More slides. More questions. At minute forty-five, the most senior person in the room glances at their phone and says "we're almost out of time — can we take the remaining items offline?" The PM says yes. The meeting ends. Nothing was decided. The "open questions" slide was never reached.</p>
-  <p>This is not a pathological case. This is the modal product review in most companies I have worked with. The PMs who run it are not incompetent — many of them are quite good. They were simply never taught that a review has a specific structure, and that deviating from it produces exactly this outcome.</p>
+  <p>This is not a pathological case. This is the modal product review in most companies. The PMs who run it are not incompetent — many of them are quite good. They were simply never taught that a review has a specific structure, and that deviating from it produces exactly this outcome.</p>
   <p>The core failure is that information-sharing and decision-making have been mixed into a single meeting format that serves neither well. Information can always be shared more efficiently in writing. Decisions require structured discussion. When you mix them, the information-sharing expands to fill the available time, and the decisions get crowded out.</p>
 
   <h2>The prep that changes everything.</h2>
@@ -115,17 +118,13 @@
     <div class="faq-item"><h3>How often should product reviews happen?</h3><p>Bi-weekly for active build cycles, monthly for teams in a steady-state iteration phase. The cadence matters less than the structure. A weekly product review with the right structure produces more value than a quarterly offsite without it. What kills cadence is reviews that feel like punishment — the fix is structure, not frequency reduction.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
 
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 054 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

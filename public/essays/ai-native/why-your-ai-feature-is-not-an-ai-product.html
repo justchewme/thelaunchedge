@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 064 · AI-Native</span><span>20 apr 2026</span><span>12 min read</span></div>
+  <div class="meta"><span>AI-Native</span><span>9 min read</span></div>
 </div></header>
 <article class="article"><div class="wrap">
   <div class="kicker"><span class="bar"></span> Essay · ai-native</div>
@@ -70,7 +73,7 @@
 
   <h2>The category error hiding in plain sight.</h2>
 
-  <p>Here is a pattern I have watched repeat across dozens of software businesses over the past two years: a team builds a solid product, adds an AI-powered feature — a summarisation button, an autocomplete suggestion, a generated first draft — sees user engagement tick up, and then updates their website header to read "AI-powered [product category]." The pitch deck gets a slide about being at the forefront of the AI revolution. A press release goes out.</p>
+  <p>Here is a pattern that has repeated across software businesses since generative AI arrived: a team builds a solid product, adds an AI-powered feature — a summarisation button, an autocomplete suggestion, a generated first draft — sees user engagement tick up, and then updates their website header to read "AI-powered [product category]." The pitch deck gets a slide about being at the forefront of the AI revolution. A press release goes out.</p>
 
   <p>Six months later, their primary foundation model provider ships the same capability natively in their API, or a competitor builds the same feature in a weekend, and the team discovers that what they thought was a moat was actually a thin coat of paint.</p>
 
@@ -82,17 +85,17 @@
 
   <p>If what remains is a functional product that users can still get substantial value from — a project management tool without AI suggestions, a CRM without AI-generated email drafts, a writing tool without AI autocomplete — then you have a product with AI features. The AI makes the product better, sometimes significantly better, but it is not constitutive of the product's core value. The product existed before AI and could exist without it.</p>
 
-  <p>An AI-native product does not pass this test. Remove the AI and there is no product. A legal contract review tool that identifies non-standard clauses using a fine-tuned model does not exist without the model. A medical coding assistant that achieves 97% accuracy on ICD-10 classification is not a manual data entry tool with suggestions bolted on — the AI is the product. A B2B intelligence platform that synthesises signals from thousands of sources into account-level insights is not a data aggregator — the synthesis is the value, and synthesis at that scale requires AI.</p>
+  <p>An AI-native product does not pass this test. Remove the AI and there is no product. A legal contract review tool that identifies non-standard clauses using a fine-tuned model does not exist without the model. A medical coding assistant that reliably classifies clinical notes into ICD-10 codes is not a manual data entry tool with suggestions bolted on — the AI is the product. A B2B intelligence platform that synthesises signals from thousands of sources into account-level insights is not a data aggregator — the synthesis is the value, and synthesis at that scale requires AI.</p>
 
   <p>The second diagnostic is the pricing test: if you removed the AI, how much would your customers pay for what remains? If the answer is "roughly the same," you have features. If the answer is "nothing — the value proposition collapses," you have a product.</p>
 
   <h2>Why this distinction determines your competitive moat.</h2>
 
-  <p>Foundation model capabilities are rapidly commoditising. GPT-4-class performance, which cost thousands of dollars per month to run two years ago, now costs tens of dollars. The capabilities that seemed differentiating in 2023 — fluent text generation, coherent summarisation, basic question-answering — are now table stakes available to any team willing to paste an API key into a `.env` file.</p>
+  <p>Foundation model capabilities are rapidly commoditising. The price of a given level of model performance has fallen sharply year after year. The capabilities that seemed differentiating in 2023 — fluent text generation, coherent summarisation, basic question-answering — are now table stakes available to any team willing to paste an API key into a `.env` file.</p>
 
-  <p>This commoditisation means that AI features built on generic foundation model capabilities have approximately zero defensibility. If your AI summarisation feature is good because GPT-4o is a good summariser, then any competitor who also uses GPT-4o can build the same feature. The moat is not yours — it is OpenAI's.</p>
+  <p>This commoditisation means that AI features built on generic foundation model capabilities have approximately zero defensibility. If your AI summarisation feature is good because the underlying model is a good summariser, then any competitor using the same model can build the same feature. The moat is not yours — it belongs to the model provider.</p>
 
-  <p>AI-native products are defensible through a fundamentally different mechanism: proprietary data, proprietary feedback loops, and proprietary context that the model is trained or prompted with. The medical coding product is defensible not because it uses a good model, but because it has been trained on millions of correctly labelled clinical notes from real hospitals. A competitor cannot replicate that dataset in a weekend. A new foundation model release does not eliminate the advantage — it improves the floor that the proprietary training data amplifies.</p>
+  <p>AI-native products are defensible through a fundamentally different mechanism: proprietary data, proprietary feedback loops, and proprietary context that the model is trained or prompted with. A medical coding product like that is defensible not because it uses a good model, but because it has been trained on a large set of correctly labelled clinical notes from real hospitals. A competitor cannot replicate that dataset in a weekend. A new foundation model release does not eliminate the advantage — it improves the floor that the proprietary training data amplifies.</p>
 
   <p>The data flywheel is what creates compounding defensibility in AI-native products. Every document the legal contract tool reviews teaches it something about what non-standard looks like. Every coding decision the medical product makes, confirmed or corrected by a human coder, strengthens its calibration. This feedback loop is closed to competitors. Features do not compound. Products do.</p>
 
@@ -106,7 +109,7 @@
 
   <p>AI-native products have access to a fundamentally different pricing architecture: outcome-based pricing. If your product automates a process that cost a customer $200,000 per year in labour, professional services, or error correction, then you can have a legitimate conversation about sharing a portion of that value — not about what a seat costs. Outcome-based pricing is more defensible, more scalable, and more aligned with what the customer actually cares about. It is also only possible when the AI is doing real work that has measurable economic value, not when it is suggesting autocomplete options in a text editor.</p>
 
-  <p>I worked with a team building document classification for insurance claims processing. Their first instinct was to price it as a SaaS tool: $299 per user per month. When we mapped the actual economic value — a 60% reduction in manual review time across a twelve-person team, reducing claims cycle time from seven days to two — the outcome-based pricing came out at roughly $80,000 per year per customer. Same product. Completely different conversation about whether it was worth it.</p>
+  <p>Consider a team building document classification for insurance claims processing. The first instinct is to price it as a SaaS tool, per user per month. Map the actual economic value instead — the hours of manual review removed across the claims team, the days taken off the claims cycle — and the outcome-based price can be many times what the seats would bring in. Same product. Completely different conversation about whether it is worth it.</p>
 
   <h2>The common failure modes of AI-adjacent positioning.</h2>
 
@@ -143,16 +146,12 @@
     <div class="faq-item"><h3>How should AI-native products be priced differently from feature-based products?</h3><p>AI-native products should price on outcomes, not on seats or usage volume. If the product automates a process that previously cost a customer $50,000 per year in labour, capturing 20% of that value is more defensible than competing on per-user pricing. Outcome-based pricing also aligns incentives — you only win when the customer wins.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 064 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

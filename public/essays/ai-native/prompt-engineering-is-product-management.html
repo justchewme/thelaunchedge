@@ -38,7 +38,7 @@
       "mainEntity": [
         { "@type": "Question", "name": "Why do companies separate prompt engineering from product management?", "acceptedAnswer": { "@type": "Answer", "text": "It typically happens for organisational reasons — prompt engineering gets assigned to an engineer or data scientist, while product management focuses on roadmap and requirements. The separation creates a gap where the person who understands what the product must do is not the same person specifying what the model must produce, which results in prompts that technically work but miss product requirements." } },
         { "@type": "Question", "name": "What skills make someone good at prompt engineering?", "acceptedAnswer": { "@type": "Answer", "text": "Precise specification writing, adversarial thinking about edge cases, systematic testing discipline, and genuine understanding of the end user's context and expectations. These are identical to the skills of a good product manager. Technical knowledge of model architecture helps but is not primary — the ability to specify exact requirements clearly is what separates reliable prompts from unreliable ones." } },
-        { "@type": "Question", "name": "How should prompt changes be managed in a production system?", "acceptedAnswer": { "@type": "Answer", "text": "With the same rigour as code changes: version control, documented rationale, evaluation against a regression set before deployment, and rollback capability. Prompt changes have caused more production incidents in the teams I have worked with than code changes. Treat them accordingly." } },
+        { "@type": "Question", "name": "How should prompt changes be managed in a production system?", "acceptedAnswer": { "@type": "Answer", "text": "With the same rigour as code changes: version control, documented rationale, evaluation against a regression set before deployment, and rollback capability. A prompt change can break production behaviour as easily as a code change, and it is usually tested far less. Treat it accordingly." } },
         { "@type": "Question", "name": "When does prompt engineering reach its limits and require fine-tuning?", "acceptedAnswer": { "@type": "Answer", "text": "When the context window required to specify the task precisely exceeds what is economically viable to send with every request, when the task requires consistent style or domain knowledge that is too large to include in a prompt, or when latency and cost constraints require a smaller model that needs task-specific training to perform adequately. Most teams reach for fine-tuning before exhausting what prompt engineering can do — a mistake that costs time and money." } }
       ]
     },
@@ -57,11 +57,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/article.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
+<meta name="twitter:image" content="https://www.thelaunchedge.com/uploads/og-default.png" />
 </head>
 <body>
 <header class="masthead"><div class="wrap">
   <a href="/" class="back">← Edge <em>Notes</em></a>
-  <div class="meta"><span>№ 065 · AI-Native</span><span>20 apr 2026</span><span>11 min read</span></div>
+  <div class="meta"><span>AI-Native</span><span>9 min read</span></div>
 </div></header>
 <article class="article"><div class="wrap">
   <div class="kicker"><span class="bar"></span> Essay · ai-native</div>
@@ -74,7 +77,7 @@
 
   <p>This is how you end up with a customer-facing AI feature that works beautifully in demos and produces embarrassing outputs when real users arrive with inputs that the demo never included. The embarrassing outputs were predictable. Nobody predicted them because nobody's job was to predict them.</p>
 
-  <p>The best prompt engineers I have worked with do not write better prompts in the sense of using cleverer language or more exotic techniques. They write better requirements. The prompt is the specification for a non-deterministic system that will encounter an enormous variety of inputs and must produce outputs that fall within acceptable bounds for all of them. Writing that specification well is a product management skill, not an engineering skill.</p>
+  <p>The best prompt engineers do not write better prompts in the sense of using cleverer language or more exotic techniques. They write better requirements. The prompt is the specification for a non-deterministic system that will encounter an enormous variety of inputs and must produce outputs that fall within acceptable bounds for all of them. Writing that specification well is a product management skill, not an engineering skill.</p>
 
   <h2>What product management and prompt engineering share.</h2>
 
@@ -92,7 +95,7 @@
 
   <p>The problem is that a prompt is simultaneously a requirement and an implementation. It specifies what the output must be and it produces the output. When the requirement-writing and the implementation are done by different people in different conversations, you get prompts that technically function according to what the engineer understood the product manager wanted, rather than prompts that produce what the user actually needs.</p>
 
-  <p>I watched this play out at a company building an AI triage feature for a healthcare adjacent product. The PM wrote a brief describing what the feature should do: categorise incoming patient messages, identify urgency, route to the appropriate team. The engineer translated this into a prompt asking the model to classify messages on those dimensions. The feature worked. It also consistently miscategorised a specific class of message — patients describing symptoms they were embarrassed about, who used hedging and indirect language — as low urgency, because the prompt had not specified how to interpret indirect language in a medical communication context. The PM had not thought to specify it. The engineer had not thought to ask. Three months and one significant incident later, the fix was a single paragraph added to the system prompt. The incident was avoidable if the person who understood the product had written the prompt themselves.</p>
+  <p>Consider how this plays out on an AI triage feature for a healthcare-adjacent product. The PM writes a brief describing what the feature should do: categorise incoming patient messages, identify urgency, route to the appropriate team. The engineer translates this into a prompt asking the model to classify messages on those dimensions. The feature works. It can also consistently miscategorise a specific class of message — patients describing symptoms they are embarrassed about, who use hedging and indirect language — as low urgency, because the prompt never specified how to interpret indirect language in a medical context. The PM did not think to specify it. The engineer did not think to ask. The fix might be a single paragraph in the system prompt, but it only gets written after something goes wrong — unless the person who understands the product writes the prompt in the first place.</p>
 
   <div class="pullquote">A prompt is not a technical artefact handed from product to engineering. It is the product specification and the implementation simultaneously — and whoever writes it must be fluent in both what the user needs and what the model will do.</div>
 
@@ -110,7 +113,7 @@
 
   <p>One of the clearest signals that an organisation has not internalised this principle is how they manage prompt changes. In most organisations, prompt changes happen in a Notion doc or a hard-coded string in the codebase, without version history, without documented rationale, and without evaluation against a regression set before deployment.</p>
 
-  <p>This is the equivalent of shipping code changes without tests or version control. The prompt is the most consequential specification in an AI product — it is what determines the product's behaviour for every user. Changing it without systematic evaluation is accepting unknown risk. I have seen more production incidents caused by undocumented prompt changes than by any other single source of failure in AI features.</p>
+  <p>This is the equivalent of shipping code changes without tests or version control. The prompt is the most consequential specification in an AI product — it is what determines the product's behaviour for every user. Changing it without systematic evaluation is accepting unknown risk. Undocumented prompt changes are one of the most common and most avoidable sources of failure in AI features.</p>
 
   <p>Prompts should be version controlled with explicit commit messages explaining why the change was made. Every change to a production prompt should be evaluated against the regression set before deployment. There should be a rollback path for prompt changes with the same urgency as a rollback path for code. None of this is technically complicated. All of it requires treating the prompt as the product artefact it actually is.</p>
 
@@ -135,20 +138,16 @@
   <div class="faq">
     <div class="faq-item"><h3>Why do companies separate prompt engineering from product management?</h3><p>It typically happens for organisational reasons — prompt engineering gets assigned to an engineer or data scientist, while product management focuses on roadmap and requirements. The separation creates a gap where the person who understands what the product must do is not the same person specifying what the model must produce, which results in prompts that technically work but miss product requirements.</p></div>
     <div class="faq-item"><h3>What skills make someone good at prompt engineering?</h3><p>Precise specification writing, adversarial thinking about edge cases, systematic testing discipline, and genuine understanding of the end user's context and expectations. These are identical to the skills of a good product manager. Technical knowledge of model architecture helps but is not primary — the ability to specify exact requirements clearly is what separates reliable prompts from unreliable ones.</p></div>
-    <div class="faq-item"><h3>How should prompt changes be managed in a production system?</h3><p>With the same rigour as code changes: version control, documented rationale, evaluation against a regression set before deployment, and rollback capability. Prompt changes have caused more production incidents in the teams I have worked with than code changes. Treat them accordingly.</p></div>
+    <div class="faq-item"><h3>How should prompt changes be managed in a production system?</h3><p>With the same rigour as code changes: version control, documented rationale, evaluation against a regression set before deployment, and rollback capability. A prompt change can break production behaviour as easily as a code change, and it is usually tested far less. Treat it accordingly.</p></div>
     <div class="faq-item"><h3>When does prompt engineering reach its limits and require fine-tuning?</h3><p>When the context window required to specify the task precisely exceeds what is economically viable to send with every request, when the task requires consistent style or domain knowledge that is too large to include in a prompt, or when latency and cost constraints require a smaller model that needs task-specific training to perform adequately. Most teams reach for fine-tuning before exhausting what prompt engineering can do — a mistake that costs time and money.</p></div>
   </div>
 
-  <div class="cta-block">
-    <h3>Get the next essay.</h3>
-    <p>Sunday editions, no listicles. ~1,200 operators and founders read them.</p>
-    <a href="/#writing" class="btn">Subscribe →</a>
-  </div>
+  <div class="cta-block"><h3>Working on this?</h3><p>If this is the problem on your desk, a 30-minute intro is the fastest way to find out whether I can help.</p><a href="/#network" class="btn">Request an intro →</a></div>
 </div></article>
-<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>Edge Notes № 065 · 20 apr 2026 · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap"><a href="/">← Back to The Launch Edge</a><span>The Launch Edge · Singapore</span></div></footer>
 <script>
 const root = document.documentElement;
-const saved = localStorage.getItem('tle-theme');
+let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {}
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 </script>
 </body>

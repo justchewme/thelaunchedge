@@ -1,23 +1,82 @@
 {
   "version": 2,
-  "public": true,
   "redirects": [
-    { "source": "/Home.html", "destination": "/", "permanent": true },
-    { "source": "/Home.html:anchor", "destination": "/:anchor", "permanent": true },
-    { "source": "/archive.html", "destination": "/essays", "permanent": true },
-    { "source": "/archive", "destination": "/essays", "permanent": true }
+    {
+      "source": "/essays/fractional-leadership/how-to-price-your-fractional-engagement",
+      "destination": "/essays#fractional-leadership",
+      "permanent": true
+    },
+    {
+      "source": "/Home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Home.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Home.html:anchor",
+      "destination": "/:anchor",
+      "permanent": true
+    },
+    {
+      "source": "/archive",
+      "destination": "/essays",
+      "permanent": true
+    },
+    {
+      "source": "/essays/founder-craft",
+      "destination": "/essays#founder-craft",
+      "permanent": false
+    },
+    {
+      "source": "/essays/founder-craft/",
+      "destination": "/essays#founder-craft",
+      "permanent": false
+    },
+    {
+      "source": "/essays/asia-gtm",
+      "destination": "/essays#asia-gtm",
+      "permanent": false
+    },
+    {
+      "source": "/essays/asia-gtm/",
+      "destination": "/essays#asia-gtm",
+      "permanent": false
+    },
+    {
+      "source": "/essays/ai-native",
+      "destination": "/essays#ai-native",
+      "permanent": false
+    },
+    {
+      "source": "/essays/ai-native/",
+      "destination": "/essays#ai-native",
+      "permanent": false
+    },
+    {
+      "source": "/essays/growth-retention",
+      "destination": "/essays#growth-retention",
+      "permanent": false
+    },
+    {
+      "source": "/essays/growth-retention/",
+      "destination": "/essays#growth-retention",
+      "permanent": false
+    },
+    {
+      "source": "/essays/fractional-leadership",
+      "destination": "/essays#fractional-leadership",
+      "permanent": false
+    },
+    {
+      "source": "/essays/fractional-leadership/",
+      "destination": "/essays#fractional-leadership",
+      "permanent": false
+    }
   ],
-  "rewrites": [
-    { "source": "/", "destination": "/public/index.html" },
-    { "source": "/sitemap.xml", "destination": "/public/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/public/robots.txt" },
-    { "source": "/article.css", "destination": "/public/article.css" },
-    { "source": "/uploads/(.*)", "destination": "/public/uploads/$1" },
-    { "source": "/essays", "destination": "/public/essays/index.html" },
-    { "source": "/essays/", "destination": "/public/essays/index.html" },
-    { "source": "/essays/:cluster", "destination": "/public/essays/:cluster/index.html" },
-    { "source": "/essays/:cluster/", "destination": "/public/essays/:cluster/index.html" },
-    { "source": "/essays/:cluster/:slug", "destination": "/public/essays/:cluster/:slug.html" },
-    { "source": "/((?!api/)(?!essays/).*)\\.html", "destination": "/public/$1.html" }
-  ]
+  "rewrites": [],
+  "cleanUrls": true
 }
