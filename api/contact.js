@@ -8,8 +8,8 @@ module.exports = async (req, res) => {
   const esc = (v) => String(v || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const { name, email, dial, phone, message } = req.body || {};
 
-  if (!name || !email || !phone) {
-    return res.status(400).json({ error: 'Name, email, and phone are required' });
+  if (!name || !email) {
+    return res.status(400).json({ error: 'Name and email are required' });
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -26,8 +26,8 @@ module.exports = async (req, res) => {
           <table style="width: 100%; border-collapse: collapse;">
             <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C; width: 140px;">Name</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${esc(name)}</td></tr>
             <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">Email</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${esc(email)}</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">WhatsApp</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${esc(dial)} ${esc(phone)}</td></tr>
-            <tr><td style="padding: 10px 0; color: #5A5F5C; vertical-align: top;">Situation</td><td style="padding: 10px 0;">${esc(message) || '—'}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD; color: #5A5F5C;">WhatsApp</td><td style="padding: 10px 0; border-bottom: 1px solid #E2DCCD;">${phone ? esc(dial) + ' ' + esc(phone) : '—'}</td></tr>
+            <tr><td style="padding: 10px 0; color: #5A5F5C; vertical-align: top;">Situation</td><td style="padding: 10px 0; white-space: pre-wrap;">${esc(message) || '—'}</td></tr>
           </table>
         </div>
       `,
