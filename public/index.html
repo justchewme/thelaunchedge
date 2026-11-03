@@ -288,6 +288,29 @@
   .manifesto .glyph { position: absolute; top: 120px; right: 64px; font-family: var(--serif); font-size: 520px; line-height: 0.8; color: var(--accent); opacity: 0.08; pointer-events: none; font-style: italic; }
 
   /* FIT */
+
+  /* INDUSTRIES */
+  .ind-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line-strong); }
+  .ind-col { padding: 56px 48px; }
+  .ind-col.now { background: var(--cream-panel); border-left: 1px solid var(--line-strong); }
+  .ind-col h3 { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1; letter-spacing: -0.022em; margin-bottom: 12px; }
+  .ind-col h3 em { font-style: italic; color: var(--accent); }
+  .ind-col .sub { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 32px; }
+  .ind-col ul { list-style: none; }
+  .ind-col li { padding: 18px 0; border-top: 1px solid var(--line-strong); display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: baseline; }
+  .ind-col li:last-child { border-bottom: 1px solid var(--line-strong); }
+  .ind-col .ind { font-family: var(--serif); font-size: 24px; line-height: 1.15; letter-spacing: -0.01em; }
+  .ind-col .where { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); text-align: right; white-space: nowrap; }
+  .ind-col .what { grid-column: 1 / -1; font-size: 15px; line-height: 1.55; color: var(--fg-muted); max-width: 520px; }
+  .ind-col .what a { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+  @media (max-width: 768px) {
+    .ind-grid { grid-template-columns: 1fr; }
+    .ind-col { padding: 36px 22px; }
+    .ind-col.now { border-left: none; border-top: 1px solid var(--line-strong); }
+    .ind-col h3 { font-size: 36px; }
+    .ind-col li { grid-template-columns: 1fr; }
+    .ind-col .where { text-align: left; white-space: normal; }
+  }
   .fit-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line-strong); }
   .fit-col { padding: 56px 48px; }
   .fit-col.yes { background: var(--cream-panel); border-right: 1px solid var(--line-strong); }
@@ -520,8 +543,9 @@
     <div class="navlinks">
       <a href="#work" class="link" data-n="01">Work</a>
       <a href="#record" class="link" data-n="02">Record</a>
-      <a href="#writing" class="link" data-n="03">Writing</a>
-      <a href="#about" class="link" data-n="04">About</a>
+      <a href="#industries" class="link" data-n="03">Industries</a>
+      <a href="#writing" class="link" data-n="04">Writing</a>
+      <a href="#about" class="link" data-n="05">About</a>
       <a href="#network" class="btn btn-primary">Request an intro
         <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -579,23 +603,31 @@
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee">
-    <span class="lbl">Built across —</span>
-    <span>Singapore</span><span class="dot">●</span>
-    <span><em>APAC</em></span><span class="dot">●</span>
-    <span>Southeast Asia</span><span class="dot">●</span>
-    <span><em>Europe</em></span><span class="dot">●</span>
-    <span>Subscriptions</span><span class="dot">●</span>
-    <span>Retention</span><span class="dot">●</span>
+    <span class="lbl">Worked across —</span>
+    <span>Fintech</span><span class="dot">●</span>
+    <span><em>Food delivery</em></span><span class="dot">●</span>
     <span>Payments</span><span class="dot">●</span>
+    <span><em>Subscriptions</em></span><span class="dot">●</span>
+    <span>Government</span><span class="dot">●</span>
+    <span><em>Marine &amp; offshore</em></span><span class="dot">●</span>
+    <span>Precision engineering</span><span class="dot">●</span>
+    <span><em>Agri-food tech</em></span><span class="dot">●</span>
+    <span>Insurance</span><span class="dot">●</span>
+    <span><em>Building materials</em></span><span class="dot">●</span>
+    <span>Consumer goods</span><span class="dot">●</span>
     <span><em>AI agents</em></span><span class="dot">●</span>
-    <span class="lbl">Built across —</span>
-    <span>Singapore</span><span class="dot">●</span>
-    <span><em>APAC</em></span><span class="dot">●</span>
-    <span>Southeast Asia</span><span class="dot">●</span>
-    <span><em>Europe</em></span><span class="dot">●</span>
-    <span>Subscriptions</span><span class="dot">●</span>
-    <span>Retention</span><span class="dot">●</span>
+    <span class="lbl">Worked across —</span>
+    <span>Fintech</span><span class="dot">●</span>
+    <span><em>Food delivery</em></span><span class="dot">●</span>
     <span>Payments</span><span class="dot">●</span>
+    <span><em>Subscriptions</em></span><span class="dot">●</span>
+    <span>Government</span><span class="dot">●</span>
+    <span><em>Marine &amp; offshore</em></span><span class="dot">●</span>
+    <span>Precision engineering</span><span class="dot">●</span>
+    <span><em>Agri-food tech</em></span><span class="dot">●</span>
+    <span>Insurance</span><span class="dot">●</span>
+    <span><em>Building materials</em></span><span class="dot">●</span>
+    <span>Consumer goods</span><span class="dot">●</span>
     <span><em>AI agents</em></span><span class="dot">●</span>
   </div>
 </div>
@@ -785,6 +817,56 @@
   </div>
 </section>
 
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="left">
+        <div class="kicker"><span class="bar"></span> 04 / industries</div>
+        <h2>Many industries.<br/><em>Same problems.</em></h2>
+      </div>
+      <div class="aside">
+        Growth, retention, follow-through and getting a product to market look different in a brokerage, a delivery app and an engineering group, but they rhyme. Here's where I've done the work in-house, and what I'm building now.
+      </div>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-col">
+        <h3>Worked <em>in</em> —</h3>
+        <div class="sub">in-house &amp; government roles</div>
+        <ul>
+          <li><span class="ind">Retail investing &amp; fintech</span><span class="where">Gotrade · 2024–now</span><span class="what">Chief Growth &amp; Product Officer. Product across asset classes, growth, retention and loyalty; marketing, BD and partnerships.</span></li>
+          <li><span class="ind">Food delivery &amp; consumer subscriptions</span><span class="where">Delivery Hero · 2022–24</span><span class="what">Subscriptions and loyalty for foodpanda (pandapro) and Foodora across APAC, Europe and Turkey.</span></li>
+          <li><span class="ind">Payments &amp; wallets</span><span class="where">Delivery Hero</span><span class="what">Cut failed recurring charges by 40%; integrated the pandapay wallet with subscriptions.</span></li>
+          <li><span class="ind">Marine, offshore &amp; renewable energy</span><span class="where">EDB</span><span class="what">Industry transformation roadmap and policy tools, with C-suites of the largest players.</span></li>
+          <li><span class="ind">Precision engineering &amp; contract manufacturing</span><span class="where">EDB</span><span class="what">Transformation roadmap and growth strategy with Singapore's largest manufacturers.</span></li>
+          <li><span class="ind">Smart city &amp; urban solutions</span><span class="where">EDB</span><span class="what">Account lead for major Singapore groups: internationalisation and new businesses.</span></li>
+          <li><span class="ind">Agri-food tech &amp; alternative proteins</span><span class="where">EDB</span><span class="what">New-business creation to anchor the alternative-protein industry in Singapore.</span></li>
+          <li><span class="ind">Safety &amp; security tech</span><span class="where">EDB</span><span class="what">Value proposition for an AI data exchange to attract investment.</span></li>
+          <li><span class="ind">Digital government</span><span class="where">EDB · SGN</span><span class="what">Product lead for the Singapore Global Network's CRM platform, website, partner portal and WeChat mini programs.</span></li>
+          <li><span class="ind">Banking, payments, IT &amp; telco · India</span><span class="where">EDB India</span><span class="what">Data-flow strategy with senior management in Mumbai and Bangalore.</span></li>
+          <li><span class="ind">Energy</span><span class="where">Energy Market Authority</span><span class="what">International relations: strategy for ties with countries and regional bodies.</span></li>
+          <li><span class="ind">Compliance &amp; anti-money laundering</span><span class="where">PwC</span><span class="what">Compliance analyst.</span></li>
+          <li><span class="ind">Product education</span><span class="where">Reforge · Product School</span><span class="what">Reforge partner, Product School speaker, 60+ product managers mentored.</span></li>
+        </ul>
+      </div>
+      <div class="ind-col now">
+        <h3>Building <em>now</em> —</h3>
+        <div class="sub">current projects</div>
+        <ul>
+          <li><span class="ind">Building materials &amp; home renovation</span><span class="where">client work</span><span class="what">Growth plan and lead follow-up system for a premium European tile specialist in Singapore.</span></li>
+          <li><span class="ind">Consumer products &amp; athletic gear</span><span class="where">own brand</span><span class="what">Taking a gear brand from factory sourcing and QA to launch in Singapore and Hong Kong.</span></li>
+          <li><span class="ind">Insurance</span><span class="where">own product</span><span class="what"><a href="https://claimback.app" target="_blank" rel="noopener">ClaimBack</a>: drafts appeal letters for rejected insurance claims.</span></li>
+          <li><span class="ind">Charity &amp; non-profit finance</span><span class="where">own build</span><span class="what">Finance operations system for a regional charity network across Singapore, Malaysia and Indonesia.</span></li>
+          <li><span class="ind">Language learning</span><span class="where">own product</span><span class="what">An English-learning app built for Indonesian speakers.</span></li>
+          <li><span class="ind">Speech AI &amp; live translation</span><span class="where">own product</span><span class="what">Two-way live translation between Indonesian, English and Korean for in-person events.</span></li>
+          <li><span class="ind">Leadership operating systems</span><span class="where">own practice</span><span class="what">Agents that brief, draft and chase, with a human approving every action. I run my own week on it.</span></li>
+          <li><span class="ind">AI meeting tools</span><span class="where">own build</span><span class="what">One-button meeting recorder with transcripts and summaries, running on local AI models.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MANIFESTO -->
 <section class="manifesto">
   <div class="wrap">
@@ -809,7 +891,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="left">
-        <div class="kicker"><span class="bar"></span> 04 / fit</div>
+        <div class="kicker"><span class="bar"></span> 05 / fit</div>
         <h2>This probably fits<br/><em>if you…</em></h2>
       </div>
       <div class="aside">
@@ -846,7 +928,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="left">
-        <div class="kicker"><span class="bar"></span> 05 / writing</div>
+        <div class="kicker"><span class="bar"></span> 06 / writing</div>
         <h2>Notes from<br/><em>the work.</em></h2>
       </div>
       <div class="aside">
@@ -896,14 +978,14 @@
 <section style="padding: 0; border-bottom: none;" id="book">
   <div class="dual">
     <a href="#network" class="card">
-      <span class="mono">06a / start here</span>
+      <span class="mono">07a / start here</span>
       <h3>Book a <em>30-min intro.</em></h3>
       <p class="note">No deck required. After the call you get a short written scope with a fixed quote.</p>
       <span class="go">Leave your details below <span class="arr">↓</span></span>
       <span class="shape">→</span>
     </a>
     <a href="https://www.linkedin.com/in/jcyw/" class="card" target="_blank" rel="noopener">
-      <span class="mono">06b / prefer linkedin?</span>
+      <span class="mono">07b / prefer linkedin?</span>
       <h3>Message me <em>on LinkedIn.</em></h3>
       <p class="note">One line on what's stuck is enough. I read every message.</p>
       <span class="go">Open my profile <span class="arr">↗</span></span>
