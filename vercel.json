@@ -75,6 +75,106 @@
       "source": "/essays/fractional-leadership/",
       "destination": "/essays#fractional-leadership",
       "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about-me",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/our-story",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/#offer",
+      "permanent": true
+    },
+    {
+      "source": "/our-services",
+      "destination": "/#offer",
+      "permanent": true
+    },
+    {
+      "source": "/service-page/:slug*",
+      "destination": "/#offer",
+      "permanent": true
+    },
+    {
+      "source": "/services-1",
+      "destination": "/#offer",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-1",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/book-online",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/booking-calendar/:slug*",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/essays",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug*",
+      "destination": "/essays",
+      "permanent": true
+    },
+    {
+      "source": "/post/:slug*",
+      "destination": "/essays",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [],
