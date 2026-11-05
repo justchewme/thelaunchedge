@@ -137,7 +137,11 @@
 
   /* Brief mock */
   .brief-wrap { position: relative; }
-  .brief-wrap::before { content: ''; position: absolute; inset: -40px -60px -40px -20px; background: none; z-index: 0; }
+  /* one depth layer: soft "morning light" behind the brief; drifts toward the cursor on desktop */
+  .brief-wrap::before { content: ''; position: absolute; inset: -90px -120px -90px -70px; z-index: 0; pointer-events: none;
+    background: radial-gradient(closest-side at var(--mx, 62%) var(--my, 58%), rgba(239,91,72,0.17), rgba(239,140,90,0.07) 52%, transparent 78%);
+    transition: background-position 600ms ease; }
+  [data-theme="dark"] .brief-wrap::before { background: radial-gradient(closest-side at var(--mx, 62%) var(--my, 58%), rgba(239,91,72,0.22), rgba(233,220,192,0.06) 55%, transparent 80%); }
   .brief { position: relative; z-index: 1; background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: 22px; max-width: 470px; margin-left: auto; }
   .brief-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
   .brief-head .t { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; }
@@ -785,6 +789,15 @@
     try { localStorage.setItem('tle-theme', dark ? 'light' : 'dark'); } catch (e) {}
   });
 
+  // morning light follows the cursor (desktop, motion allowed)
+  (function(){
+    const w = document.querySelector('.brief-wrap'), h = document.querySelector('.hero');
+    if (!w || !h || !matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) return;
+    let tx = 62, ty = 58, x = 62, y = 58, raf = 0;
+    const step = () => { x += (tx - x) * 0.08; y += (ty - y) * 0.08; w.style.setProperty('--mx', x.toFixed(1) + '%'); w.style.setProperty('--my', y.toFixed(1) + '%'); raf = (Math.abs(tx - x) + Math.abs(ty - y) > 0.2) ? requestAnimationFrame(step) : 0; };
+    h.addEventListener('pointermove', e => { const r = w.getBoundingClientRect(); tx = Math.max(20, Math.min(85, (e.clientX - r.left) / r.width * 100)); ty = Math.max(25, Math.min(85, (e.clientY - r.top) / r.height * 100)); if (!raf) raf = requestAnimationFrame(step); });
+    h.addEventListener('pointerleave', () => { tx = 62; ty = 58; if (!raf) raf = requestAnimationFrame(step); });
+  })();
   // reveal on scroll
   const rv = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window) {
