@@ -76,7 +76,7 @@
     --shadow: 0 1px 2px rgba(15,29,54,0.04), 0 12px 40px -12px rgba(15,29,54,0.18);
   }
   /* navy surfaces: dark theme + the navy bands (stats, offer panel, footer) */
-  [data-theme="dark"], #record, .flag-left, footer {
+  [data-theme="dark"], nav.top, .hero, #record, .flag-left, footer {
     --bg: #12233F; --bg-2: #172A4A; --bg-3: #1C3154; --panel: #1E355A; --card: #182C4D;
     --fg: #F4EEE2; --fg-muted: #B5BCC8; --fg-soft: #959DAE;
     --brand: #E9DCC0; --brand-hover: #F4EEE2; --brand-soft: rgba(233,220,192,0.10);
@@ -84,7 +84,8 @@
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 16px 48px -16px rgba(0,0,0,0.6);
   }
   [data-theme="dark"] { --bg: #0D1A30; --bg-2: #12233F; --bg-3: #172A4A; }
-  #record, .flag-left, footer { background: var(--bg); color: var(--fg); }
+  nav.top, .hero, #record, .flag-left, footer { color: var(--fg); }
+  #record, .flag-left, footer { background: var(--bg); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; transition: background 300ms ease, color 300ms ease; }
@@ -111,7 +112,7 @@
   .icon { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
   /* NAV */
-  nav.top { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: color-mix(in oklab, var(--bg) 86%, transparent); border-bottom: 1px solid var(--line); }
+  nav.top { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(12,25,48,0.96); border-bottom: 1px solid var(--line); }
   nav.top .inner { max-width: 1240px; margin: 0 auto; padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .wordmark { font-family: var(--serif); font-size: 25px; letter-spacing: -0.01em; }
   .wordmark em { font-style: italic; color: var(--brand); }
@@ -125,9 +126,23 @@
   [data-theme="dark"] .theme-toggle .moon { display: none; }
 
   /* HERO */
-  .hero { padding: 72px 0 88px; position: relative; overflow: hidden; }
+  .hero { --bg: #0C1930; padding: 44px 0 64px; position: relative; overflow: hidden; isolation: isolate; background: var(--bg); min-height: calc(100svh - 69px); display: flex; align-items: center; }
+  .hero > .wrap { position: relative; z-index: 2; width: 100%; }
+  /* DAWN: the one depth layer. A sun rising behind the morning brief. */
+  .dawn { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .dawn .haze { position: absolute; inset: 0; background: linear-gradient(to top, rgba(239,91,72,0.22), rgba(150,70,90,0.08) 40%, transparent 70%); opacity: 0; animation: dawn-fade 2.8s ease 0.2s forwards; }
+  .dawn .sun-wrap { position: absolute; left: 68%; bottom: 0; width: 0; height: 0; transform: translate3d(calc(var(--px, 0) * 36px), calc(var(--py, 0) * 14px), 0); transition: transform 900ms cubic-bezier(.2,.7,.2,1); }
+  .dawn .sun { position: absolute; width: 1500px; height: 1500px; left: -750px; top: -820px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,226,186,0.95) 0%, rgba(255,186,128,0.75) 6%, rgba(244,120,84,0.45) 16%, rgba(239,91,72,0.2) 30%, rgba(120,60,90,0.1) 44%, transparent 60%);
+    transform: translateY(340px); opacity: 0.25; animation: dawn-rise 3.4s cubic-bezier(.16,.8,.24,1) 0.15s forwards, dawn-breathe 9s ease-in-out 3.6s infinite alternate; }
+  .dawn .horizon { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent 4%, rgba(255,226,186,0.8) 68%, transparent 98%); opacity: 0; animation: dawn-fade 2s ease 1.2s forwards; }
+  @keyframes dawn-rise { to { transform: translateY(0); opacity: 1; } }
+  @keyframes dawn-breathe { from { scale: 1; } to { scale: 1.06; } }
+  @keyframes dawn-fade { to { opacity: 1; } }
+  .hero h1 { color: #F6F0E4; }
+  .hero h1 em { color: #F3D3AE; }
   .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 64px; align-items: center; }
-  .avail { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 13.5px; color: var(--fg-muted); background: var(--card); }
+  .avail { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 13.5px; color: var(--fg-muted); background: rgba(244,238,226,0.04); }
   .avail .dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A;  }
   h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 8vw, 112px); line-height: 0.92; letter-spacing: -0.035em; margin: 26px 0 26px; }
   .hero .lede { font-size: 20px; }
@@ -137,29 +152,33 @@
 
   /* Brief mock */
   .brief-wrap { position: relative; }
-  /* one depth layer: soft "morning light" behind the brief; drifts toward the cursor on desktop */
-  .brief-wrap::before { content: ''; position: absolute; inset: -90px -120px -90px -70px; z-index: 0; pointer-events: none;
-    background: radial-gradient(closest-side at var(--mx, 62%) var(--my, 58%), rgba(239,91,72,0.17), rgba(239,140,90,0.07) 52%, transparent 78%);
-    transition: background-position 600ms ease; }
-  [data-theme="dark"] .brief-wrap::before { background: radial-gradient(closest-side at var(--mx, 62%) var(--my, 58%), rgba(239,91,72,0.22), rgba(233,220,192,0.06) 55%, transparent 80%); }
-  .brief { position: relative; z-index: 1; background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: 22px; max-width: 470px; margin-left: auto; }
+  .brief { position: relative; z-index: 1; background: rgba(18,36,66,0.58); -webkit-backdrop-filter: blur(22px) saturate(1.15); backdrop-filter: blur(22px) saturate(1.15); border: 1px solid rgba(244,238,226,0.14); border-radius: 18px; box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 40px 90px -30px rgba(0,0,0,0.65); padding: 22px; max-width: 470px; margin-left: auto; }
   .brief-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
   .brief-head .t { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; }
   .brief-head .t em { font-style: italic; color: var(--brand); }
   .brief-head .time { font-family: var(--mono); font-size: 11px; color: var(--fg-muted); letter-spacing: 0.1em; text-transform: uppercase; }
   .brief-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-  .brief-stats div { background: var(--bg-2); border-radius: 10px; padding: 10px 12px; }
+  .brief-stats div { background: rgba(244,238,226,0.05); border-radius: 10px; padding: 10px 12px; }
   .brief-stats b { display: block; font-family: var(--serif); font-size: 28px; line-height: 1; font-weight: 400; }
   .brief-stats span { font-size: 11.5px; color: var(--fg-muted); }
-  .brief-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--warm); padding: 14px 0 8px; }
-  .dec { border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; margin-bottom: 9px; background: var(--bg); }
+  .brief-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #F3D3AE; padding: 14px 0 8px; }
+  .dec { border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; margin-bottom: 9px; background: rgba(9,20,38,0.5); transition: opacity 500ms ease, transform 500ms ease, background 300ms ease; }
+  .dec.done, .live .dec.done.on { opacity: 0.55 !important; }
+  .dec.done .acts span { pointer-events: none; }
   .dec .q { font-size: 14.5px; font-weight: 500; line-height: 1.35; }
   .dec .why { font-size: 13px; color: var(--fg-muted); margin-top: 4px; line-height: 1.4; }
   .dec .rec { font-size: 13px; margin-top: 6px; color: var(--brand); }
   .dec .acts { display: flex; gap: 6px; margin-top: 10px; }
-  .dec .acts span { font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--fg-muted); }
-  .dec .acts span.yes { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-  .brief-cap { position: relative; z-index: 1; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-soft); text-align: right; margin-top: 12px; max-width: 470px; margin-left: auto; }
+  .dec .acts span { font-size: 12px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--fg-muted); cursor: pointer; transition: background 160ms ease, color 160ms ease, border-color 160ms ease; user-select: none; }
+  .dec .acts span:hover, .dec .acts span:focus-visible { border-color: var(--fg); color: var(--fg); outline: none; }
+  .dec .acts span.yes { background: var(--brand); border-color: var(--brand); color: #0C1930; font-weight: 500; }
+  .dec .acts span.yes:hover { background: #F6F0E4; color: #0C1930; }
+  .dec .acts span.picked { background: transparent; border-color: transparent; color: var(--ok); padding-left: 0; }
+  /* live brief: items arrive at 07:00 */
+  .live .brief-stats div, .live .brief-label, .live .dec { opacity: 0; transform: translateY(10px); }
+  .live .on { opacity: 1 !important; transform: none !important; transition: opacity 600ms ease, transform 600ms cubic-bezier(.2,.7,.2,1); }
+  .brief-head .time.tick { color: #F3D3AE; }
+  .brief-cap { position: relative; z-index: 1; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,238,226,0.72); text-shadow: 0 1px 8px rgba(12,25,48,0.6); text-align: right; margin-top: 12px; max-width: 470px; margin-left: auto; }
 
   /* PROOF STRIP */
   .proof { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); padding: 26px 0; }
@@ -335,9 +354,9 @@
   .m-cta { display: none; }
 
   /* reveal */
-  .js .rv { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 600ms ease; }
+  .js .rv { opacity: 1; }
   .js .rv.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .dawn .sun, .dawn .haze, .dawn .horizon { animation: none; opacity: 1; transform: none; } }
 
   @media (max-width: 1020px) {
     .hero-grid { grid-template-columns: 1fr; gap: 56px; }
@@ -420,6 +439,7 @@
 
 <!-- HERO -->
 <header class="hero">
+  <div class="dawn" aria-hidden="true"><div class="haze"></div><div class="sun-wrap"><div class="sun"></div></div><div class="horizon"></div></div>
   <div class="wrap hero-grid">
     <div>
       <span class="avail"><span class="dot"></span>For founders &amp; CEOs · a few engagements at a time</span>
@@ -434,13 +454,13 @@
 
     <div class="brief-wrap" aria-label="Sample morning brief">
       <div class="brief">
-        <div class="brief-head"><span class="t">Morning <em>brief</em></span><span class="time">Tue · 07:00</span></div>
+        <div class="brief-head"><span class="t">Morning <em>brief</em></span><span class="time">Tue · <span class="clock">07:00</span></span></div>
         <div class="brief-stats">
           <div><b>14</b><span>threads closed overnight</span></div>
           <div><b>6</b><span>owners chased</span></div>
           <div><b>9</b><span>replies drafted</span></div>
         </div>
-        <div class="brief-label">● 3 decisions need you</div>
+        <div class="brief-label">● <span class="n">3</span> <span class="w">decisions need you</span></div>
         <div class="dec">
           <div class="q">Approve the Q1 hiring plan?</div>
           <div class="why">Finance flags it S$18k over budget. Two of three roles are on the critical path.</div>
@@ -459,7 +479,7 @@
           <div class="acts"><span class="yes">Book it</span><span>Snooze</span></div>
         </div>
       </div>
-      <div class="brief-cap">Illustration · sample company</div>
+      <div class="brief-cap">Illustration · sample company · <span class="try">tap a decision</span></div>
     </div>
   </div>
 </header>
@@ -789,14 +809,35 @@
     try { localStorage.setItem('tle-theme', dark ? 'light' : 'dark'); } catch (e) {}
   });
 
-  // morning light follows the cursor (desktop, motion allowed)
+  // DAWN: sun drifts with the cursor (desktop)
   (function(){
-    const w = document.querySelector('.brief-wrap'), h = document.querySelector('.hero');
-    if (!w || !h || !matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) return;
-    let tx = 62, ty = 58, x = 62, y = 58, raf = 0;
-    const step = () => { x += (tx - x) * 0.08; y += (ty - y) * 0.08; w.style.setProperty('--mx', x.toFixed(1) + '%'); w.style.setProperty('--my', y.toFixed(1) + '%'); raf = (Math.abs(tx - x) + Math.abs(ty - y) > 0.2) ? requestAnimationFrame(step) : 0; };
-    h.addEventListener('pointermove', e => { const r = w.getBoundingClientRect(); tx = Math.max(20, Math.min(85, (e.clientX - r.left) / r.width * 100)); ty = Math.max(25, Math.min(85, (e.clientY - r.top) / r.height * 100)); if (!raf) raf = requestAnimationFrame(step); });
-    h.addEventListener('pointerleave', () => { tx = 62; ty = 58; if (!raf) raf = requestAnimationFrame(step); });
+    const h = document.querySelector('.hero');
+    if (!h || !matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) return;
+    h.addEventListener('pointermove', e => { const r = h.getBoundingClientRect(); h.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.68).toFixed(3)); h.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.6).toFixed(3)); });
+    h.addEventListener('pointerleave', () => { h.style.setProperty('--px', 0); h.style.setProperty('--py', 0); });
+  })();
+  // LIVE BRIEF: arrives at 07:00, and you can clear it
+  (function(){
+    const b = document.querySelector('.brief'); if (!b) return;
+    const decs = [...b.querySelectorAll('.dec')], n = b.querySelector('.brief-label .n'), w = b.querySelector('.brief-label .w'), clock = b.querySelector('.clock');
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let left = decs.length;
+    const label = () => { if (left > 0) { n.textContent = left; w.textContent = left === 1 ? 'decision needs you' : 'decisions need you'; } else { n.textContent = ''; w.textContent = 'all clear · back to your day'; } };
+    const doneWord = { 'Approve': '✓ Approved', 'Change': '✓ Sent back with notes', 'Discuss': '✓ Added to Thursday', 'Send draft': '✓ Sent', 'Edit': '✓ Opened draft', 'Book it': '✓ Booked 10:30', 'Snooze': '✓ Snoozed to tomorrow' };
+    decs.forEach(d => d.querySelectorAll('.acts span').forEach(sp => {
+      sp.setAttribute('role', 'button'); sp.tabIndex = 0;
+      const go = () => { if (d.classList.contains('done')) return; const acts = d.querySelector('.acts'); acts.innerHTML = ''; const t = document.createElement('span'); t.className = 'picked'; t.textContent = doneWord[sp.textContent.trim()] || '✓ Done'; acts.appendChild(t); d.classList.add('done'); left--; label(); };
+      sp.addEventListener('click', go); sp.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    }));
+    if (still) return;
+    b.classList.add('live');
+    const stats = [...b.querySelectorAll('.brief-stats div')], bl = b.querySelector('.brief-label');
+    let t = 500;
+    clock.textContent = '06:59'; setTimeout(() => { clock.textContent = '07:00'; clock.parentNode.classList.add('tick'); }, 1100);
+    stats.forEach((s, i) => { const v = s.querySelector('b'), target = +v.textContent; v.textContent = '0';
+      setTimeout(() => { s.classList.add('on'); const t0 = performance.now(); const f = now => { const k = Math.min(1, (now - t0) / 1100); v.textContent = Math.round(target * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); }, t + i * 160); });
+    t += 900; setTimeout(() => bl.classList.add('on'), t);
+    decs.forEach((d, i) => setTimeout(() => d.classList.add('on'), t + 300 + i * 420));
   })();
   // reveal on scroll
   const rv = document.querySelectorAll('.rv');
