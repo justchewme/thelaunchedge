@@ -79,14 +79,9 @@
           <div class="cluster-label">Featured</div>
           <div class="cluster-title">Recent <em>essays.</em></div>
         </div>
-        <span class="cluster-count">8 essays</span>
+        <span class="cluster-count">6 essays</span>
       </div>
       <div class="essay-grid-legacy">
-        <a class="essay-card" href="/essays/ai-native/replace-three-workflows-with-one-agent">
-          <div class="num">ai-native</div>
-          <h3>Replace three workflows with one <em>agent.</em></h3>
-          <div class="meta"><span>6 min</span><span class="chip">ai-native</span></div>
-        </a>
         <a class="essay-card" href="/essays/asia-gtm/southeast-asia-market-entry-mistakes">
           <div class="num">asia gtm</div>
           <h3>The five SEA market entry mistakes that <em>kill</em> funded startups.</h3>
@@ -106,11 +101,6 @@
           <div class="num">asia gtm</div>
           <h3>Jakarta is not a second market.</h3>
           <div class="meta"><span>3 min</span><span class="chip">asia gtm</span></div>
-        </a>
-        <a class="essay-card" href="/article-ai-hiring.html">
-          <div class="num">ai-native</div>
-          <h3>You're not hiring AI. You're hiring <em>judgement.</em></h3>
-          <div class="meta"><span>4 min</span><span class="chip">ai-native</span></div>
         </a>
         <a class="essay-card" href="/article-activation.html">
           <div class="num">growth</div>
@@ -147,22 +137,11 @@
       <div class="essay-grid" id="grid-asia-gtm"></div>
     </div>
 
-    <!-- AI-Native cluster -->
-    <div class="cluster-section" id="ai-native">
-      <div class="cluster-head">
-        <div>
-          <div class="cluster-label">03 / AI-Native</div>
-          <div class="cluster-title">What to build, <em>and why.</em></div>
-        </div>
-      </div>
-      <div class="essay-grid" id="grid-ai-native"></div>
-    </div>
-
     <!-- Growth & Retention cluster -->
     <div class="cluster-section" id="growth-retention">
       <div class="cluster-head">
         <div>
-          <div class="cluster-label">04 / Growth &amp; Retention</div>
+          <div class="cluster-label">03 / Growth &amp; Retention</div>
           <div class="cluster-title">Numbers that <em>compound.</em></div>
         </div>
       </div>
@@ -173,7 +152,7 @@
     <div class="cluster-section" id="fractional-leadership">
       <div class="cluster-head">
         <div>
-          <div class="cluster-label">05 / Fractional Leadership</div>
+          <div class="cluster-label">04 / Fractional Leadership</div>
           <div class="cluster-title">Senior hands, <em>lean model.</em></div>
         </div>
       </div>
@@ -191,7 +170,7 @@ let saved = null; try { saved = localStorage.getItem('tle-theme'); } catch (e) {
 if (saved === 'dark') root.setAttribute('data-theme', 'dark');
 
 // Dynamically discover essays by fetching the sitemap
-const CLUSTERS = ['founder-craft','asia-gtm','ai-native','growth-retention','fractional-leadership'];
+const CLUSTERS = ['founder-craft','asia-gtm','growth-retention','fractional-leadership'];
 const CLUSTER_LABELS = {
   'founder-craft': 'Founder Craft',
   'asia-gtm': 'Asia GTM',
