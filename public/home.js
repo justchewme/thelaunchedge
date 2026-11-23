@@ -58,23 +58,7 @@
     addEventListener('resize', fit);
   }
 
-  /* ---------- hero: the page opens like a morning brief ---------- */
-  function intro() {
-    const nav = $('.nav'), title = $('[data-hero-title]'), glow = $('[data-glow]');
-    const fades = $$('[data-hero-fade]');
-    if (reduce) return;
-    lenis?.stop();
-    let split = null;
-    const tl = gsap.timeline({ defaults: { ease: EASE.out }, onComplete: () => { split?.revert(); lenis?.start(); } });
-    if (glow) tl.fromTo(glow, { opacity: 0, yPercent: 14 }, { opacity: 1, yPercent: 0, duration: 2.6, ease: 'power2.out' }, 0);
-    if (nav) tl.fromTo(nav, { yPercent: -100 }, { yPercent: 0, duration: 1.1 }, 0.2);
-    if (title) {
-      split = SplitText.create(title, { type: 'lines', mask: 'lines' });
-      gsap.set(title, { autoAlpha: 1 });
-      tl.from(split.lines, { yPercent: 112, duration: 1.4, stagger: 0.11 }, 0.25);
-    }
-    if (fades.length) tl.fromTo(fades, { y: 14, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.1, stagger: 0.12 }, 0.9);
-  }
+  /* hero intro (headline, fades, glow, nav) is pure CSS so it never waits on JS: see home.css */
 
   /* ---------- masked line reveal on headings ---------- */
   function splitReveals() {
@@ -179,7 +163,6 @@
   /* ---------- boot after fonts, so line splits use final metrics ---------- */
   const boot = () => {
     fitType();
-    intro();
     const mm = gsap.matchMedia();
     mm.add(MOTION, () => {
       system();   // pin first, so every trigger below includes its scroll distance

@@ -57,9 +57,7 @@
     }
   ]
 }</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=IBM+Plex+Mono:wght@400&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <meta name="theme-color" content="#14100c" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
@@ -100,14 +98,14 @@
 <header class="hero ink" data-hero>
   <div class="hero__glow" data-glow aria-hidden="true"></div>
   <div class="wrap hero__body">
-    <div class="hero__top mono" data-hero-fade>
+    <div class="hero__top mono" data-hero-fade style="--d:.55s">
       <span>For founders and CEOs. A few engagements at a time. Singapore.</span>
       <span class="hero__clock tnum">Tue 07:00 · your brief is ready</span>
     </div>
-    <h1 data-hero-title><span class="l">Stop chasing.</span><span class="l">Start <em>deciding.</em></span></h1>
+    <h1><span class="l"><span>Stop chasing.</span></span><span class="l"><span>Start <em>deciding.</em></span></span></h1>
     <div class="g hero__foot">
-      <p class="hero__lede" data-hero-fade>I install an <b>AI-run operating system</b> for your leadership team. One brief every morning: what moved, what's stuck, and the few decisions that need you, each with a recommendation. <b>Nothing goes out without your approval.</b></p>
-      <div class="hero__act" data-hero-fade>
+      <p class="hero__lede" data-hero-fade style="--d:.7s">I install an <b>AI-run operating system</b> for your leadership team. One brief every morning: what moved, what's stuck, and the few decisions that need you, each with a recommendation. <b>Nothing goes out without your approval.</b></p>
+      <div class="hero__act" data-hero-fade style="--d:.82s">
         <div class="hero__act-row">
           <a href="#contact" class="btn" data-magnetic><span class="btn__t-wrap"><span class="btn__t" data-t="Book a free 30-min call">Book a free 30-min call</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="#how" class="link">See how it works</a>
@@ -116,7 +114,7 @@
       </div>
     </div>
   </div>
-  <div class="proof" data-hero-fade>
+  <div class="proof" data-hero-fade style="--d:.95s">
     <div class="wrap">
       <span class="mono">Operator experience at</span>
       <ul>
