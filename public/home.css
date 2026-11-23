@@ -315,3 +315,6 @@ html:not(.js) .hero__hintX { display: none; }
 .wa-pill:hover { background: var(--ink); color: var(--paper); }
 .wa-pill.hide { transform: translateY(24px); opacity: 0; pointer-events: none; }
 @media (max-width: 699px) { .wa-pill { width: 52px; height: 52px; padding: 0; justify-content: center; } .wa-pill span { display: none; } .wa-pill .wa-ic { width: 24px; height: 24px; } }
+
+.hero__foot { max-width: 800px; }
+.hero__foot .lede { max-width: 66ch; }
