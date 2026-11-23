@@ -13,11 +13,21 @@
     btn.disabled = true; err.style.display = 'none'; label.textContent = 'Sending…';
     try {
       const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: f.name.value, email: f.email.value, dial: f.dial.value, phone: f.phone.value, message: f.message.value }) });
+        body: JSON.stringify({ name: f.name.value, email: f.email.value, dial: f.dial.value, phone: f.phone.value, message: (f.topic && f.topic.value ? 'Interested in: ' + f.topic.value + '\n\n' : '') + f.message.value }) });
       if (!res.ok) throw new Error();
       sent.style.display = 'block'; label.textContent = 'Sent';
     } catch (_) { btn.disabled = false; label.textContent = 'Request my call'; err.style.display = 'block'; }
   });
+
+  // ways to work: audience tabs dim what doesn't apply; every option pre-selects the contact form
+  const tabs = $$('.tab'), opts = $$('.opt'), groups = $$('.grp .opts');
+  tabs.forEach((t) => t.addEventListener('click', () => {
+    tabs.forEach((x) => x.setAttribute('aria-pressed', String(x === t)));
+    const a = t.dataset.aud;
+    groups.forEach((g) => g.classList.toggle('is-filtered', a !== 'all'));
+    opts.forEach((o) => o.classList.toggle('on', a === 'all' || o.dataset.for.split(' ').includes(a)));
+  }));
+  $$('[data-topic]').forEach((el) => el.addEventListener('click', () => { const s = $('#f-topic'); if (s) s.value = el.dataset.topic; }));
 
   const nav = $('#nav');
   const inks = [$('.proof'), $('.foot')];
