@@ -25,57 +25,42 @@
   },
   "inLanguage": "en-SG"
 }</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/article.css">
 <style>
-  .essays-masthead {
-    background: var(--bg-3); border-bottom: 2px solid var(--fg);
-    padding: 64px 0 48px;
-  }
-  .essays-masthead .wrap { max-width: 1200px; }
-  .essays-masthead .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-  .essays-masthead .kicker .bar { width: 36px; height: 1px; background: var(--fg-muted); }
-  .essays-masthead h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(52px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 28px; }
-  .essays-masthead h1 em { font-style: italic; color: var(--accent); }
-  .essays-masthead p { font-size: 18px; color: var(--fg-muted); max-width: 560px; line-height: 1.55; }
-
-  .clusters { padding: 80px 0 120px; }
-  .clusters .wrap { max-width: 1200px; }
-  .cluster-section { margin-bottom: 72px; border-top: 1px solid var(--line-strong); padding-top: 32px; }
-  .cluster-section .cluster-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 32px; }
-  .cluster-section .cluster-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
-  .cluster-section .cluster-title { font-family: var(--serif); font-size: 36px; line-height: 1; letter-spacing: -0.02em; }
-  .cluster-section .cluster-title em { font-style: italic; color: var(--accent); }
-  .cluster-section .cluster-count { font-family: var(--mono); font-size: 11px; color: var(--fg-muted); letter-spacing: 0.12em; text-transform: uppercase; }
-
-  .essay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
-  .essay-card { background: var(--bg); padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; min-height: 220px; transition: background 180ms ease; }
-  .essay-card:hover { background: var(--bg-2); }
-  .essay-card .num { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-  .essay-card h3 { font-family: var(--serif); font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; font-weight: 400; flex: 1; }
-  .essay-card h3 em { font-style: italic; color: var(--accent); }
-  .essay-card .meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--fg-muted); text-transform: uppercase; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
-  .essay-card .meta .chip { color: var(--accent); }
-
-  /* Pre-existing essays grid */
-  .essay-grid-legacy { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-strong); border: 1px solid var(--line-strong); }
-
-  @media (max-width: 1100px) {
-    .essay-grid-legacy { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 900px) {
-    .essay-grid { grid-template-columns: 1fr 1fr; }
-    .essay-grid-legacy { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .essay-grid, .essay-grid-legacy { grid-template-columns: 1fr; }
-  }
+  .essays-masthead { background: var(--amber); color: var(--bone); padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem); }
+  .essays-masthead .wrap { max-width: 1560px; }
+  .essays-masthead .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: rgba(245, 242, 236, .78); margin-bottom: 2rem; display: flex; align-items: center; gap: 12px; }
+  .essays-masthead .kicker .bar { width: 32px; height: 1px; background: currentColor; }
+  .essays-masthead h1 { font-family: var(--sans); font-weight: 300; font-size: clamp(3rem, .8rem + 9vw, 9rem); line-height: .92; letter-spacing: -.05em; margin-bottom: 2rem; }
+  .essays-masthead h1 em { font-family: var(--serif); font-style: italic; font-weight: 300; letter-spacing: -.035em; font-size: 1.04em; }
+  .essays-masthead p { font-size: clamp(1.1rem, 1rem + .4vw, 1.35rem); color: rgba(245, 242, 236, .82); max-width: 34em; line-height: 1.45; }
+  .clusters { padding: clamp(3rem, 7vw, 6rem) 0 clamp(5rem, 9vw, 8rem); }
+  .clusters .wrap { max-width: 1560px; }
+  .cluster-section { margin-bottom: clamp(3.5rem, 7vw, 6rem); border-top: 1px solid var(--line-strong); padding-top: 1.25rem; }
+  .cluster-section .cluster-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
+  .cluster-section .cluster-label { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--fg-muted); margin-bottom: .5rem; }
+  .cluster-section .cluster-title { font-family: var(--sans); font-weight: 300; font-size: clamp(2rem, 1.2rem + 2.6vw, 3.5rem); line-height: 1; letter-spacing: -.04em; }
+  .cluster-section .cluster-title em { font-family: var(--serif); font-style: italic; font-weight: 300; }
+  .cluster-section .cluster-count { font-family: var(--mono); font-size: 12px; color: var(--fg-muted); letter-spacing: .04em; }
+  .essay-grid, .essay-grid-legacy { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; }
+  .essay-grid-legacy { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .essay-card { padding: 1.25rem 0 1.5rem; display: flex; flex-direction: column; gap: .9rem; min-height: 190px; border-top: 1px solid var(--line); transition: opacity .3s var(--out); }
+  .essay-grid:hover .essay-card:not(:hover), .essay-grid-legacy:hover .essay-card:not(:hover) { opacity: .55; }
+  .essay-card .num { font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; color: var(--fg-muted); }
+  .essay-card h3 { font-family: var(--sans); font-weight: 400; font-size: 1.375rem; line-height: 1.18; letter-spacing: -.025em; flex: 1; }
+  .essay-card h3 em { font-family: var(--serif); font-style: italic; font-weight: 300; }
+  .essay-card .meta { font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; color: var(--fg-muted); margin-top: auto; padding-top: .9rem; display: flex; justify-content: space-between; }
+  .essay-card .meta .chip { color: var(--fg-muted); }
+  @media (max-width: 1100px) { .essay-grid-legacy { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 900px) { .essay-grid, .essay-grid-legacy { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .essay-grid, .essay-grid-legacy { grid-template-columns: 1fr; } .essay-card { min-height: 0; } }
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#f5f2ec" />
 </head>
 <body>
+<header class="masthead"><div class="wrap"><a href="/" class="back">← The Launch <em>Edge</em></a><div class="meta"><span>Edge Notes</span><span>Singapore</span></div></div></header>
 <header class="essays-masthead">
   <div class="wrap">
     <div class="kicker"><span class="bar"></span> edge notes · the archive</div>
@@ -198,7 +183,7 @@
   </div>
 </section>
 
-<footer class="foot"><div class="wrap" style="max-width:1200px"><a href="/">← Back to The Launch Edge</a><span>Edge Notes · The Archive · Singapore</span></div></footer>
+<footer class="foot"><div class="wrap" style="max-width:1200px"><a href="/">← Back to The Launch Edge</a><span>Edge Notes · The Archive · Singapore</span><a class="sister" href="https://justincreativestudios.com/?utm_source=thelaunchedge&amp;utm_medium=site&amp;utm_campaign=footer" target="_blank" rel="noopener">Also by Justin: Justin Creative Studios &#8599;</a></div></footer>
 
 <script>
 const root = document.documentElement;
