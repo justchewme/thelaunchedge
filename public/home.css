@@ -303,3 +303,14 @@ html:not(.js) .hero__hintX { display: none; }
 .also-built .t { font-weight: 400; font-size: clamp(1.3rem, 1.1rem + .8vw, 1.9rem); letter-spacing: -.03em; line-height: 1.1; }
 .also-built .t svg { display: inline-block; width: .6em; height: .6em; fill: none; stroke: currentColor; stroke-width: 1.6; vertical-align: .05em; margin-left: 4px; }
 .also-built .d { color: var(--mute); }
+
+/* whatsapp */
+.wa-ic { width: 18px; height: 18px; flex: none; }
+.wa-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+.wa-row .mono { color: var(--mute); }
+.wa-btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(28, 27, 24, .22); font-weight: 500; font-size: 15px; transition: background-color .3s, color .3s, border-color .3s; }
+.wa-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.wa-pill { position: fixed; right: 20px; bottom: 20px; z-index: 55; display: inline-flex; align-items: center; gap: 9px; height: 46px; padding: 0 18px 0 15px; border-radius: 999px; background: var(--surface); color: var(--ink); font-size: 14px; font-weight: 500; box-shadow: 0 1px 0 var(--line), 0 14px 30px -14px rgba(28, 27, 24, .45); transition: transform .5s var(--out), opacity .4s, background-color .3s, color .3s; }
+.wa-pill:hover { background: var(--ink); color: var(--paper); }
+.wa-pill.hide { transform: translateY(24px); opacity: 0; pointer-events: none; }
+@media (max-width: 699px) { .wa-pill { width: 52px; height: 52px; padding: 0; justify-content: center; } .wa-pill span { display: none; } .wa-pill .wa-ic { width: 24px; height: 24px; } }

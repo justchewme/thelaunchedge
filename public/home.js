@@ -38,6 +38,10 @@
   };
   addEventListener('scroll', paint, { passive: true }); paint();
 
+  // WhatsApp pill: appears once the hero is behind you, hides while the contact section is on screen
+  const wap = $('#wapill'), contact = $('#contact');
+  if (wap) { wap.classList.add('hide'); const upd = () => { const r = contact ? contact.getBoundingClientRect() : null; const inContact = r && r.top < innerHeight * 0.9 && r.bottom > 0; wap.classList.toggle('hide', scrollY < innerHeight * 0.7 || inContact); }; addEventListener('scroll', upd, { passive: true }); upd(); }
+
   // gentle rise, once (works without GSAP)
   const rise = $$('[data-rise]');
   if ('IntersectionObserver' in window) {
