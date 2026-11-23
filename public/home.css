@@ -224,6 +224,7 @@ html.lenis, html.lenis body { height: auto; }
 .legal a:hover { color: var(--paper); }
 .bigmark { font-size: 15vw; font-weight: 400; line-height: .8; letter-spacing: -.07em; white-space: nowrap; padding-bottom: .24em; user-select: none; color: rgba(245, 242, 236, .1); }
 .bigmark span { display: inline-block; }
+.bigmark span::before { content: attr(data-t); }
 
 /* ---------- reduced motion / no JS ---------- */
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; } }
@@ -247,7 +248,7 @@ html:not(.js) .hero__hintX { display: none; }
 .r:last-child { border-bottom: 1px solid rgba(245, 242, 236, .16); }
 @media (min-width: 900px) { .r { grid-template-columns: 3fr 4fr 5fr; } }
 .r b { font-weight: 300; font-size: clamp(2.6rem, 1.4rem + 4vw, 5.5rem); letter-spacing: -.05em; line-height: 1; font-variant-numeric: tabular-nums; }
-.r h4 { font-weight: 400; font-size: clamp(1.25rem, 1.05rem + .8vw, 1.7rem); letter-spacing: -.025em; line-height: 1.15; }
+.r h3 { font-weight: 400; font-size: clamp(1.25rem, 1.05rem + .8vw, 1.7rem); letter-spacing: -.025em; line-height: 1.15; }
 .r p { color: rgba(245, 242, 236, .66); font-size: 15.5px; }
 
 /* ways to work together */
